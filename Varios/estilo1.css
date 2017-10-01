@@ -45,8 +45,9 @@ div.cell.code_cell {
     background-color: rgb(256,256,256); 
     border-radius: 0px; 
     padding: 0.5em;
-    /*margin-left:1em;
-    margin-top: 1em;*/
+    margin-left:1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
     margin-left:auto;
     margin-right:auto;
     width:1125px;
