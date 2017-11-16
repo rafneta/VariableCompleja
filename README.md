@@ -1,6 +1,9 @@
-# VariableCompleja
+# Variable Compleja
 Libro electrónico de Variable compleja elaborado en Jupyter y Python 2.7  
 ##
-[Capítulo 1: Números compejos y el plano complejo](https://www.google.com)
+<dl>
+ <a href="http://nbviewer.jupyter.org/github/rafneta/VariableCompleja/blob/master/Cap1_Numeros_Complejos.ipynb", target="blank_"> Capítulo 1: Números compejos y el plano complejo </a>
+ </dl>
+
 
  
