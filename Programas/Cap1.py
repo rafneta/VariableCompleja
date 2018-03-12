@@ -13,4 +13,5 @@ from Programas.ncsuma import *
 from Programas.ncresta import *
 from Programas.ncproducto import *
 from Programas.ncdivision import *
+from Programas.mapeoc import *
 
