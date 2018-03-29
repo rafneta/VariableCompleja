@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[57]:
+# In[9]:
 
 
 # Mapeo complejo
@@ -21,19 +21,19 @@ def Gramapeoc(figuras,mapeo,malla,
     ancho_cuadro=1.4
     marcador="o"
     tam_marcador=10
-    fig=plt.figure(figsize=(15,8))
+    fig=plt.figure(figsize=(15,5))
     plt.rc('text', usetex=False)
     #plt.rc('font', family='serif')
     #plt.rc('font', family='cm')
     #ax = plt.axes()
 
     
-    axx1=fig.add_subplot(232,projection='3d',facecolor='w')
-    axx3=fig.add_subplot(233,projection='3d',facecolor='w')
+    #axx1=fig.add_subplot(232,projection='3d',facecolor='w')
+    #axx3=fig.add_subplot(233,projection='3d',facecolor='w')
     
-    ax =fig.add_subplot(234)
-    at=fig.add_subplot(235,facecolor='w')
-    axx=fig.add_subplot(236)
+    ax =fig.add_subplot(131)
+    at=fig.add_subplot(132,facecolor='w')
+    axx=fig.add_subplot(133)
     
     
     
@@ -44,20 +44,20 @@ def Gramapeoc(figuras,mapeo,malla,
     u1=lambdify((x,y),re(f(x+I*y).expand()),("sympy"))
     v1=lambdify((x,y),im(f(x+I*y).expand()),("sympy"))
     
-    X = np.arange(-5, 5, 0.25)
-    Y = np.arange(-5, 5, 0.25)
-    X, Y = np.meshgrid(X, Y)
-    Z=u(X,Y)
-    axx1.plot_surface(X, Y, Z, rstride=1, cstride=1,linewidth=0, antialiased=False)
-    #axx1.contour3D(X, Y, Z, 50)
-    axx1.contour(X, Y, Z, zdir='z', offset=-20)
+    #X = np.arange(-5, 5, 0.25)
+    #Y = np.arange(-5, 5, 0.25)
+    #X, Y = np.meshgrid(X, Y)
+    #Z=u(X,Y)
+    #axx1.plot_surface(X, Y, Z, rstride=1, cstride=1,linewidth=0, antialiased=False)
     
-    axx1.contour(X, Y, Z, zdir='y', offset=7)
+    #axx1.contour(X, Y, Z, zdir='z', offset=-20)
     
-    axx1.contour(X, Y, Z, zdir='x', offset=-7)
+    #axx1.contour(X, Y, Z, zdir='y', offset=7)
     
-    Z=v(X,Y)
-    axx3.plot_surface(X, Y, Z, rstride=1, cstride=1,linewidth=0, antialiased=False)
+    #axx1.contour(X, Y, Z, zdir='x', offset=-7)
+    
+    #Z=v(X,Y)
+    #axx3.plot_surface(X, Y, Z, rstride=1, cstride=1,linewidth=0, antialiased=False)
     
     #axx3.contour3D(X, Y, Z, 50)
     #axx3.plot_trisurf(X,Y,Z)
@@ -182,13 +182,13 @@ def Gramapeoc(figuras,mapeo,malla,
     ax.set_ylabel(r"$y$",fontsize=20,color="b")
     title=ax.set_title(r"Dominio de $f(z)$", y=1.05,fontsize=20, color="b")
     
-    axx1.set_xlabel(r"$\mathbb{R}e(z)$ ",fontsize=10,color="b")
-    axx1.set_ylabel(r"$\mathbb{I}m(z)$",fontsize=10,color="b")
-    title=axx1.set_title(r"$\mathbb{R}e(f(z))$", y=1.1,fontsize=20, color="b")
+    #axx1.set_xlabel(r"$\mathbb{R}e(z)$ ",fontsize=10,color="b")
+    #axx1.set_ylabel(r"$\mathbb{I}m(z)$",fontsize=10,color="b")
+    #title=axx1.set_title(r"$\mathbb{R}e(f(z))$", y=1.1,fontsize=20, color="b")
     
-    axx3.set_xlabel(r"$\mathbb{R}e(z)$ ",fontsize=10,color="b")
-    axx3.set_ylabel(r"$\mathbb{I}m(z)$",fontsize=10,color="b")
-    title=axx3.set_title(r"$\mathbb{I}m(f(z))$", y=1,fontsize=20, color="b")
+    #axx3.set_xlabel(r"$\mathbb{R}e(z)$ ",fontsize=10,color="b")
+    #axx3.set_ylabel(r"$\mathbb{I}m(z)$",fontsize=10,color="b")
+    #title=axx3.set_title(r"$\mathbb{I}m(f(z))$", y=1,fontsize=20, color="b")
     
     axx.xaxis.set_label_coords(0.5, -0.05)
     axx.yaxis.set_label_coords(-0.08,0.5)
@@ -197,7 +197,7 @@ def Gramapeoc(figuras,mapeo,malla,
     axx.spines['top'].set_color('none')
     axx.set_xlabel(r"$u(x,y)$ ",fontsize=20,color="b")
     axx.set_ylabel(r"$v(x,y)$",fontsize=20,color="b")
-    title=axx.set_title(r"Rango de f(z)", y=1,fontsize=20, color="b")
+    title=axx.set_title(r"Rango de f(z)", y=1.05,fontsize=20, color="b")
           
     #ax.axis([x0,x1,y0,y1])
     if  actilim==False or xmin>=xmax or ymin>=ymax :

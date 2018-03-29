@@ -1,7 +1,8 @@
 
 # coding: utf-8
 
-# In[ ]:
+# In[1]:
+
 
 from Programas.nuco import *
 from Programas.nuscos import *
@@ -14,4 +15,5 @@ from Programas.ncresta import *
 from Programas.ncproducto import *
 from Programas.ncdivision import *
 from Programas.mapeoc import *
+from Programas.graficasc import *
 
