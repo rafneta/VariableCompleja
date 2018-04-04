@@ -1,7 +1,7 @@
 
 # coding: utf-8
 
-# In[22]:
+# In[34]:
 
 
 # Gráficas de funciones  complejas
@@ -42,26 +42,35 @@ def Gragraficasc(figuras,mapeo,malla,
     
     
     
+    
     f1=sympify(mapeo)
     f=lambdify(z,f1,("sympy",))
     u=lambdify((x,y),re(f(x+I*y).expand()),("numpy"))
     v=lambdify((x,y),im(f(x+I*y).expand()),("numpy"))
-    w=lambdify((x,y),Abs(f(x+I*y).expand()),("numpy"))
-    zz=lambdify((x,y),arg(f(x+I*y).expand()),("numpy"))
     u1=lambdify((x,y),re(f(x+I*y).expand()),("sympy"))
     v1=lambdify((x,y),im(f(x+I*y).expand()),("sympy"))
+    w=lambdify((x,y),(((u1(x,y)**2+v1(x,y)**2)**0.5).expand()),("numpy"))
+    zz=lambdify((x,y),simplify(atan(simplify(v1(x,y)/u1(x,y)))),("numpy"))
     
-    X = np.arange(-5, 5, 0.25)
-    Y = np.arange(-5, 5, 0.25)
+    
+    if  actilim==False or xmin>=xmax or ymin>=ymax:
+        xmin=-5
+        xmax=5
+        ymin=-5
+        ymax=5
+    
+    
+    X = np.arange(xmin, xmax, 0.25)
+    Y = np.arange(ymin, ymax, 0.25)
     X, Y = np.meshgrid(X, Y)
     Z=u(X,Y)
     axx1.plot_surface(X, Y, Z, rstride=1, cstride=1,linewidth=0, antialiased=False)
     
-    axx1.contour(X, Y, Z, zdir='z', offset=-20)
+    axx1.contour(X, Y, Z, zdir='z', offset=np.min(Z)-0.4*abs(np.min(Z)))
     
-    axx1.contour(X, Y, Z, zdir='y', offset=7)
+    axx1.contour(X, Y, Z, zdir='y', offset=ymax+0.4*abs(ymax))
     
-    axx1.contour(X, Y, Z, zdir='x', offset=-7)
+    axx1.contour(X, Y, Z, zdir='x', offset=xmin-0.4*abs(xmin))
     
     Z=v(X,Y)
     axx3.plot_surface(X, Y, Z, rstride=1, cstride=1,linewidth=0, antialiased=False)
@@ -69,11 +78,14 @@ def Gragraficasc(figuras,mapeo,malla,
     axx3.contour3D(X, Y, Z, 50)
     #axx3.plot_trisurf(X,Y,Z)
     
+    
     Z=w(X,Y)
-    axx2.contour3D(X, Y, Z, 50)
+    #axx2.contour3D(X, Y, Z, 50)
+    axx2.plot_surface(X, Y, Z, rstride=1, cstride=1,linewidth=0, antialiased=False)
     
     Z=zz(X,Y)
-    axx4.contour3D(X, Y, Z, 50)
+    #axx4.contour3D(X, Y, Z, 50)
+    axx4.plot_surface(X, Y, Z, rstride=1, cstride=1,linewidth=0, antialiased=False)
     
     
     
@@ -128,7 +140,7 @@ def Gragraficasc(figuras,mapeo,malla,
     at3.text(0.2, 0.6, "con", fontsize=10)
     at3.text(0, 0.5, "$u(x,y)=%s" % latex(u1(x,y))+"$", fontsize=10)
     at3.text(0, 0.4, "$v(x,y)=%s" % latex(v1(x,y))+"$", fontsize=10)
-    at3.text(0, 0.3, "$\|f(z)\|=%s" % latex(Abs(f(x+I*y).expand()))+"$", fontsize=15)
+    at3.text(0, 0.3, "$\|f(z)\|=%s" % latex(simplify((u1(x,y)**2+v1(x,y)**2)**0.5))+"$", fontsize=15)
     
     at4.set_xticklabels("", visible=False)
     at4.set_yticklabels("", visible=False)
@@ -142,7 +154,7 @@ def Gragraficasc(figuras,mapeo,malla,
     at4.text(0.2, 0.6, "con", fontsize=10)
     at4.text(0, 0.5, "$u(x,y)=%s" % latex(u1(x,y))+"$", fontsize=10)
     at4.text(0, 0.4, "$v(x,y)=%s" % latex(v1(x,y))+"$", fontsize=10)
-    at4.text(0, 0.3, "$\measuredangle f(z)=arctan(%s" % latex(v1(x,y)/(u1(x,y)))+")$", fontsize=15)
+    at4.text(0, 0.3, "$\measuredangle f(z)=%s"% latex(simplify(atan(simplify(v1(x,y)/u1(x,y)))))             +"$", fontsize=15)
 
 
 
@@ -277,7 +289,7 @@ def graficasc():
 
     Mapeo=widgets.Textarea(
     value='z**2',
-    placeholder='Type something',
+    placeholder='Escribe la funcion en terminos de z',
     description=r'\(f(z)\):',
     continuous_update=False,
     disabled=False
@@ -302,22 +314,22 @@ def graficasc():
         description='Activar limites'
     )
     
-    Xmin=widgets.FloatText(value=-0.5,
+    Xmin=widgets.FloatText(value=-1,
             description='Xmin',
             step=0.5,
             continuous_update=False)
     
-    Xmax=widgets.FloatText(value=0.5,
+    Xmax=widgets.FloatText(value=1,
             description='Xmax',
             step=0.5,
             continuous_update=False)
     
-    Ymin=widgets.FloatText(value=-0.5,
+    Ymin=widgets.FloatText(value=-1,
             description='Ymin',
             step=0.5,
             continuous_update=False)
     
-    Ymax=widgets.FloatText(value=0.5,
+    Ymax=widgets.FloatText(value=1,
             description='Ymax',
             step=0.5,
             continuous_update=False)
