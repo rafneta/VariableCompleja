@@ -47,7 +47,7 @@ def Granumcom(norma, fase, fp, conj, inverso, inversoa, mz, alpha,
     
     sns.set()
     cp=sns.color_palette("Set2", 10)
-    print cp
+    #print cp
     ax.plot([0, re(z)],[0,im(z)],color=cp[0],lw=3,label=s % latex(z))
     ax.plot(re(z),im(z), color=cp[0], marker=marcador,markersize=tam_marcador)
     #plt.legend(loc = "best")
