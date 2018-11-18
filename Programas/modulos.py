@@ -3,6 +3,7 @@
 
 # In[ ]:
 
+
 ##########################################################
 ##                                                      ##
 ##                    BITACORA                          ##
@@ -27,8 +28,14 @@
 ##    Día 18: jueves    28/septiembre/2017---2:00 horas ##
 ##    Día 19: sabado    30/septiembre/2017---2:00 horas ##
 ##    Día 20: domingo      01/octubre/2017---2:00 horas ##
+##    Día 21: Domingo    17/diciembre/2017---3:00 horas ##
+##    Día 22: Lunes      18/diciembre/2017---5:00 horas ##
+##    Dia 23: Viernes    9/marzo/2018--------8:00 horas ##
+##    Dia 24: Domingo   11/marzo/2018--------2:00 horas ##
+##    Día 25: Jueves    29/marzo/2018--------2:00 horas ##
+##    Día 26: Martes    03/abril/2018--------2:00 horas ##
 ##----------------------------------------------------- ##
-##                                   TOTAL: 61:30 horas ##
+##                                   TOTAL: 83:30 horas ##
 ##                                                      ##
 ##########################################################
 
@@ -52,14 +59,5 @@ import ipywidgets as widgets
 from IPython.display import display, Latex, Math
 from sympy.abc import x, y, mu, r, tau
 #init_printing(use_latex='mathjax') # impresion en formato latex
-init_printing()
-x, y, z, t, xx = symbols('x y z t xx')
-
-solve(x**2+1,x)
-Abs(z)
-arg(z)
-z.as_real_imag()
-eq = Add(2*x, 3*x, evaluate=False)
-
 #display(Math(r"""%s""" %latex(t**2)))
 
