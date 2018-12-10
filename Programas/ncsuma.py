@@ -3,6 +3,7 @@
 
 # In[ ]:
 
+
 # Suma de numeros complejos
 #ncsuma
 
@@ -98,7 +99,8 @@ def Granumsuma(suma,malla,
         plt.savefig("ncsuma.png")
         plt.savefig("ncsuma.svg")
         plt.savefig("ncsuma.pdf")
-        plt.savefig("ncsuma.jpg")
+        # no soporta el binder
+        #plt.savefig("ncsuma.jpg")
         plt.close()
     guardanota.value=""
 

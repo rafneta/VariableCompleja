@@ -3,6 +3,7 @@
 
 # In[ ]:
 
+
 # Numero complejo inverso multiplicativo
 # ncinversomul
 
@@ -98,6 +99,7 @@ def Granumim(uno,dos,inverso, malla,               actilim, xmin, xmax, ymin,   
         plt.savefig("ncinversomul.png")
         plt.savefig("ncinversomul.svg")
         plt.savefig("ncinversomul.pdf")
+        # No se soporta en BINDER
         plt.savefig("ncinversomul.jpg")
         plt.close()
     guardanota.value=""

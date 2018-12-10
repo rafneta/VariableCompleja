@@ -3,6 +3,7 @@
 
 # In[ ]:
 
+
 # Numero complejo conjugado
 # ncconjugado
 from modulos import *
@@ -87,7 +88,8 @@ def Granumc(uno,dos,conj, malla,               actilim, xmin, xmax, ymin,       
         plt.savefig("ncconjugado.png")
         plt.savefig("ncconjugado.svg")
         plt.savefig("ncconjugado.pdf")
-        plt.savefig("ncconjugado.jpg")
+        # no soporta con binder 
+        #plt.savefig("ncconjugado.jpg")
         plt.close()
     guardanota.value=""
 

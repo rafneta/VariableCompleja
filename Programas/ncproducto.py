@@ -3,6 +3,7 @@
 
 # In[ ]:
 
+
 # Producto de numeros complejos
 ### ncproducto
 
@@ -100,7 +101,8 @@ def Granumproducto(producto,malla,
         plt.savefig("ncproducto.png")
         plt.savefig("ncproducto.svg")
         plt.savefig("ncproducto.pdf")
-        plt.savefig("ncproducto.jpg")
+        # no se soporta en Binder
+        # plt.savefig("ncproducto.jpg")
         plt.close()
     guardanota.value=""
 

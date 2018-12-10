@@ -3,6 +3,7 @@
 
 # In[ ]:
 
+
 # Numero complejo inverso aditivo
 # ncinversoadi
 
@@ -84,7 +85,8 @@ def Granumia(uno,dos,inversoa, malla,               actilim, xmin, xmax, ymin,  
         plt.savefig("ncinversoadi.png")
         plt.savefig("ncinversoadi.svg")
         plt.savefig("ncinversoadi.pdf")
-        plt.savefig("ncinversoadi.jpg")
+        # no se soporta en Binder 
+        # plt.savefig("ncinversoadi.jpg")
         plt.close()
     guardanota.value=""
 

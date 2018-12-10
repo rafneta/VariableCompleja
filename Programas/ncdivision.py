@@ -3,6 +3,7 @@
 
 # In[ ]:
 
+
 # Producto de numeros complejos
 ### ncdivision
 
@@ -104,7 +105,8 @@ def Granumdivision(division,malla,
         plt.savefig("ncdivision.png")
         plt.savefig("ncdivision.svg")
         plt.savefig("ncdivision.pdf")
-        plt.savefig("ncdivision.jpg")
+        # No sporta en binder
+        # plt.savefig("ncdivision.jpg")
         plt.close()
     guardanota.value=""
 

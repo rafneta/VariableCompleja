@@ -223,7 +223,8 @@ def Gramapeoc(figuras,mapeo,malla,
         plt.savefig("mapeoc.png")
         plt.savefig("mapeoc.svg")
         plt.savefig("mapeoc.pdf")
-        plt.savefig("mapeoc.jpg")
+        # No soporta en Binder
+        # plt.savefig("mapeoc.jpg")
         plt.close()
     guardanota.value=""
     

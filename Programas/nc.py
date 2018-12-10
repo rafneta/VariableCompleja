@@ -3,6 +3,7 @@
 
 # In[ ]:
 
+
 #Numero complejo
 #nc
 from modulos import *
@@ -76,7 +77,8 @@ def Granum(uno,dos,malla,
         plt.savefig("nc.png")
         plt.savefig("nc.svg")
         plt.savefig("nc.pdf")
-        plt.savefig("nc.jpg")
+        # No se soporta en binder el JPG 
+        #plt.savefig("nc.jpg")
         plt.close()
     guardanota.value=""
 

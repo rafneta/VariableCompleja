@@ -3,6 +3,7 @@
 
 # In[ ]:
 
+
 # Resta de numeros complejos
 #ncresta
 
@@ -103,7 +104,8 @@ def Granumresta(resta,malla,
         plt.savefig("ncresta.png")
         plt.savefig("ncresta.svg")
         plt.savefig("ncresta.pdf")
-        plt.savefig("ncresta.jpg")
+        # No se soporta en binder
+        # plt.savefig("ncresta.jpg")
         plt.close()
     guardanota.value=""
 

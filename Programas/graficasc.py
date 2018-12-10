@@ -250,7 +250,8 @@ def Gragraficasc(figuras,mapeo,malla,
         plt.savefig("graficasc.png")
         plt.savefig("graficasc.svg")
         plt.savefig("graficasc.pdf")
-        plt.savefig("graficasc.jpg")
+        # No soporta en Binder
+        # plt.savefig("graficasc.jpg")
         plt.close()
     guardanota.value=""
     
