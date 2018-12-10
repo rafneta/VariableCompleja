@@ -1,0 +1,3763 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Señales y sistemas: Una perspectiva</title>
+        <!--<link rel="stylesheet" href="css/letras1.css">-->
+		<meta name="description" content="Libro en Linea" />
+		<meta name="keywords" content="Señales, sistemas, apuntes, libro" />
+		<meta name="author" content="Rafael Martínez-Martínez" />
+        <link href="css/bootstrap.css" rel="stylesheet">
+		<link rel="shortcut icon" href="../favicon.ico"> 
+        <link rel="stylesheet" href="css/estilos.css">
+        <link rel="stylesheet" href="css/agate.css">
+
+
+		<link rel="stylesheet" type="text/css" href="css/jquery.jscrollpane.custom.css" />
+		<link rel="stylesheet" type="text/css" href="css/bookblock.css" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        
+		<link rel="stylesheet" type="text/css" href="css/custom.css" />
+		<script src="js/modernizr.custom.79639.js"></script>
+         <!--aqui estaba el n¡bostrapp -->
+        
+        <!--INCLUIMOS PARA CORRER LAS COSAS -->
+        <link type="text/css"
+        href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/redmond/jquery-ui.css" rel="stylesheet" />
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js?"></script>
+    <script type="text/javascript" src="http://lab.abhinayrathore.com/jquery_youtube/jquery.youtubepopup.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+        $("button.youtube").YouTubePopup({ autoplay: 1, draggable: true, clickOutsideClose: true, idAttribute: 'id',width: 300, height: 250,
+         hideTitleBar: true, autohide: 1});
+         $("a.youtube").YouTubePopup({ autoplay: 1, draggable: true, clickOutsideClose: true, idAttribute: 'id',width: 736, height: 414,
+         hideTitleBar: true, autohide: 1});
+        });
+    </script>
+       
+    <!--    <script type="text/x-mathjax-config">
+            MathJax.Hub.Config({
+    TeX: { equationNumbers: { autoNumber: "AMS" } }});  </script> -->
+        
+      <!--  <script type="text/x-mathjax-config">
+           MathJax.Hub.Config({
+        CommonHTML: {scale: 100}});</script>-->
+		<script type="text/x-mathjax-config">
+           MathJax.Hub.Config({
+        SVG: {
+    scale: 120
+  }});
+        MathJax.Hub.Queue(
+  function () {
+    $("#cubierta1").fadeOut(); 
+  }
+);
+</script>
+          
+
+        
+        <script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+        
+        <script type="text/javascript" async
+            src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+        </script>
+        
+
+	</head>
+	<body >
+        
+		<div id="container" class="container">	
+
+			<div class="menu-panel">
+				<h3>Contenido</h3>
+				<ul id="menu-toc" class="menu-toc">
+					<li class="menu-toc-current"><a href="#Portada">Portada</a></li>
+					<li ><a href="#item1">Prefacio</a></li>
+					<li ><a href="#item2">Defición y clasificación</a></li>
+					<li ><a href="#item3">Señales en tiempo continuo</a></li>
+					<li ><a href="#item4">Operaciones con  señales continuas</a></li>
+                    <li ><a href="#item5">Operaciones con señales discretas</a></li>
+                    <li ><a href="#item6">Más definiciones</a></li>
+                    <li ><a href="#item7">Señales básicas</a></li>
+                    <li ><a href="#item8">Convolución en tiempo continuo</a></li>
+                    <li ><a href="#item9">Convolución en tiempo discreto</a></li>
+                    <!--
+                    <li ><a href="#item10">Correlación en tiempo continuo</a></li>
+                    <li ><a href="#item11">Correlación en tiempo discreto</a></li>
+                    -->
+                    <li ><a href="#item12">Series de Fourier continuas</a></li>
+                    <li ><a href="#item13">Series de Fourier discretas</a></li>
+                    <li ><a href="#item14">Transformada de Fourier continua</a></li>
+                    <li ><a href="#item15">Transformada de Fourier discreta</a></li>
+                    <li ><a href="#item16">Transformada de Laplace</a></li>
+                    <li ><a href="#item17">Transformada Z</a></li>
+                    <li ><a href="#item18">Sistemas</a></li>
+
+				</ul>
+			<!--	<div>
+					<a href="http://tympanus.net/Development/AudioPlayer/">&larr; Previous Demo: Responsive Audio Player</a>
+					<a href="http://tympanus.net/codrops/?p=12795">Back to the Codrops Article</a>
+				</div>-->
+			</div>
+
+			<div class="bb-custom-wrapper">
+				<div id="bb-bookblock" class="bb-bookblock">
+					<div class="bb-item" id="Portada">
+						<div class="content">
+							<div class="scroller">
+                                <h2>Señales y sistemas: una perspectiva</h2>    
+                                <h3>Rafael Martínez-Martínez</h3>
+                             <p><br>La licencia es lo siguiente:
+
+Permite a otros copiar, distribuir, exhibir y ejecutar públicamente el trabajo, así como hacer y distribuir trabajos derivados con fines no comerciales pero reconociendo la autoría y sólo bajo la misma licencia o una compatible.</p>
+                                <p><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" width="15%" height="15%" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">Señales y sistemas: una perspectiva</span> por <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.mateyasi.org/portada.html" property="cc:attributionName" rel="cc:attributionURL">Rafael Martínez-Martínez</a> se distribuye bajo una <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Licencia Creative Commons Atribución-NoComercial-CompartirIgual 4.0 Internacional</a>.</p>
+					<p>Los autores han hecho su mejor esfuerzo en la preparación de este material. Se distribuye gratuitamente con la esperanza de que sea útil, pero sin ninguna garantía expresa o implícita respecto a la exactitud o completitud del contenido.</p>
+                            </div>
+                        </div>
+                    </div>
+					<div class="bb-item" id="item1">
+						<div class="content">
+							<div class="scroller">
+								<h2> Prefacio </h2>
+<p>Este prefacio (así como todo el documento electrónico) es variante respecto al tiempo, lo que consultes dependerá de la fecha y hora en que lo hagas. Creo (no tengo una referencia que confirme lo que escribiré) que los libros usuales han sido parte de la educación por tradición, es claro que hace décadas (por no decir siglos) una de las formas de almacenar los conocimientos era escribiendo libros y claro que la experiencia de interactuar con un libro es inigualable. En la actualidad tenemos herramientas tecnológicas (tantas que no sabemos que elegir) para almacenar información, transmitir y enseña, simular situaciones, etc. Por tal motivo este ""libro"" (le llamaremos documento electrónico) es un poco diferente a lo usual. Se presenta de manera escrita la teoría, pero muchas de las explicaciones son mediante video, lo cual acota a que la consulta sea mediante un dispositivo digital (por tal motivo lo definimos como un documento electrónico).</p>
+
+<p>La motivación para escribir documento electrónico proviene de varios lugares, en primer lugar, en el 2004 cuando era estudiante del segundo de cinco años de ingeniería en UPIITA-IPN, el M. en C. Juan Carlos Guzmán Salgado, mi tutor académico y amigo, me enseño lo que era y como se utilizaba LaTeX simplemente quede eclipsado.
+</p>
+<p>
+En segundo lugar, las tecnologías de la información y la comunicación cada día me dejan con la boca abierta, pero si pienso este punto, en realidad la gente que elabora y reutiliza estas tecnologías es la que me sorprende, la tecnología para elaborar estos materiales  me motiva (y tomo prestada) del  M. en C. Juan Carlos Guzmán Salgado UPIITA-IPN, M. en C. Rubén Dario ITESM-CEM, del M. en C Walter Mora del ITC, de Udacity, edX, de Mix de microsoft, OSX, Ubuntu-Linux, diseño de Lightboard, construcción Lightboard, programadores de paquetes: HTML, CSS, LaTeX, Javascrip, y ellos a la vez se inspiran en trabajo de otros, no menos importantes.
+    </p>
+<p>
+En tercer y último lugar, el precio de los libros tiene como consecuencia que sean inaccesibles para muchos estudiantes, entiendo que el precio sea alto, el trabajo de elaboración es arduo y agobiante e implica un equipo de producción impresionante. Por tal motivo este material será ofrecido de manera gratuita  y en diferentes plataformas siguiendo la filosofía de Educación para todos, que aprendí en la FC-UNAM. Esta filosofía ha sido compartida en internet, basta con escribir en un motor de búsqueda cualquier tema y aparecerán enlaces con información en diferente formatos desde html hasta pdf. En este sentido las notas del Dr. Gabriel Villa Salvador ofrecen uno de mis ejemplos a seguir junto con las notas del M. en C. Rubén Dario ITESM-CEM y del M. en C. Walter Mora.
+       </p>                         
+<p>
+Quiero aclarar que este documento electrónico no intenta desplazar ni sustituir a los libros clásicos asociados al tema que son excelentes, y por mucho mejores de lo que estoy escribiendo aquí, pero tomo una frase de Thomas Stearns Eliot que leí en la página del profesor  <a href="http://www.jmilne.org/math/index.html"> J. S. Milne</a>
+</p>
+                                <p>
+Mi escusa para no haber escrito el libro es que ha habido mucha otra gente
+mejor equipada en muchas formas que yo y ellos tampoco lo han escrito.
+</p>
+                                <p>
+Agradezco al profesor Rubén Dario por esas platicas de tecnología, producción de contenidos, programación, matemáticas (y no se, probablemente se convierta en mi coautor, recordemos que este documento es dependiente del tiempo), al profesor Walter Mora, por tener disponible en la nube sus formatos de libros, fue inspirador, a todos mis profesores y mis estudiantes que están en esta dinámica del aprendizaje durante toda la vida #LifeLongLearning</p>
+
+<p>
+ Ciudad de México, julio 2016.
+ Rafael Martínez-Martínez</p> 
+							</div>
+						</div>
+					</div>
+                    
+					<div class="bb-item" id="item2">
+						<div class="content">
+							<div class="scroller">
+    				
+								<h2>Definición y clasificación</h2>
+
+<div class="col-sm-6 justo">
+
+<p>Definiremos a una señal como una función $f$, si el dominio es el conjunto $A$ y el rango el conjunto $B$, escribiremos</p>
+                    
+<div id="ecuacion">$$f:A \rightarrow B$$</div>
+    
+<p>Las señales se pueden clasificar de acuerdo a varios criterios. Un criterio se debe a la cardinalidad (de manera intuitiva, cuantos elementos tiene) de su dominio y contradominio.</p>
+                                <p>Un conjunto se dice que es infinito numerable si existe una función biyectiva entre dicho conjunto y los números naturales, en caso de que el conjunto sea infinito y dicha relación no exista se dice que es infinito no numerable. </p>
+                                <p>Diremos que un conjunto es discreto si es finito o infinito numerable. Como ejemplos:</p>
+    <div id="ejemplocorto">
+        <ul>
+            <li><p>$C=\left\{-2.345,1,\pi,e,-3.5,10 \right\}$</p></li>
+                                <li><p>$\mathbb{N}$</p></li>
+                                <li><p>$\mathbb{Z}$</p></li>
+                                <li><p>$3\mathbb{Z}=\left\{...,-6,-3,0,3,6,9,... \right\}$</p></li>
+                                <li><p>$T\mathbb{Z}=\left\{...,-2T,-T,0,T,2T,3T,... \right\}$</p></li>
+            </ul>
+    </div>
+  
+                                <p>Diremos que un conjunto es continuo si es infinito no numerable.</p>
+     <div id="ejemplocorto">
+<ul>
+                                <li><p>$C=[0,1]$</p></li>
+                                <li><p>$\mathbb{R}$</p></li>
+                                <li><p>$C=(-3,5)$</p></li>
+                                <li><p>$C=[a,b]$ con $a, b\in\mathbb{R}$</p></li>
+</ul>
+    </div>
+                                <p>Se puede decir que los conjuntos son discretos si los elementos están "separados" (como los números naturales). En los conjuntos continuos esta "separación" no se puede distinguir (como los números reales). Por ejemplo, en el conjunto $\{-1.5, -1, 2, 3, 3.5\}$ el elemento inmediato posterior a 2 es el 3, mientras que en el conjunto  $[0,1]$ el elemento inmediato posterior a 0.5 es indistinguible.   </p>
+                                <p>En particular suponemos que las señales modelan fenómenos que transcurren en el tiempo, es por ello que si $A$ es continuo, decimos que la señal es en tiempo continuo, y si $A$ es discreto diremos que la señal es en tiempo discreto. Se pensará que $A\subset\mathbb{R}$ ya sea en tiempo continuo o discreto.</p>
+                                <p>Por costumbre las señales en tiempo continuo suelen ser definidas con la variable $t$, es decir, si vemos la notación $f(t)$ nos referimos a una señal en tiempo continuo. Las señales en tiempo discreto en ocasiones son definidas utilizando la variable $k$ o $n$, optamos por la variable $n$ además por lo regular se definen entre corchetes. Así al observar la notación $f[n]$ nos referimos a una señal en tiempo discreto. </p>
+                                <p>Gracias a las definiciones mencionadas anteriormente se pueden clasificar a las señales como: analogícas, digitales, cuantizadas o muestreadas.  </p>
+                                <p>Una señal analogica es aquella donde el dominio es en tiempo continuo y el rango es un conjunto continuo. La gráfica de este tipo de señales se ve así: </p>
+                                
+    <div class="polaroid">
+   <img src="imagenes/continnua2_orig.png" alt="Pareja">
+  <div class="despolaroid">
+    <p>Señal Analogica</p>
+  </div>
+</div>
+    
+    
+    
+    
+                                <p>Una señal digital es aquella donde el dominio es un conjunto en tiempo discreto y el rango es un conjunto discreto finito, la gráfica de este tipo de señales se ve así.</p>
+                                
+      <div class="polaroid">
+   <img src="imagenes/discreta_orig.png" alt="Pareja">
+  <div class="despolaroid">
+    <p>Señal Digital</p>
+  </div>
+</div>
+    
+    
+                                <p>Las líneas verticales son una convención de visualización, es decir, no significa que un elemento del dominio tenga múltiples alturas asignadas (si no la relación no sería función) el elemento asignado es el que se encuentra al final de la línea vertical. </p>
+
+</div>
+<div class="col-sm-6 justo">
+
+                                <p>Una señal cuantizada es aquella donde el dominio es en tiempo continuo y el rango es un conjunto discreto finito. La gráfica de este tipo de señales se ve así: </p>
+                                
+    <div class="polaroid">
+   <img src="imagenes/cuantizada_orig.png" alt="Pareja">
+  <div class="despolaroid">
+    <p>Señal Cuantizada</p>
+  </div>
+</div>
+                                
+                                <p>La línea vertical nuevamente es una convención de visualización, la altura del elemento del dominio podría ser cualquiera sobre la línea vertical (pero solo una), incluso podría no estar asignada. Aquí comentamos dos cosas, los resultados que estudiaremos en señales no cambian si la función tiene este tipo de discontinuidades, por otro lado esta abstracción geométrica concuerda perfectamente con las mediciones electrónicas que se pueden realizar a circuitos eléctricos.</p>
+                                
+                                <p>Es importante mencionar que dependiendo del autor que se consulte las definiciones podrían ser diferentes, por ejemplo, algunos autores definen a una señal cuantizada cuando $B$ (nos referimos al rango de la señal) es finito, es decir, $A$ (nos referimos al dominio de la señal) podría ser cualquier tipo de conjunto. En general esto es muy frecuente en ingeniería, los autores tratan de abstraer con herramientas matemáticas distintos fenómenos, y en principio no en todos las áreas hay estándares. No hay que preocuparse por este tipo de detalles, lo importante es entender que se esta haciendo independientemente del nombre que reciba.  </p>
+                                <p>Una señal muestreada es aquella donde el dominio es en tiempo discreto infinito y el rango es discreto infinito. </p>
+    <div class="polaroid">
+   <img src="imagenes/muestreada_orig.png" alt="Pareja">
+  <div class="despolaroid">
+    <p>Señal Muestreada</p>
+  </div>
+</div>
+    
+                               
+    
+                                
+                                <p>Los puntos suspensivos indican que la secuencia continúa indefinidamente. Es importante mencionar que esto solo es una abstracción matemática, es imposible almacenar una cantidad infinita de datos, así que cuando se trabaje con un dispositivo tecnológico construido con electrónica digital (Laptops, smartphones, tablets, etc. ), se tendrá siempre una cantidad finita de elementos (tal vez muchos, pero finita). </p>
+                                
+                                <p>Resulta ser que la herramienta matemática con la que se trabajan las señales sólo depende del tipo de dominio de la señal (en tiempo continuo o en tiempo discreto), es decir, el rango podría ser un conjunto discreto o continuo. Así a partir de este momento solo nos referimos a señales en tiempo continuo o en tiempo discreto sin hacer referencia explícita a el rango.  </p>
+                                
+                                <p>Se ha decidido escribir los resultados para tiempo continuo y para tiempo discreto por separado, con la finalidad de no saturar a los lectores que están interesados en un dominio en particular.  </p>
+                                    
+</div>
+    							</div>
+						</div>
+					</div>
+                    
+					<div class="bb-item" id="item3">
+						<div class="content">
+							<div class="scroller">
+                                <h2>Señales en tiempo continuo</h2>
+<p>Para una señal $f:A\rightarrow B$ en tiempo continuo donde $B\subset\mathbb{R}$ decimos que la señal es real. Si $B\subset\mathbb{C}$ decimos que la señal es compleja. </p>
+                                
+                                <p>Para la señal real $f(t)=t^3$ se muestra su gráfica</p>
+                                
+                                <div><img src="imagenes/real2d_4.png"></div>
+                                <pre><code class="matlab"> 
+%MATLAB
+%Puedes ejecutar online al final de esta página,
+%solo las tres primeras lineas
+% Y puedes copiar todo si ejecutas MATLAB 
+t=-100:0.1:100;
+plot(t,t.^3,'LineWidth',2)
+grid on
+ax = gca;
+ax.XAxisLocation = 'origin';
+ax.YAxisLocation = 'origin';
+ax.Box = 'off';
+title('Gráfica de la señal f(t)=t^3 ')
+
+                                </code></pre>
+                                <p>Para la señal compleja $f(t)=t^2+tj$ se muestra su rango y su gráfica respectivamente </p>
+                                
+                                <div><img src="imagenes/compleja2d_3.png"></div>
+                                <pre><code class="matlab">
+%MATLAB
+%Puedes ejecutar online al final de esta página,
+%solo las tres primeras lineas
+% Y puedes copiar todo si ejecutas MATLAB
+t=-100:0.1:100;
+plot(t.^2,t,'LineWidth',2)
+grid on
+ax = gca;
+ax.XAxisLocation = 'origin';
+ax.YAxisLocation = 'origin';
+ax.Box = 'off';
+axis([-3000,10000,-100,100])
+xlabel('Re')
+ylabel('Im')
+title('Rango de la señal f(t)=t^2+tj ')
+
+                                </code></pre>
+                                <div><img src="imagenes/compleja3d_4.png"></div>
+                                <pre><code class="matlab"> 
+%MATLAB
+%Puedes ejecutar online al final de esta página,
+%solo las tres primeras lineas
+% Y puedes copiar todo si ejecutas MATLAB 
+t=-100:0.1:100;
+plot3(t,t.^2,t,'LineWidth',2)
+grid on
+xlabel('Dominio t')
+ylabel('Re')
+zlabel('Im')
+title('Gráfica de la señal f(t)=t^2+tj ')
+
+                                </code></pre>
+                                <p>Con una substitución directa en los códigos anteriores se puede resolver el siguiente ejemplo.</p>
+                                  <div class="ejemplo">
+<div id="derecha">
+      <p>    <strong>Ejemplo 1.</strong><br></p></div>
+                                      <p>
+            Realice las gráficas de las siguientes señales complejas, así como el rango.
+                                            </p>                                    
+<ul>
+<li>$f(t)=e^{tj}$</li>
+<li>$f(t)=e^{0.1tj}$</li>
+<li>$f(t)=e^{5tj}$</li>
+</ul>
+<div id="stc1" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Stc1c()">×</a>
+  <div class="overlay-content">
+</div>
+</div>
+			
+<button class="dmbutton" onclick="Stc1o()">Solución</button>
+</div>          
+                                
+
+                                <p>Una señal en tiempo continuo $f$ es causal si $f(t)=0$ para todo $t$ menor que cero, en caso contrario decimos que es no causal. Se muestran gráficas de señales causales y de señales no causales.</p>
+                                
+                                <p>La siguiente clasificación de las señales que presentaremos tiene que ver con la idea de "medir a la señal", es decir, dada una señal le realizamos una operación que de resultado nos regrese  un número mayor o igual a cero. </p>
+                                
+                                <p>Para una señal $f$ definimos su energía  $E_f$ como</p>
+                                
+                                $$E_f=\lim_{T\to \infty}\int_{-T}^{T} ||f(t)||^2dt=\int_{-\infty}^\infty ||f(t)||^2dt$$
+                                
+                                <p>Si $0\leq E_f<\infty$ decimos que la señal es de energía, si $E_f\to\infty$ decimos que la señal no es de energía. Es importante hacer notar que $||f(t)||^2$ se refiere a la norma de la señal al cuadrado, cuando la señal sea real entonces.</p>
+                                    
+                                $$||f(t)||^2=\left(f(t)\right)^2$$
+                                    
+                                <p>Cuando la señal sea compleja</p>
+                                
+                                $$||f(t)||^2=\mathbb{R}e(f(t))^2+\mathbb{I}m(f(t))^2$$
+                                
+                                <p>Para una señal $f$ definimos su potencia  $P_f$ como</p>
+                                
+                                $$P_f=\lim_{T\to \infty}\dfrac{1}{T}\int_{-T/2}^{T/2} ||f(t)||^2dt$$
+                                
+                                <p>Si $0< P_f<\infty$ decimos que la señal es de potencia, si $P_f\to\infty$ decimos que la señal no es de potencia. Es importante hacer notar que $||f(t)||^2$ se refiere a la norma de la señal al cuadrado. Una señal puede ser de energía  o de potencia  o de ninguno de estos tipos. Las señales que son de energía tienen potencia 0 es por esto que una señal es de  potencia cuando el cálculo es positivo.   </p>
+                                  <div class="ejemplo">
+<div id="derecha">
+      <p>    <strong>Ejemplo.</strong><br></p></div>
+<p>
+            Clasifique la siguiente señal como de energía, potencia o ninguna de estas
+$$f(t)=e^{tj}$$
+ 
+</p>
+
+
+
+<div id="stc2" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Stc2c()">×</a>
+  <div class="overlay-content">
+   
+  
+<p>Sabemos que $f(t)=e^{tj}=cos(t)+sen(t)j$, en este caso</p>
+
+$$\|f(t)\|^2=cos(t)^2+sen(t)^2=1$$
+
+<p>Entonces la energía se calcula como</p>
+
+$$E_f=\int_{-\infty}^{\infty}\|f(t)\|^2dt=\int_{-\infty}^{\infty}dt=\left.t\right|_{-\infty}^{\infty}\to \infty$$
+
+<p>Así, esta señal no es de energía. No podemos concluir que sea una señal de potencia, es necesario realizar la operación correspondiente, en este caso aprovechando las operaciones realizadas previamente</p>
+
+$$P_f=\lim_{T\to\infty}\frac{1}{T}\int_{-T/2}^{T/2}\|f(t)\|^2dt=\lim_{T\to\infty}\frac{1}{T}\int_{-T/2}^{T/2}dt=\frac{1}{T}\lim_{T\to\infty}\left.t\right|_{-T/2}^{T/2}=\lim_{T\to\infty}\frac{1}{T} T=1$$
+
+<p>Así la señal es de potencia.</p>
+
+
+</div>
+</div>
+			
+<button class="dmbutton" onclick="Stc2o()">Solución</button>
+</div>          
+                                  <div class="ejemplo">
+<div id="derecha">
+      <p>    <strong>Ejemplo.</strong><br></p></div>
+<p>
+            Clasifique la siguiente señal como de energía, potencia o ninguna de estas
+$$f(t)=t$$
+ 
+</p>
+
+
+
+<div id="stc3" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Stc3c()">×</a>
+  <div class="overlay-content">
+   
+  
+<p>Sabemos que $f(t)=t$, en este caso</p>
+
+$$\|f(t)\|^2=t^2$$
+
+<p>Entonces la energía se calcula como</p>
+
+$$E_f=\int_{-\infty}^{\infty}\|f(t)\|^2dt=\int_{-\infty}^{\infty}t^2dt=\left.\frac{t^3}{3}\right|_{-\infty}^{\infty}\to \infty$$
+
+<p>Así, esta señal no es de energía. No podemos concluir que sea una señal de potencia, es necesario realizar la operación correspondiente, en este caso aprovechando las operaciones realizadas previamente</p>
+
+$$P_f=\lim_{T\to\infty}\frac{1}{T}\int_{-T/2}^{T/2}\|f(t)\|^2dt=\lim_{T\to\infty}\frac{1}{T}\int_{-T/2}^{T/2}t^2dt=\frac{1}{T}\lim_{T\to\infty}\left.\frac{t^3}{3}\right|_{-T/2}^{T/2}=\lim_{T\to\infty}\frac{1}{T} \frac{T^3}{12}= \lim_{T\to\infty}\frac{T^2}{12}\to\infty$$
+
+<p>Así la señal no es de potencia.</p>
+
+
+</div>
+</div>
+			
+<button class="dmbutton" onclick="Stc3o()">Solución</button>
+</div>          
+                                  <div class="ejemplo">
+<div id="derecha">
+      <p>    <strong>Ejemplo.</strong><br></p></div>
+<p>
+            Clasifique la siguiente señal como de energía, potencia o ninguna de estas
+$$f(t)=\begin{cases}
+e^{-3t}&\mbox{si }0\leq t\\
+0&\mbox{en otro caso}
+\end{cases}$$
+</p>
+
+
+
+<div id="stc4" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Stc4c()">×</a>
+  <div class="overlay-content">
+   
+  
+<p>Dada $f(t)$ se tiene</p>
+
+$$\|f(t)\|^2=\begin{cases}
+e^{-6t}&\mbox{si }0\leq t\\
+0&\mbox{en otro caso}
+\end{cases}$$
+
+<p>Entonces la energía se calcula como</p>
+
+$$E_f=\int_{-\infty}^{\infty}\|f(t)\|^2dt=\int_{-\infty}^{0}0dt+\int_{0}^{\infty}e^{-6t}dt=\left.-\frac{e^{-6t}}{6}\right|_{0}^{\infty}=\frac{1}{6}$$
+
+<p>Así, esta señal es de energía. Es importante que se verifique que si calculamos la potencia de esta señal el resultado será cero. </p>
+
+
+
+</div>
+</div>
+			
+<button class="dmbutton" onclick="Stc4o()">Solución</button>
+</div>          
+                                
+                                <p><iframe src="https://octave-online.net/" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="800" width="850"></iframe></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bb-item" id="item4">
+						<div class="content">
+							<div class="scroller">
+                                <h2>Operaciones con  señales continuas</h2>
+<h3>Traslación de señales</h3>
+<p>Las operaciones de traslación horizontal y/o vertical sobre una señal \(f(t)\) tienen como consecuencia que se genere una nueva señal \(g(t)\) cuya gráfica precisamente es un movimiento, horizontal o vertical de la gráfica de la señal "original". Denotaremos a la operación traslación con la letra \(\mathcal{T}\), con subíndice \(h\) para  traslación horizontal, así como un subíndice que indique la cantidad de unidades a trasladar. </p>
+
+<p>Si queremos generar una señal $g(t)$ que sea la traslación horizontal de la señal \(f(t)\), \(t_0\in\mathbb{R}\) unidades escribiremos:</p>
+
+<div id="ecuacion">
+            \begin{equation}
+  g(t)={\;}_h\mathcal{T}_{t_0}\left\{f(t)\right\}=f(t+t_0)
+ 
+\end{equation}
+
+</div>
+
+<p>Por lo regular la notación \({ }_{h}\mathcal{T}_{t_0}\) suele omitirse, aunque considero que la notación es importante en determinados problemas pues evita confusiones. Cuando \(t_0<0\) la gráfica resultante se traslada a la derecha respecto a la original y se dice que esta señal esta retrasada en tiempo, pues lo que pasaba en un determinado momento ahora pasa después, porque la gráfica de la señal resultante esta a la derecha de la señal original. Cuando \(t_0>0\) la gráfica resultante se traslada a la izquierda respecto a la original y se dice que esta señal esta adelantada en tiempo, pues lo que pasaba en un determinado momento ahora pasa antes, porque la gráfica de la señal resultante esta a la izquierda de la señal original. Cuando \(t_0=0\) no hay ninguna traslación y la señal resultante es idéntica a la señal original. </p>
+    
+<p>De manera similar si queremos trasladar a la función \(f(t)\) verticalmente \(s_0\) unidades escribimos la notación equivalente. Cuando \(s_0<0\) la gráfica resultante se traslada hacia abajo respecto a la original. Cuando \(s_0>0\) la gráfica resultante se traslada hacia arriba respecto a la original. Cuando \(s_0=0\) no hay ninguna traslación y la gráfica resultante es idéntica a la original. </p>
+
+<div id="ecuacion">
+            \begin{equation}
+  g(t)={\;}_v\mathcal{T}_{s_0}\left\{f(t)\right\}=f(t)+s_0
+ 
+\end{equation}
+
+</div>
+
+<p>Cabe aclarar que los movimientos horizontales son contrarios a lo que se esperaría, mientras que los movimientos verticales concuerdan con la intuición, es decir, se esperaría que si el valor de traslación horizontal es positivo la gráfica se mueva a la derecha (y viceversa), pero ocurre lo contrario. En general este comportamiento "contrario" en las operaciones horizontales vuelve a suceder en los escalamientos, de los cuales hablaremos más adelante.  </p>
+        
+<p>En la siguiente aplicación se pretende ilustrar lo que se ha comentado hasta el momento, es importante que observes que las operaciones no dependen de las letras que se utilizan para las variables, lo que es importante es la operación que se realiza. Puedes dar click en el botón play, también puedes editar la aplicación modificando las fórmulas o agregando otras.</p>
+
+<p><iframe src="https://www.desmos.com/calculator/ycs22sdngy" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="450" width="850"></iframe></p>
+
+<h3>Escalamiento de señales</h3>
+
+<p>Las operaciones de escalamiento horizontal y/o vertical sobre una señal $f(t)$ tienen como consecuencia que se genere una nueva señal $g(t)$ cuya gráfica precisamente es un escalamiento, horizontal o vertical de la gráfica de la señal "original". Denotaremos a la operación escalamiento con la letra $\mathcal{E}$, con subíndice $h$ para  escalamiento horizontal, así como un subíndice que indique la cantidad de unidades a escalar. </p>
+
+<p>Si queremos generar una señal $g(t)$ que sea el escalamiento horizontal de la señal $f(t)$, $b\neq 0\in\mathbb{R}$ unidades escribiremos:</p>
+
+<div id="ecuacion">
+            \begin{equation}
+  g(t)={\;}_h\mathcal{E}_{b}\left\{f(t)\right\}=f(bt)
+\end{equation}
+
+</div>
+
+<p>Por lo regular la notación ${ }_{h}\mathcal{E}_{b}$ suele omitirse, aunque considero que la notación es importante en determinados problemas pues evita confusiones. Cuando $0 < b < 1$ la gráfica resultante es una expansión horizontal respecto a la original. Si $b=1$ no hay escalamiento, la gráfica resultante es idéntica a la original. Ahora si $b>1$ la gráfica resultante es una compresión horizontal respecto a la original. Si $b=0$ entonces la señal resultante es una constante (sería la evaluación de $f$ en $0$) que podría estar bien definida o no, eso dependerá de la forma de $f$, entonces se pierde la idea de escalamiento, por tal motivo este caso no lo consideramos.</p>
+
+<p>Ahora si $-1 < b < 0$ la gráfica resultante se expande y se invierte horizontalmente respecto a la original. Si  $b=-1$ la gráfica resultante solo se invierte horizontalmente respecto a la original. Cuando $b<-1$ la gráfica resultante se comprime y se invierte horizontalmente respecto a la original. </p>
+
+<p>De manera similar si queremos escalar a la función $f(t)$ verticalmente $a\neq 0\in\mathbb{R}$ unidades escribimos la notación equivalente. Cuando $0 < a < 1$ la gráfica resultante se comprime, si $a=1$ no hay escalamiento, $a>1$ se expande. Si $-1<a<0$ se comprime e invierte, para $a=-1$ solo se invierte, si $a<-1$ se expande e invierte, todas los resultados son respecto a la gráfica original y escalamientos verticales. No se considera el caso $a=0$ ¿por qué? </p>
+    
+<div id="ecuacion">
+            \begin{equation}
+  g(t)={\;}_v\mathcal{E}_{a}\left\{f(t)\right\}=af(t)
+\end{equation}
+
+</div>
+
+<p>Observa que al igual que en las traslaciones hay un comportamiento "contrario" en los escalamientos horizontales, a lo que la intuición nos diría. </p>
+
+<p>En la siguiente aplicación se pretende ilustrar lo que se ha comentado hasta el momento, es importante que observes que las operaciones no dependen de las letras que se utilizan para las variables, lo que es importante es la operación que se realiza. Puedes dar click en el botón play, también puedes editar la aplicación modificando las fórmulas o agregando otras.  </p>
+
+<p><iframe src="https://www.desmos.com/calculator/idglseokgr" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="450" width="850"></iframe></p>
+
+<p>Observemos que el orden de las operaciones verticales no conmuta. Si trasladamos y después escalamos verticalmente a la señal $f(t)$ tendríamos:</p>
+
+$f_1(t)={\;}_v\mathcal{T}_{s_0}\left\{f(t)\right\}=f(t)+s_0$<br>
+$f_2(t)={\;}_v\mathcal{E}_{a}\left\{f_1(t)\right\}=af_1(t)=af(t)+as_0$
+
+<p>Ahora si escalamos y después trasladamos verticalmente a la señal $f(t)$ tendríamos:
+</p>
+$g_1(t)={\;}_v\mathcal{E}_{a}\left\{f(t)\right\}=af(t)$<br>
+$g_2(t)={\;}_v\mathcal{T}_{s_0}\left\{g_1(t)\right\}=g_1(t)+s_0=af(t)+s_0$
+                                    </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="bb-item" id="item5">
+						<div class="content">
+							<div class="scroller">
+                                <h2>Operaciones con señales discretas</h2>
+<h3>Traslación de señales</h3>
+
+<p>Las operaciones de traslación horizontal y/o vertical sobre una señal $f[n]$ tienen como consecuencia que se genere una nueva señal $g[n]$ cuya gráfica precisamente es un movimiento, horizontal o vertical de la gráfica de la señal "original". Denotaremos a la operación traslación con la letra \(\mathcal{T}\), con subíndice \(h\) para  traslación horizontal, así como un subíndice que indique la cantidad de unidades a trasladar. </p>
+
+<p>Si queremos generar una señal $g[n]$ que sea la traslación horizontal de la señal $f[n]$, \(n_0\in\mathbb{Z}\) unidades escribiremos:</p>
+
+<div id="ecuacion">
+            \begin{equation}
+  g[n]={\;}_h\mathcal{T}_{n_0}\left\{f[n]\right\}=f[n+n_0]
+ 
+\end{equation}
+
+</div>
+
+<p>Por lo regular la notación \({ }_{h}\mathcal{T}_{n_0}\) suele omitirse, aunque considero que la notación es importante en determinados problemas pues evita confusiones. Cuando $n_0 < 0$ la gráfica resultante se traslada a la derecha respecto a la original y se dice que esta señal esta retrasada en tiempo, pues lo que pasaba en un determinado momento ahora pasa después, porque la gráfica de la señal resultante esta a la derecha de la señal original. Cuando \(n_0>0\) la gráfica resultante se traslada a la izquierda respecto a la original y se dice que esta señal esta adelantada en tiempo, pues lo que pasaba en un determinado momento ahora pasa antes, porque la gráfica de la señal resultante esta a la izquierda de la señal original. Cuando \(n_0=0\) no hay ninguna traslación y la señal resultante es idéntica a la señal original. </p>
+    
+<p>De manera similar si queremos trasladar a la función $f[n]$ verticalmente $s_0$ unidades escribimos la notación equivalente. Cuando $s_0<0$ la gráfica resultante se traslada hacia abajo respecto a la original. Cuando $s_0>0$ la gráfica resultante se traslada hacia arriba respecto a la original. Cuando $s_0=0$ no hay ninguna traslación y la gráfica resultante es idéntica a la original. </p>
+    
+<div id="ecuacion">
+            \begin{equation}
+  g[n]={\;}_v\mathcal{T}_{s_0}\left\{f[n]\right\}=f[n]+s_0
+ 
+\end{equation}
+
+</div>
+
+<p>Cabe aclarar que los movimientos horizontales son contrarios a lo que se esperaría, mientras que los movimientos verticales concuerdan con la intuición, es decir, se esperaría que si el valor de traslación horizontal es positivo la gráfica se mueva a la derecha (y viceversa), pero ocurre lo contrario. En general este comportamiento "contrario" en las operaciones horizontales vuelve a suceder en los escalamientos, de los cuales hablaremos más adelante.  </p>
+
+<p>En la siguiente aplicación se pretende ilustrar lo que se ha comentado hasta el momento, es importante que observes que las operaciones no dependen de las letras que se utilizan para las variables, lo que es importante es la operación que se realiza. Puedes dar click en el botón play, también puedes editar la aplicación modificando las fórmulas o agregando otras.</p>
+
+<h3>Escalamiento de señales</h3>
+
+<p>Las operaciones de escalamiento horizontal y/o vertical sobre una señal $f[n]$ tienen como consecuencia que se genere una nueva señal $g[n]$ cuya gráfica precisamente es un escalamiento, horizontal o vertical de la gráfica de la señal "original". Denotaremos a la operación escalamiento con la letra \(\mathcal{E}\), con subíndice \(h\) para  escalamiento horizontal, así como un subíndice que indique la cantidad de unidades a escalar. </p>
+
+<p>Si queremos generar una señal $g[n]$ que sea el escalamiento horizontal de la señal \(f[n]\), \(b\neq 0\in\mathbb{Z}\) unidades escribiremos:</p>
+
+<div id="ecuacion">
+            \begin{equation}
+  g[n]={\;}_h\mathcal{E}_{b}\left\{f(t)\right\}=f[bn]
+ 
+\end{equation}
+
+</div>
+
+<p>Por lo regular la notación \({ }_{h}\mathcal{E}_{b}\) suele omitirse, aunque considero que la notación es importante en determinados problemas pues evita confusiones. Cuando $0 < b < 1$ la gráfica resultante es una expansión horizontal respecto a la original. Si $b=1$ no hay escalamiento, la gráfica resultante es idéntica a la original. Ahora si \(b>1\) la gráfica resultante es una compresión horizontal respecto a la original. Si \(b=0\) entonces la señal resultante es una constante (sería la evaluación de $f$ en $0$) que podría estar bien definida o no, eso dependerá de la forma de $f$, entonces se pierde la idea de escalamiento, por tal motivo este caso no lo consideramos.</p>
+
+<p>Ahora si $-1 < b < 0$ la gráfica resultante se expande y se invierte horizontalmente respecto a la original. Si  \(b=-1\) la gráfica resultante solo se invierte horizontalmente respecto a la original. Cuando $b<-1$ la gráfica resultante se comprime y se invierte horizontalmente respecto a la original. </p>
+    
+<p>De manera similar si queremos escalar a la función \(f[n]\) verticalmente \(a\neq 0\in\mathbb{R}\) unidades escribimos la notación equivalente. Cuando \(0<a<1\) la gráfica resultante se comprime, si \(a=1\) no hay escalamiento, \(a>1\) se expande. Si $-1<a<0$ se comprime e invierte, para $a=-1$ solo se invierte, si $a<-1$ se expande e invierte, todas los resultados son respecto a la gráfica original y escalamientos verticales. No se considera el caso $a=0$ ¿por qué? </p>
+    
+<div id="ecuacion">
+            \begin{equation}
+  g[n]={\;}_v\mathcal{E}_{a}\left\{f[n]\right\}=af[n]
+ 
+\end{equation}
+
+</div>
+
+<p>Observa que al igual que en las traslaciones hay un comportamiento "contrario" en los escalamientos horizontales, a lo que la intuición nos diría. </p>
+
+<p>En la siguiente aplicación se pretende ilustrar lo que se ha comentado hasta el momento, es importante que observes que las operaciones no dependen de las letras que se utilizan para las variables, lo que es importante es la operación que se realiza. Puedes dar click en el botón play, también puedes editar la aplicación modificando las fórmulas o agregando otras.  </p>
+
+<p>Las funciones coseno y seno al ser evaluadas en variable discreta adquieren dos características (no se presentan cuando se evalúan en una variable continua) estas características son las siguientes</p>
+    
+<div class="ejemplo">
+
+
+<div id="derecha">
+      <p>    <strong>Periodicidad señal discretas</strong><br></p></div>
+<p>La señal $cos[\omega_0 n]$ es periódica cuando $\frac{2\pi}{\omega_0}\in\mathbb{Q}$ y el periodo es el primer múltiplo entero de este número </p>
+
+<p>Nota: Esto también es válido para la función seno</p>
+
+<div id="ostd1" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Ostd1c()">×</a>
+  <div class="overlay-content">                   
+Suponemos que existe $N_0\in\mathbb{Z}$ tal que 
+$$cos[\omega_0 n]=cos[\omega_0 (n+ N_0)]$$
+
+de la suma de ángulos para la función coseno, se tiene 
+
+$$cos[\omega_0 n]=cos[\omega_0 n]cos[\omega_0N_0]-sen[\omega_0 n]sen[\omega_0N_0]$$
+
+Entonces debe de suceder que $cos[\omega_0N_0]=1$ y $sen[\omega_0N_0]=0$ entonces $\omega_0 N_0=2\pi k$ con $k\in\mathbb{Z}$ o equivalentemente 
+
+$$\frac{N_0}{k}=\frac{2\pi}{\omega_0}\in\mathbb{Q}$$
+
+Ahora si esto sucede, como $N_0\in\mathbb{Z}$ y 
+$$N_0=\frac{2\pi}{\omega_0}k\in\mathbb{Q}$$
+
+Así se elige $k$ para tener un valor de $N_0$ entero. 
+  </div>
+</div>
+<br>
+<button class="dmbutton" onclick="Ostd1o()">Argumentos</button>
+                  
+                        <br>
+</div>
+    
+
+<div class="ejemplo">
+
+
+<div id="derecha">
+      <p>    <strong>Unicidad de señales discretas</strong><br></p></div>
+<p>Las señales en tiempo  discreto $cos[\omega_0 n]$ y $cos[\omega_1 n]$ son iguales si $\omega_0=\omega_1\,mod\,2\pi$ ($\omega_0$ es congruente con $\omega_1$ módulo $2\pi$), es decir cuando $2\pi$ divida a la diferencia $\omega_0-\omega_1$</p>
+
+<p>Nota: Esto también es válido para la función seno</p>
+
+<div id="ostd2" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Ostd2c()">×</a>
+  <div class="overlay-content">                   
+Por hipótesis existe $k\in\mathbb{Z}$ tal que 
+
+$$\omega_0-\omega_1=2\pi k$$
+
+equivalentemente 
+ 
+$$\omega_0=\omega_1+2\pi k$$
+
+Entonces
+$$
+\begin{array}{rl}
+cos[\omega_0 n]&=cos[(\omega_1+2\pi k)n]\\
+&=cos[\omega_1 n]cos[2\pi kn]-sen[\omega_1 n]sen[2\pi kn]\\
+&=cos[\omega_1 n]
+\end{array}
+$$
+Así se concluye la afirmación. 
+ 
+
+  </div>
+</div>
+<br>
+<button class="dmbutton" onclick="Ostd2o()">Argumentos</button>
+                  
+                        <br>
+</div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bb-item" id="item6">
+						<div class="content">
+							<div class="scroller">
+                                <h2>Más definiciones</h2>
+<p>Decimos que una señal $f$ es par si: </p>
+
+$$f(t)=f(-t)$$
+
+<p>La gráfica de este tipo de señales es simétrica con respecto al eje vertical. Una propiedad importante de este tipo de señales es </p>
+
+$$\int_{-a}^{a}f(t)dt=2\int_{-a}^{0}f(t)dt=2\int_0^{a}f(t)dt$$
+
+<p>con $a>0\in\mathbb{R}$.</p>
+
+<p>La gráfica de este tipo de señales es simétrica con respecto al origen. Una propiedad importante de este tipo de señales es </p>
+
+$$\int_{-a}^{a}f(t)dt=0$$
+
+<p>con $a>0\in\mathbb{R}$.</p>
+
+<div class="ejemplo">
+
+
+<div id="derecha">
+      <p>    <strong>Representación de una señal </strong><br></p></div>
+<p>Toda señal $f$, se puede escribir como la suma de una señal par más una señal impar, es decir:</p>
+$$f(t)=f_p(t)+f_i(t)$$
+<p>con </p>
+$$f_p(t)=\frac{f(t)+f(-t)}{2}$$ 
+$$f_i(t)=\frac{f(t)-f(-t)}{2}$$ 
+
+<div id="md1" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Md1c()">×</a>
+  <div class="overlay-content">                   
+Observamos primero que la suma es correcta, es decir
+
+$$f_p(t)+f_i(t)=\frac{f(t)+f(-t)+f(t)-f(-t)}{2}=f(t)$$
+
+Observemos que
+
+$$f_p(-t)=\frac{f(-t)+f(t)}{2}=\frac{f(t)+f(-t)}{2}=f_p(t)$$
+
+por lo tanto $f_p(t)$ es una señal par
+
+De manera similar
+
+$$-f_i(-t)=-\frac{f(-t)-f(t)}{2}=\frac{f(t)-f(-t)}{2}=f_i(t)$$
+
+por lo tanto $f_i(t)$ es una señal impar
+                
+
+ 
+
+  </div>
+</div>
+<button class="dmbutton" onclick="Md1o()">Argumentos</button>
+                  
+                        <br>
+</div>
+
+<p> A continuación se muestran señales con diferentes simetrías</p>
+
+<iframe src="https://www.desmos.com/calculator/ondqm0giya" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="450" width="850"></iframe>
+
+<p>Decimos que una señal $f$ es periódica si existe $T>0$ (el primero de ellos) tal que </p>
+
+$$f(t)=f(t+T)$$                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bb-item" id="item7">
+						<div class="content">
+							<div class="scroller">
+                                <h2>Señales básicas</h2>
+<h3>Escalón o función de Heaviside</h3>
+<p>El escalón (unitario) $u(t)$ se define así:  </p>
+
+<div id="ecuacion">
+           $$u(t)=\begin{cases}
+1&\mbox{si }0\leq t\\
+0&\mbox{en otro caso}
+\end{cases}$$
+</div>
+
+<p>depende del autor la definición del escalón (unitario, porque la máxima altura es $1$) podría ser diferente, algunos autores establecen a $u(0)$ como indefinido, es claro que al comparar estas definiciones resultan distintas, pero bajo operaciones que involucren integración los resultados son los mismos (como veremos adelante, la integración es la operación fundamental en el tratamiento de señales en tiempo continuo), esto permite usar la definición a conveniencia. </p>
+
+<p>La  gráfica de esta función es la siguiente: </p>
+
+<p>La representación gráfica que suele ser utilizada en señales es: </p>
+
+<h3>Delta de Dirac o impulso</h3>
+
+<p>Si se quiere ser preciso en definir  que es una delta de Dirac (nos referimos a ella como delta), desde un punto de vista matemático formal, me parece que el tema se complica. No obstante, lo que se establezca sobre la delta será cierto solo que los argumentos para "entender que es una delta" serán intuitivos. Un excelente documento para revisar este tema  es el siguiente <a href="http://esaez.mat.utfsm.cl/dirac.pdf">enlace</a> (claro, preciso y elegante). El esfuerzo por definir la delta de Dirac es necesario, pues la delta permite caracterizar a los sistemas como "transformadores de señales" en particular estudiaremos aquellos sistemas  que son Lineales e Invariantes en Tiempo (entiéndase esto como una clasificación de los sistemas que por el momento no es importante).</p>
+
+<p>La delta de Dirac es una estructura matemática que se conoce como distribución, las distribuciones permiten transformar funciones en objetos "más sencillos" (por ejemplo en números u otras "cosas"). Y en ese sentido para nuestros fines nos interesa la "transformación simbólica" cuando aparece la delta, así podemos dar una "definición simbólica". La delta de Dirac $\delta(t)$ se define como:</p>
+
+<div id="ecuacion">
+            \begin{array}{l}
+\delta(t-t_0)=0\mbox{ si }t\neq t_0\\
+\int\limits_{-\infty}^{\infty}f(t)\delta(t-t_0)\,dt=f(t_0)\mbox{ si } f \mbox{es continua en }t_0
+\end{array}
+</div>
+
+<p>En particular si $t_0=0$ y $f(t)=1$, se tiene que: </p>
+
+<div >
+            \begin{array}{l}
+\delta(t)=0\mbox{ si }t\neq 0\\
+\int\limits_{-\infty}^{\infty}\delta(t)\,dt=1
+\end{array}
+</div>
+
+<p>Es decir, identificamos un "serie de símbolos" por unos equivalentes conocidos, como son el número $0$ y evaluar una función $f(t_0)$. Para fines prácticos bastaría con acostumbrarse a esta operatividad, para nuestra fortuna hay una serie de motivaciones geométricas que nos pueden ayudar a asociar una idea geométrica de la delta  (idea geométrica, no es la gráfica como tal ¿por qué?).</p>
+
+<p><iframe src="https://www.desmos.com/calculator/8bchrj4ndm" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="450" width="850"></iframe></p>
+
+<p>La representación geométrica de la delta es la siguiente:</p>
+
+<p>Para valores "pequeños" de $a$ las señales anteriores satisfacen las condiciones de la definición de la delta cuando $t_0=0$, y $f(t)=1$. En particular es importante observar esto para la función $y_a(t)$</p>
+
+<div >
+            \begin{array}{l}
+\delta(t)=\lim\limits_{a\to 0}y_a(t)\\
+\delta(t)=\lim\limits_{a\to 0}\frac{1}{a}\left(u(t+\frac{a}{2})-u(t-\frac{a}{2})\right)\\
+\int\limits_{-\infty}^{\infty}y_a(t)\,dt=\frac{1}{a}\int\limits_{-a/2}^{a/2}\,dt=1
+\end{array}
+</div>
+
+<p>La teoría de distribuciones requiere herramientas matemáticas especializadas, pero se puede hacer una manipulación sencilla con simbólicos, a continuación se presentan una serie de propiedades de la delta de Dirac que pueden reducirse a partir de la definición y de operar el símbolo de integral de manera usual  </p>
+
+
+<table class="rwd-table">
+  <tr>
+       <th>#</th>
+    <th>Propiedad</th>
+        <th>Prueba</th>
+  </tr>
+
+<tr>
+    <td data-th="#">1.</td>
+    <td data-th="Propiedad">$f(t)\delta(t)=f(0)\delta(t)$ <br> $f$ continua en $0$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Propiedad 1">
+video</button></td>
+  </tr>
+
+<tr>
+    <td data-th="#">2.</td>
+    <td data-th="Propiedad">$\frac{d^n}{dt^n}\delta(t)=\delta^{(n)}(t)$<br> $n\in\mathbb{N}$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Propiedad 1">
+video</button></td>
+  </tr>
+
+
+<tr>
+    <td data-th="#">3.</td>
+    <td data-th="Propiedad">$\delta(at)=\frac{1}{|a|}\delta(t)$ <br> $a\neq 0\in\mathbb{R}$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Propiedad 1">
+video</button></td>
+  </tr>
+
+
+<tr>
+    <td data-th="#">4.</td>
+    <td data-th="Propiedad">$u(t-t_0)=\int\limits_{-\infty}^t\delta(\tau-t_0)\,dt$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Propiedad 1">
+video</button></td>
+  </tr>
+
+<tr>
+    <td data-th="#">5.</td>
+    <td data-th="Propiedad">$\frac{d}{dt}u(t-t_0)=\delta(t-t_0)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Propiedad 1">
+video</button></td>
+  </tr>
+
+<tr>
+    <td data-th="#">6.</td>
+    <td data-th="Propiedad">$\int\limits_{-\infty}^{\infty}f(t)\delta^{(n)}(t)dt=(-1)^nf^{(n)}(0)$<br>$n\in\mathbb{Z}_+$ $f$ es $n$ veces continuamente <br> diferenciable en $0$ </td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Propiedad 1">
+video</button></td>
+  </tr>
+
+</table>
+
+<p>Nota: La teoría de distribuciones fue desarrollada por el matemático francés Laurent Schwartz entre 1945-1950</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bb-item" id="item8">
+						<div class="content">
+							<div class="scroller">
+                                <h2>Convolución en tiempo continuo</h2>
+<h3>Definición de convolución</h3>
+<p>La operación de convolución entre dos señales $f(t)$ y $x(t)$ genera una nueva señal $g(t)$, la operación se define como:</p>
+
+<div id="ecuacion">
+            \begin{equation}
+  g(t)=f(t)*x(t)=\int_{-\infty}^{\infty}f(\tau)x(t-\tau)\,d\tau
+ 
+\end{equation}
+</div>
+
+<p>Nota: También se conoce a la convolución como producto composición, integral de superposición, integral de Duhamel. </p>
+
+<p>Esta operación tiene diferentes simplificaciones dependiendo de como sea la forma de las señales involucradas, comenzamos con el caso que aparece frecuentemente en sistemas. </p>
+
+<div class="ejemplo">
+<div id="derecha">
+      <p>    <strong>Señales causales</strong><br></p></div>
+<p>Si las señales son causales y tienen longitud infinita entonces la convolución es:</p>
+$$g(t)=\begin{cases}
+\int_0^t f(\tau)x(t-\tau)\,d\tau&\mbox{si }0\leq t\\
+0&\mbox{en otro caso}
+\end{cases}$$
+
+<div id="ctc5" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Ctc5c()">×</a>
+  <div class="overlay-content">                   
+Escribiremos el escalón unitario de manera implícita  $f(t)u(t)$ y $x(t)u(t)$, al sustituir en la definición de convolución
+
+$$\int_{-\infty}^{\infty}f(\tau)u(\tau)x(t-\tau)u(t-\tau)\,d\tau$$                
+     
+Si $\tau<0$ entonces $u(\tau)=0$ así la integral se reduce a:
+
+$$\int_{0}^{\infty}f(\tau)u(\tau)x(t-\tau)u(t-\tau)\,d\tau$$ 
+
+Si $t-\tau < 0$ equivalentemente $t < \tau$ entonces $u(t-\tau)=0$ y los escalones tienen valor unitario, así la integral se reduce a:
+
+$$\int_{0}^{t}f(\tau)x(t-\tau)\,d\tau$$ 
+
+               
+  </div>
+</div>
+<button class="dmbutton" onclick="Ctc5o()">Argumentos</button>
+                  
+                        <br>
+</div>
+<p>Otra caso para tener en cuenta es cuando las señales tienen longitud finita, es decir, son cero para casi todo su intervalo de definición, en tales circunstancias se puede dar una sugerencia de los pasos a seguir para realizar la convolución. </p>
+
+<div class="ejemplo">
+
+<div id="derecha">
+      <p>    <strong>Pasos para realizar convoluciones</strong><br></p></div>
+
+<p>1. Seleccionar una de las dos señal para graficar con el argumento $\tau$</p>
+<p>2. La segunda señal se gráfica con el argumento $-\tau$</p>
+<p>3. En la segunda señal para cada valor horizontal de cambio de geometría se suma la variable $t$ </p>
+<p>4. Se traslada la segunda señal mediante la variable $t\in\mathbb{R}$ hasta que $f(\tau)g(t-\tau)$ no sea cero </p>
+<p>5. Mediante el paso anterior se eligen los valores de $\tau$ para realizar la integral </p>  
+<p>6. Se anota el intervalo de $t$ para los cuales los pasos 4 y 5 son válidos</p>
+<p>7. Se repite los pasos 4-6 hasta que $t$  tome todos los valores reales </p>               
+</div>
+    
+<p>De la definición es fácil ver que se satisfacen las siguientes propiedades</p>  
+    
+<div class="ejemplo">
+
+
+<div id="derecha">
+      <p>    <strong>Propiedades de la convolución</strong><br></p></div>
+1) La convolución conmuta $$f(t)*x(t)=x(t)*f(t)$$
+<div id="ctc1" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Ctc1c()">×</a>
+  <div class="overlay-content">                   
+Escribiremos el escalón unitario de manera implícita  $f(t)u(t)$ y $x(t)u(t)$, al sustituir en la definición de convolución
+
+  </div>
+</div>
+<button class="dmbutton" onclick="Ctc1o()">Argumentos</button>
+                  
+                        <br>
+2) La convolución asocia $$\left(f(t)*x(t)\right)*z(t)=f(t)*\left(x(t)*z(t)\right)$$
+<div id="ctc2" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Ctc2c()">×</a>
+  <div class="overlay-content">                   
+Escribiremos el escalón unitario de manera implícita  $f(t)u(t)$ y $x(t)u(t)$, al sustituir en la definición de convolución
+
+  </div>
+</div>
+<button class="dmbutton" onclick="Ctc2o()">Argumentos</button>
+<br>
+3) La convolución distribuye $$f(t)*\left(x(t)+z(t)\right)=f(t)*x(t)+f(t)*z(t)$$
+<div id="ctc3" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Ctc3c()">×</a>
+  <div class="overlay-content">                   
+Escribiremos el escalón unitario de manera implícita  $f(t)u(t)$ y $x(t)u(t)$, al sustituir en la definición de convolución
+
+$$\int_{-\infty}^{\infty}f(\tau)u(\tau)x(t-\tau)u(t-\tau)\,d\tau$$                
+              
+  </div>
+</div>
+<button class="dmbutton" onclick="Ctc3o()">Argumentos</button>
+
+<br>
+
+4) Identidad $$f(t)*\delta(t)=f(t)$$
+
+<div id="ctc4" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Ctc4c()">×</a>
+  <div class="overlay-content">                   
+Escribiremos el escalón unitario de manera implícita  $f(t)u(t)$ y $x(t)u(t)$, al sustituir en la definición de convolución
+
+$$\int_{-\infty}^{\infty}f(\tau)u(\tau)x(t-\tau)u(t-\tau)\,d\tau$$                
+              
+  </div>
+</div>
+<button class="dmbutton" onclick="Ctc4o()">Argumentos</button>
+
+<br>
+
+5) Traslación. Si $f(t)*x(t)=y(t)$ entonces $$f(t-t_0)*x(t)=y(t-t_0)$$
+<br>
+
+6) Constantes. Si $a$ es constante entonces $$af(t)*x(t)=f(t)*ax(t)=a(f(t)*x(t))$$
+<br>
+
+7) Derivación con delta. Si $m\in\mathbb{N}$ entonces $$f(t)*\delta^{(m)}(t)=f^{(m)}(t)$$
+<br>
+
+8) Derivación. Si $f(t)*x(t)=y(t)$ y $m,n\in\mathbb{N}$ entonces $$f^{(m)}(t)*x^{(n)}(t)=y^{(m+n)}(t)$$
+<br>
+
+9) Escalamiento. Si $f(t)*x(t)=y(t)$ y $a\neq 0\in\mathbb{R}$ entonces $$f(at)*x(at)=\frac{1}{|a|}y(at)$$
+<br>
+
+</div>
+<h3>Observaciones</h3>
+    
+<ul>
+    <li>La convolución no necesariamente existe, i. e., no siempre se puede realizar para cualesquiera dos señales, por ejemplo si se quiere realizar $u(t)*u(-t)$ donde $u(t)$ es un escalón unitario, veremos que no hay convergencia para ningún valor de $t$</li>
+    <li>La convolución de señales periódicas también tiene detalles técnicos, es por eso que algunas veces se define una operación conocida como convolución periódica, que es similar a la definición de convolución salvo que los límites de integración no son infinitos.</li>
+    <li>El resultado de la convolución de dos señales es "más suave" que las señales involucradas.   </li>    
+</ul>
+    
+<p>Para los casos en donde las señales son causales se puede construir la siguiente tabla, la deducción de cada fórmula es de manera directa </p>
+
+<table class="rwd-table">
+  <tr>
+       <th>#</th>
+    <th>$f(t)$</th>
+    <th>$x(t)$</th>
+    <th>$f(t)*x(t)$</th>
+    <th>Prueba</th>
+  </tr>
+
+<tr>
+    <td data-th="#">1.</td>
+    <td data-th=" Señal ">$f(t)$</td>
+    <td data-th=" Señal">$\delta(t-T)$</td>
+    <td data-th="Convolución"> $f(t-T)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la delta de Dirac">
+video</button></td>
+  </tr>
+
+<tr>
+    <td data-th="#">2.</td>
+    <td data-th=" Señal ">$e^{\lambda t}u(t)$</td>
+    <td data-th=" Señal">$u(t)$</td>
+    <td data-th="Convolución"> $\frac{e^{\lambda t }-1}{\lambda}u(t)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la delta de Dirac">
+video</button></td>
+  </tr>
+
+<tr>
+    <td data-th="#">3.</td>
+    <td data-th=" Señal ">$u(t)$</td>
+    <td data-th=" Señal">$u(t)$</td>
+    <td data-th="Convolución"> $tu(t)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la delta de Dirac">
+video</button></td>
+  </tr>
+
+<tr>
+    <td data-th="#">4.</td>
+    <td data-th=" Señal ">$e^{\lambda_1 t}u(t)$</td>
+    <td data-th=" Señal">$e^{\lambda_2 t}u(t)$</td>
+    <td data-th="Convolución"> $\frac{e^{\lambda_1 t }-e^{\lambda_2 t }}{\lambda_1-\lambda_2}u(t)$<br>$\lambda_1\neq\lambda_2$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la delta de Dirac">
+video</button></td>
+  </tr>
+
+
+<tr>
+    <td data-th="#">5.</td>
+    <td data-th=" Señal ">$e^{\lambda t}u(t)$</td>
+    <td data-th=" Señal">$e^{\lambda t}u(t)$</td>
+    <td data-th="Convolución"> $te^{\lambda_1 t}u(t)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la delta de Dirac">
+video</button></td>
+  </tr>
+
+<tr>
+    <td data-th="#">6.</td>
+    <td data-th=" Señal ">$te^{\lambda t}u(t)$</td>
+    <td data-th=" Señal">$e^{\lambda t}u(t)$</td>
+    <td data-th="Convolución"> $\frac{1}{2}t^2e^{\lambda t}u(t)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la delta de Dirac">
+video</button></td>
+  </tr>
+
+<tr>
+    <td data-th="#">7.</td>
+    <td data-th=" Señal ">$t^Nu(t)$</td>
+    <td data-th=" Señal">$e^{\lambda t}u(t)$</td>
+    <td data-th="Convolución"> $\frac{N!e^{\lambda t}}{\lambda^{N+1}}u(t)-$<br>
+$\sum\limits_{k=0}^N\frac{N!t^{N-k}}{\lambda^{k+1}(N-k)!}u(t)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la delta de Dirac">
+video</button></td>
+  </tr>
+
+
+<tr>
+    <td data-th="#">8.</td>
+    <td data-th=" Señal ">$t^Mu(t)$</td>
+    <td data-th=" Señal">$t^Nu(t)$</td>
+    <td data-th="Convolución"> $\frac{M!N!}{(M+N+1)!}t^{M+N+1}u(t)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la delta de Dirac">
+video</button></td>
+  </tr>
+
+<tr>
+    <td data-th="#">9.</td>
+    <td data-th=" Señal ">$te^{\lambda_1 t}u(t)$</td>
+    <td data-th=" Señal">$e^{\lambda_2 t}u(t)$</td>
+    <td data-th="Convolución"> $\frac{e^{\lambda_2 t }-e^{\lambda_1 t }+(\lambda_1-\lambda_2)te^{\lambda_1 t }}{(\lambda_1-\lambda_2)^2}u(t)$<br>$\lambda_1\neq\lambda_2$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la delta de Dirac">
+video</button></td>
+  </tr>
+
+<tr>
+    <td data-th="#">10.</td>
+    <td data-th=" Señal ">$t^Me^{\lambda t}u(t)$</td>
+    <td data-th=" Señal">$t^Ne^{\lambda t}u(t)$</td>
+    <td data-th="Convolución"> $\frac{M!N!}{(N+M+1)!}t^{M+N+1}e^{\lambda t}u(t)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la delta de Dirac">
+video</button></td>
+  </tr>
+
+
+<tr>
+    <td data-th="#">11.</td>
+    <td data-th=" Señal ">$e^{-a t}cos(\beta t + \theta)u(t)$</td>
+    <td data-th=" Señal">$e^{\lambda t}u(t)$</td>
+    <td data-th="Convolución"> $\frac{cos(\theta-\phi)e^{-\lambda t}-e^{-at}cos(\beta t +\theta-\phi)}{\sqrt{(a+\lambda)^2+\beta^2}}u(t)$<br> $\phi=tan^{-1}\left(-\beta/(a+\lambda)\right)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la delta de Dirac">
+video</button></td>
+  </tr>
+
+<tr>
+    <td data-th="#">12.</td>
+    <td data-th=" Señal ">$e^{-a t}cos(\omega t)u(t)$</td>
+    <td data-th=" Señal">$e^{-a t}sen(\omega t)u(t)$</td>
+    <td data-th="Convolución"> $\frac{1}{2}te^{-at}sen(\omega t)u(t)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la delta de Dirac">
+video</button></td>
+  </tr>
+
+<tr>
+    <td data-th="#">13.</td>
+    <td data-th=" Señal ">$e^{-a t}sen(\omega t)u(t)$</td>
+    <td data-th=" Señal">$e^{-a t}sen(\omega t)u(t)$</td>
+    <td data-th="Convolución"> $\frac{1}{2\omega}e^{-at}sen(\omega t)u(t)-\frac{1}{2}te^{-at}cos(\omega t)u(t)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la delta de Dirac">
+video</button></td>
+  </tr>
+
+<tr>
+    <td data-th="#">14.</td>
+    <td data-th=" Señal ">$e^{-a t}cos(\omega t)u(t)$</td>
+    <td data-th=" Señal">$e^{-a t}cos(\omega t)u(t)$</td>
+    <td data-th="Convolución"> $\frac{1}{2\omega}e^{-at}sen(\omega t)u(t)+\frac{1}{2}te^{-at}cos(\omega t)u(t)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la delta de Dirac">
+video</button></td>
+  </tr>
+</table>
+                                </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bb-item" id="item9">
+						<div class="content">
+							<div class="scroller">
+                                <h2>Convolución en tiempo discreto</h2>
+<h3>Definición de convolución</h3>
+<p>La operación de convolución entre dos señales $f(t)$ y $x(t)$ genera una nueva señal $g(t)$, la operación se define como:</p>
+
+<div id="ecuacion">
+            \begin{equation}
+  g(t)=f(t)*x(t)=\int_{-\infty}^{\infty}f(\tau)x(t-\tau)\,d\tau
+ 
+\end{equation}
+</div>
+
+<p>Nota: También se conoce a la convolución como producto composición, integral de superposición, integral de Duhamel. </p>
+
+<p>Esta operación tiene diferentes simplificaciones dependiendo de como sea la forma de las señales involucradas, comenzamos con el caso que aparece frecuentemente en sistemas. </p>
+
+<div class="ejemplo">
+<div id="derecha">
+      <p>    <strong>Señales causales</strong><br></p></div>
+<p>Si las señales son causales y tienen longitud infinita entonces la convolución es:</p>
+$$g(t)=\begin{cases}
+\int_0^t f(\tau)x(t-\tau)\,d\tau&\mbox{si }0\leq t\\
+0&\mbox{en otro caso}
+\end{cases}$$
+
+<div id="ctc5" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Ctc5c()">×</a>
+  <div class="overlay-content">                   
+Escribiremos el escalón unitario de manera implícita  $f(t)u(t)$ y $x(t)u(t)$, al sustituir en la definición de convolución
+
+$$\int_{-\infty}^{\infty}f(\tau)u(\tau)x(t-\tau)u(t-\tau)\,d\tau$$                
+     
+Si $\tau<0$ entonces $u(\tau)=0$ así la integral se reduce a:
+
+$$\int_{0}^{\infty}f(\tau)u(\tau)x(t-\tau)u(t-\tau)\,d\tau$$ 
+
+Si $t-\tau < 0$ equivalentemente $t < \tau$ entonces $u(t-\tau)=0$ y los escalones tienen valor unitario, así la integral se reduce a:
+
+$$\int_{0}^{t}f(\tau)x(t-\tau)\,d\tau$$ 
+
+               
+  </div>
+</div>
+<button class="dmbutton" onclick="Ctc5o()">Argumentos</button>
+                  
+                        <br>
+</div>
+<p>Otra caso para tener en cuenta es cuando las señales tienen longitud finita, es decir, son cero para casi todo su intervalo de definición, en tales circunstancias se puede dar una sugerencia de los pasos a seguir para realizar la convolución. </p>
+
+<div class="ejemplo">
+
+<div id="derecha">
+      <p>    <strong>Pasos para realizar convoluciones</strong><br></p></div>
+
+<p>1. Seleccionar una de las dos señal para graficar con el argumento $\tau$</p>
+<p>2. La segunda señal se gráfica con el argumento $-\tau$</p>
+<p>3. En la segunda señal para cada valor horizontal de cambio de geometría se suma la variable $t$ </p>
+<p>4. Se traslada la segunda señal mediante la variable $t\in\mathbb{R}$ hasta que $f(\tau)g(t-\tau)$ no sea cero </p>
+<p>5. Mediante el paso anterior se eligen los valores de $\tau$ para realizar la integral </p>  
+<p>6. Se anota el intervalo de $t$ para los cuales los pasos 4 y 5 son válidos</p>
+<p>7. Se repite los pasos 4-6 hasta que $t$  tome todos los valores reales </p>               
+</div>
+    
+<p>De la definición es fácil ver que se satisfacen las siguientes propiedades</p>  
+    
+<div class="ejemplo">
+
+
+<div id="derecha">
+      <p>    <strong>Propiedades de la convolución</strong><br></p></div>
+1) La convolución conmuta $$f(t)*x(t)=x(t)*f(t)$$
+<div id="ctc1" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Ctc1c()">×</a>
+  <div class="overlay-content">                   
+Escribiremos el escalón unitario de manera implícita  $f(t)u(t)$ y $x(t)u(t)$, al sustituir en la definición de convolución
+
+  </div>
+</div>
+<button class="dmbutton" onclick="Ctc1o()">Argumentos</button>
+                  
+                        <br>
+2) La convolución asocia $$\left(f(t)*x(t)\right)*z(t)=f(t)*\left(x(t)*z(t)\right)$$
+<div id="ctc2" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Ctc2c()">×</a>
+  <div class="overlay-content">                   
+Escribiremos el escalón unitario de manera implícita  $f(t)u(t)$ y $x(t)u(t)$, al sustituir en la definición de convolución
+
+  </div>
+</div>
+<button class="dmbutton" onclick="Ctc2o()">Argumentos</button>
+<br>
+3) La convolución distribuye $$f(t)*\left(x(t)+z(t)\right)=f(t)*x(t)+f(t)*z(t)$$
+<div id="ctc3" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Ctc3c()">×</a>
+  <div class="overlay-content">                   
+Escribiremos el escalón unitario de manera implícita  $f(t)u(t)$ y $x(t)u(t)$, al sustituir en la definición de convolución
+
+$$\int_{-\infty}^{\infty}f(\tau)u(\tau)x(t-\tau)u(t-\tau)\,d\tau$$                
+              
+  </div>
+</div>
+<button class="dmbutton" onclick="Ctc3o()">Argumentos</button>
+
+<br>
+
+4) Identidad $$f(t)*\delta(t)=f(t)$$
+
+<div id="ctc4" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Ctc4c()">×</a>
+  <div class="overlay-content">                   
+Escribiremos el escalón unitario de manera implícita  $f(t)u(t)$ y $x(t)u(t)$, al sustituir en la definición de convolución
+
+$$\int_{-\infty}^{\infty}f(\tau)u(\tau)x(t-\tau)u(t-\tau)\,d\tau$$                
+              
+  </div>
+</div>
+<button class="dmbutton" onclick="Ctc4o()">Argumentos</button>
+
+<br>
+
+5) Traslación. Si $f(t)*x(t)=y(t)$ entonces $$f(t-t_0)*x(t)=y(t-t_0)$$
+<br>
+
+6) Constantes. Si $a$ es constante entonces $$af(t)*x(t)=f(t)*ax(t)=a(f(t)*x(t))$$
+<br>
+
+7) Derivación con delta. Si $m\in\mathbb{N}$ entonces $$f(t)*\delta^{(m)}(t)=f^{(m)}(t)$$
+<br>
+
+8) Derivación. Si $f(t)*x(t)=y(t)$ y $m,n\in\mathbb{N}$ entonces $$f^{(m)}(t)*x^{(n)}(t)=y^{(m+n)}(t)$$
+<br>
+
+9) Escalamiento. Si $f(t)*x(t)=y(t)$ y $a\neq 0\in\mathbb{R}$ entonces $$f(at)*x(at)=\frac{1}{|a|}y(at)$$
+<br>
+
+</div>
+<h3>Observaciones</h3>
+    
+<ul>
+    <li>La convolución no necesariamente existe, i. e., no siempre se puede realizar para cualesquiera dos señales, por ejemplo si se quiere realizar $u(t)*u(-t)$ donde $u(t)$ es un escalón unitario, veremos que no hay convergencia para ningún valor de $t$</li>
+    <li>La convolución de señales periódicas también tiene detalles técnicos, es por eso que algunas veces se define una operación conocida como convolución periódica, que es similar a la definición de convolución salvo que los límites de integración no son infinitos.</li>
+    <li>El resultado de la convolución de dos señales es "más suave" que las señales involucradas.   </li>    
+</ul>
+    
+<p>Para los casos en donde las señales son causales se puede construir la siguiente tabla, la deducción de cada fórmula es de manera directa </p>
+
+<table class="rwd-table">
+  <tr>
+       <th>#</th>
+    <th>$f[n]$</th>
+    <th>$g[n]$</th>
+    <th>$f[n]*g[n]$</th>
+    <th>Prueba</th>
+  </tr>
+
+<tr>
+    <td data-th="#">1.</td>
+    <td data-th=" Señal ">$f[n]$</td>
+    <td data-th=" Señal">$\delta[n-n_0]$</td>
+    <td data-th="Convolución"> $f[n-n_0]$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la delta de Dirac">
+video</button></td>
+  </tr>
+
+<tr>
+    <td data-th="#">2.</td>
+    <td data-th=" Señal ">$\gamma^{n}u[n]$</td>
+    <td data-th=" Señal">$u[n]$</td>
+    <td data-th="Convolución"> $\frac{1-\gamma^{n+1}}{1-\gamma}u[n]$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la delta de Dirac">
+video</button></td>
+  </tr>
+
+<tr>
+    <td data-th="#">3.</td>
+    <td data-th=" Señal ">$u[n]$</td>
+    <td data-th=" Señal">$u[n]$</td>
+    <td data-th="Convolución"> $(n+1)u[n]$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la delta de Dirac">
+video</button></td>
+  </tr>
+
+<tr>
+    <td data-th="#">4.</td>
+    <td data-th=" Señal ">$\gamma_1^{n}u[n]$</td>
+    <td data-th=" Señal">$\gamma_2^{n}u[n]$</td>
+    <td data-th="Convolución"> $\frac{\gamma_1^{n+1 }-\gamma^{n+1 }}{\gamma_1-\gamma_2}u[n]$<br>$\gamma_1\neq\gamma_2$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la delta de Dirac">
+video</button></td>
+  </tr>
+
+
+<tr>
+    <td data-th="#">5.</td>
+    <td data-th=" Señal ">$\gamma_1^{n}u[n]$</td>
+    <td data-th=" Señal">$\gamma_2^{n}u[-(n+1)]$</td>
+    <td data-th="Convolución"> $\frac{\gamma_1}{\gamma_2-\gamma_1}\gamma_1^nu[n]+$
+    <br>$\frac{\gamma_2}{\gamma_2-\gamma_1}\gamma_2^nu[-(n+1)]$<br>$|\gamma_2|>|\gamma_1|$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la delta de Dirac">
+video</button></td>
+  </tr>
+
+<tr>
+    <td data-th="#">6.</td>
+    <td data-th=" Señal ">$n\gamma_1^{n}u[n]$</td>
+    <td data-th=" Señal">$\gamma_2^{n}u[n]$</td>
+    <td data-th="Convolución"> $\frac{\gamma_1\gamma_2}{(\gamma_1-\gamma_2)^2}(\gamma_2^n-\gamma_1^n)u[n]+$
+    <br>$\frac{\gamma_1}{\gamma_1-\gamma_2}n\gamma_1^nu[n]$<br>$\gamma_1\neq\gamma_2$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la delta de Dirac">
+video</button></td>
+  </tr>
+
+<tr>
+    <td data-th="#">7.</td>
+    <td data-th=" Señal ">$nu[n]$</td>
+    <td data-th=" Señal">$nu[n]$</td>
+    <td data-th="Convolución"> $\frac{1}{6}n(n-1)(n+1)u[n]$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la delta de Dirac">
+video</button></td>
+  </tr>
+
+
+<tr>
+    <td data-th="#">8.</td>
+    <td data-th=" Señal ">$\gamma^{n}u[n]$</td>
+    <td data-th=" Señal">$\gamma^{n}u[n]$</td>
+    <td data-th="Convolución"> $(n+1)\gamma^nu[n]$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la delta de Dirac">
+video</button></td>
+  </tr>
+
+<tr>
+    <td data-th="#">9.</td>
+    <td data-th=" Señal ">$\gamma^{n}u[n]$</td>
+    <td data-th=" Señal">$nu[n]$</td>
+    <td data-th="Convolución"> $\frac{\gamma(\gamma^n-1)+n(1-\gamma)}{(1-\gamma)^2}u[n]$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la delta de Dirac">
+video</button></td>
+  </tr>
+
+<tr>
+    <td data-th="#">10.</td>
+    <td data-th=" Señal ">$|\gamma_1|^ncos[\beta n+ \theta]u[n]$</td>
+    <td data-th=" Señal">$\gamma_2^nu[n]$</td>
+    <td data-th="Convolución"> $\frac{|\gamma_1|^{n+1}cos[\beta(n+1)+\theta-\phi]}{R}u[n]-$
+    <br>$\frac{\gamma_2^{n+1}cos(\theta-\phi)}{R}u[n]$
+    <br>$\gamma_2$ real
+    <br>$R=\left(|\gamma_1|^2+\gamma_2^2-2|\gamma_1|\gamma_2cos(\beta)\right)^{0.5}$
+    <br>$\phi=tan^{-1}\left(\frac{|\gamma_1|sen(\beta)}{|\gamma_1|cos(\beta)-\gamma_2}\right)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la delta de Dirac">
+video</button></td>
+  </tr>
+
+</table>
+                                </div>
+                        </div>
+                    </div>
+                    <!--
+                    <div class="bb-item" id="item10">
+						<div class="content">
+							<div class="scroller">
+                                <h2>Correlación en tiempo continuo</h2>
+                                identificador10
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bb-item" id="item11">
+						<div class="content">
+							<div class="scroller">
+                                <h2>Correlación en tiempo discreto</h2>
+                                identificador11
+                            </div>
+                        </div>
+                    </div>
+                    -->
+                    <div class="bb-item" id="item12">
+						<div class="content">
+							<div class="scroller">
+                                <h2>Series de Fourier continuas</h2>
+<h3>Convergencia de las series de Fourier</h3>
+
+<p>La convergencia de la serie de Fourier de una función $f(t)$,  se refiere a especificar en que sentido la función $f(t)$ se "parece" a su serie de Fourier. Si se satisfacen las siguientes condiciones:</p>
+
+<ul>
+    <li>La función $f(t)$ es absolutamente integrable en $< T_0 >$, es decir $$\int_{< T_0 >}|f(t)|dt<\infty$$</li>
+    <li>$f(t)$ tiene un número finito de discontinuidades (no infinitas) en $< T_0 >$</li>
+    <li>$f(t)$ tiene un número finito de máximos y mínimos en $< T_0 >$</li>
+</ul>
+        
+<p>Entonces se asegura que en un punto $a$ donde $f(t)$ sea continua la serie de Fourier converge al valor de $f(t)$ siempre y cuando se consideren una cantidad suficientemente grande de armónicos, esto es $$\lim_{n\to\infty}S_f(a)=f(a)$$ y si resulta ser que en $a$ $f(t)$ es discontinua (no infinita) se tendrá que $$S_f(a)=\frac{f(a^-)+f(a^+)}{2}$$ A las condiciones anteriormente mencionadas se les conoce como condiciones de Dirichlet.</p>
+
+<p>En particular se presenta un fenómeno en la gráfica de la serie de Fourier  en los puntos donde $f$ tiene discontinuidades tipo salto, este fenómeno recibe el nombre de Fenómeno de Gibbs, y se refiere a un "excedente" que aparece en la gráfica justo en las discontinuidades, tanto a la izquierda como a la derecha del punto de discontinuidad, este excedente disminuye su "ancho" conforme aumenta el número de armónicos considerados en la suma de la serie. </p>
+        
+<p>Aunque este comportamiento es un poco extraño no contradice en ningún momento la Teoría de Fourier, es decir, con la serie se buscaba minimizar la energía del error ( definido como la resta de la  función original menos la serie) y en ningún momento se busco una "copia" de la función original</p>
+        
+<h3>Teorema de Parseval</h3>
+
+<p>Este resultado nos indica que la potencia de una señal periódica $f(t)$ se puede obtener a partir de su serie de Fourier asociada $S_f$, entonces si se tiene la representación trigonométrica compacta de $f$, se tendrá $$P_f=C_0^2+\frac{1}{2}\sum_{n=1}^{\infty}C_n^2$$ Y  en caso de que se tenga la representación exponencial compleja</p> $$P_f=D_0^2+2\sum_{n=1}^{\infty}|D_n|^2$$
+
+  <div class="ejemplo">
+<div id="derecha">
+      <p>    <strong>Ejemplo 1. Aplicación del teorema de Parseval</strong><br></p></div>
+<p>
+            Si aplicas el teorema de Parseval a la función periódica $f(t)=t$ en $[-1,1]$ ¿Qué resultado se obtiene?
+</p>
+
+
+
+<div id="sfc1" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Sfc1c()">×</a>
+  <div class="overlay-content">
+   
+  
+<p >
+        
+          Se obtienen los coeficientes de la serie exponencial compleja para $f$   </p>
+
+$$D_n=\frac{(-1)^n}{n\pi}j\;\;n\neq0\mbox{ y }D_0=0$$
+
+$$|D_n|=\frac{1}{n\pi}\;\;n\neq0$$
+
+<p>Por otro lado</p>
+ 
+          \begin{align*}
+          P_f&=	\frac{1}{T}\int_{T/2}^{T/2}|f(t)|^2dt\\
+          &=\frac{1}{2}\int_{-1}^{1}t^2dt=\frac{1}{3}\\
+            
+          \end{align*}
+
+
+        <p >  Si aplicamos el teorema de Parseval
+</p>
+
+\begin{align*}
+          P_f&=D_0^2+2\sum_{n=1}^{\infty}|D_n|^2\\
+          \frac{1}{3}&=2\sum_{n=1}^{\infty}\frac{1}{n^2\pi^2}
+          \end{align*}
+
+<p>Entonces al aplicar el teorema de Parseval se obtiene un resultado conocido sobre series, es decir</p>
+
+$$\sum_{n=1}^{\infty}\frac{1}{n^2}=\frac{\pi^2}{6}$$
+
+<div class="video-w">
+<div class="video-container">
+         <iframe src="" frameborder="0" width="420" height="315"></iframe>
+</div>
+</div>
+
+</div>
+</div>
+			
+<button class="dmbutton" onclick="Sfc1o()">Solución</button>
+</div>          
+        
+
+<div class="ejemplo">
+
+
+<div id="derecha">
+      <p>    <strong>Ejemplo: Series de Fourier, traslación y escalamiento</strong><br></p>
+</div>
+
+<p> Si se conoce el espectro (exponencial complejo) de Fourier para una señal $f(t)$ encontrar el espectro para  </p>
+<p><e>(a)</e> $g(t)=f(t-b)$  
+</p> 
+<p><e>(b)</e> $r(t)=f(at)$, $a>0$</p>
+
+<div id="sfc2" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Sfc2c()">×</a>
+  <div class="overlay-content">                   
+ 
+<p><e>(a)</e> Antes de hacer cuentas es bueno pensar que podría esperarse. Si pensamos en la expresión trigonométrica compacta (sin perdida de generalidad, pues las tres representaciones son equivalentes) el espectro esta determinado por $C_n$ y $\phi_n$ para cada $n\in\mathbb{N}$ (cada función sera de la forma $C_n\cos(n\omega_0 t+\phi_n)$), ahora la serie se "parece" a la señal original, entonces si se traslada horizontalmente a la señal original, bastaría con trasladar a todas las funciones en la serie de Fourier para que el "parecido" continué siendo cierto, es decir se tendrían las mismas frecuencias asociadas a las mismas magnitudes pero a ángulos diferentes respecto de los originales (por el desplazamiento) ¿es esta idea clara?, en caso de que no (y aunque si) realicemos las operaciones correspondientes            </p>                   
+
+<p><e>(b)</e> Pensando en como comenzamos el inciso anterior, ¿es  transparente que se esperará en este caso?, antes de contestar  procedamos al contrario del inciso anterior, ahora primero realicemos cuentas </p>
+
+<p>Después de estas operaciones, ¿que pensarías sobre la pregunta inicial? </p>
+
+  </div>
+</div>
+
+<button class="dmbutton" onclick="Sfc2o()">Solución</button>
+                  
+                        <br>
+</div>
+<p>
+<iframe src="https://www.desmos.com/calculator/euj40rv0mf" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="700" width="90%"></iframe></p>                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bb-item" id="item13">
+						<div class="content">
+							<div class="scroller">
+                                <h2>Series de Fourier discretas</h2>
+<p>En realidad el nombre correcto de esta sección debería ser: series de Fourier de señales en tiempo discreto, para hacer breve el título prefiero no utilizar el nombre completo.</p>
+
+<p>Para desarrollar las ideas de esta sección sería muy bueno que el lector este familiarizado con las series de Fourier de señales en tiempo continuo (aunque no es necesario, si solo se requiere realizar la operación, sin profundizar en la deducción y/o motivación).</p>
+
+<p>Definimos la series de Fourier (exponencial) para una señal en tiempo discreto $x[n]$ en $N_0\in \mathbb{N}$ evaluaciones ("o de longitud $N_0$") como  </p>
+
+<div id="ecuacion">
+           \begin{equation}
+  S_x[n]=\sum_{p=n_0}^{n_0+N_0-1}d_pe^{p\Omega_0nj}
+\end{equation}
+
+\begin{equation}
+
+d_p=\frac{1}{N_0}\sum_{r=n_0}^{n_0+N_0-1}x[r]e^{-r\Omega_0pj} 
+\end{equation}
+
+Con $\Omega_0=\frac{2\pi}{N_0}$ y $n_0$ el tiempo inicial de evaluación de la señal $x[n]$
+</div>
+
+<p>$d_p$ son los coeficientes de la serie de Fourier, es importante observar que en el intervalo de $n_0$ a $n_0+N_0-1$ hay $N_0$ puntos (números naturales).</p>
+
+<h3>Observaciones</h3>
+
+<ul>
+<li>La ecuación asociada a $S_x$ recibe el nombre de ecuación de síntesis (mismo nombre que en el caso continuo)</li>
+<li>La ecuación asociada a $d_p$ recibe el nombre de ecuación de análisis (mismo nombre que en el caso continuo)</li>
+<li>La ecuación de síntesis tiene una cantidad finita de términos, contrario al caso continuo. Esto es consecuencia de que las señales en tiempo discreto cuya frecuencia dista un múltiplo de $2\pi$  son iguales</li>
+<li>La serie de Fourier es periódica de periodo $N_0$, esto es, $S_x[n]=S_x[n+N_0]$</li>
+<li>Los coeficientes de Fourier son periódicos de periodo $N_0$, es decir, $d_{p}=d_{p+N_0}$</li>
+</ul>
+
+<h3>Relacion de Parseval</h3>
+
+<p>Existe una relación entre la potencia de una señal en tiempo discreto periódica y los coeficientes de su serie de Fourier, la relación es la siguiente</p>
+
+$$\frac{1}{N}\sum_{n=n_0}^{n_0+N_0-1}|x[n]|^2=\sum_{k= < N_0 >}|d_k|^2$$
+
+<p>La suma de la derecha se puede hacer en cualquier intervalo de longitud $N_0$</p>
+    
+<p>A continuación se presentan ejemplos donde se aplica directamente la definición que se ha comentado, posteriormente cuando estemos familiarizados con la operación se comentará sobre una motivación de esta definición </p> 
+
+  <div class="ejemplo">
+<div id="derecha">
+      <p>    <strong>Ejemplo 1.</strong><br></p></div>
+<p>
+            Encuentre la serie de Fourier $S_x[n]$ para la señal  
+
+$$x[n]=\begin{cases}
+(0.2)^n  & \text{si } n\in\left\{-1,0,1,2\right\} \\
+1 & \text{en otro caso}
+\end{cases}$$
+
+en $[-2,3]\bigcap \mathbb{Z}=\left\{-2,-1,0,1,2,3\right\}$
+</p>
+
+
+
+<div id="sfd1" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Sfd1c()">×</a>
+  <div class="overlay-content">
+   
+  
+</div>
+</div>
+			
+<button class="dmbutton" onclick="Sfd1o()">Solución</button>
+</div>          
+    
+<div class="ejemplo">
+
+
+<div id="derecha">
+      <p>    <strong>Ejemplo 2.</strong><br></p></div>
+<p>  Encuentre la serie de Fourier discreta de la siguiente señal</p>
+
+<div id="sfd2" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Sfd2c()">×</a>
+  <div class="overlay-content">                   
+            <iframe src="https://www.desmos.com/calculator/6vzcy5ftl3" marginwidth="0" marginheight="0" scrolling="no" frameborder="0" height="700" width="90%"></iframe>        
+  </div>
+</div>
+<button class="dmbutton" onclick="Sfd2o()">Solución</button>
+                  
+                        <br>
+</div>
+
+<p>Como se podrá observar el cálculo de las series de Fourier discreta es una tarea ardua (no difícil), por lo que se puede hacer un programa que haga el cálculo de estos coeficientes, se ha desarrollado una función en MATLAB, que puede ser ejecutada en el siguiente enlace  (para ejecutar scrips se tiene que seguir las instrucciones de la página), en este caso la solución el ejemplo 1 descrito anteriormente se puede obtener ejecutando la siguiente instrucción</p>
+    
+<pre><code class="matlab"> 
+%MATLAB
+
+>> Forierdiscreto([1,5,1,0.2,0.04,1],6,-2,-10,7)
+
+</code></pre>
+    
+<p>El otro tipo de problemas a los que te puedes enfrentar es donde la señal sea una combinación (lineal o no) de senos y cosenos, entonces se utiliza la identidad de Euler para encontrar la serie de Fourier correspondiente   </p>
+    
+<pre><code class="matlab"> 
+%MATLAB
+function Forierdiscreto(xn,N0,n0,a,b)
+
+omega0=2*pi/N0;
+
+sprintf('\n')
+fprintf('%6s %12s %15s\n','p','real dp', 'imaginario dp')
+r=n0:n0+N0-1;
+
+for p=n0:n0+N0-1;
+E=exp(-r*omega0*p*j);
+dn(p-n0+1)=(1/N0)*sum(xn.*E);
+fprintf('%6.2d %12.5f %15.5f\n',p,real(dn(p-n0+1)), imag(dn(p-n0+1)))
+end
+
+sprintf('\n')
+fprintf('%6s %12s %15s\n','n','real x(n)', 'imaginaria x(n)')
+p=n0:n0+N0-1;
+
+for n=a:b
+E=exp(p*omega0*n*j);
+Sx(n-a+1)=sum(dn.*E);  
+fprintf('%6.2d %12.5f %15.5f\n',n,real(Sx(n-a+1)), imag(Sx(n-a+1)))
+end
+
+stem(a:b,Sx)
+grid on
+hold on 
+stem(n0:n0+N0-1,xn,'r')
+end
+
+
+</code></pre>
+    
+<h3>Espectro de Fourier</h3>
+
+<p>Al igual que en el caso continuo, los coeficientes de Fourier $d_p$ (en general) serán números complejos, por lo que se puede escribir (con varias convenciones) la información de la serie en dos gráficas, una sera $|d_p|$ vs $p\Omega_0$ y otra será $\angle d_p$ vs ​$p\Omega_0$  la primera recibe el nombre de espectro de magnitud y la segunda espectro de fase y en conjunto forman el espectro de Fourier para la señal correspondiente (al igual que el caso continuo).</p>
+
+<p>La construcción  es idéntica al caso continuo pero solo se tienen que construir $N_0$ coeficientes, pues estos son periódicos, así, los espectros son gráficas periódicas; por último si $x[n]$ es real entonces $d_p=\overline{d_p}$</p>
+
+<h3>¿Por qué la Serie tiene la forma descrita?</h3>
+
+<p>Es claro para el lector que si se plantea un problema de optimización del error cuadrático promedio entre la señal $x[n]$ y una combinación lineal  de exponenciales complejas ortogonales en el intervalo $ < N_0 > $; los coeficientes, como se han definido anteriormente, son el resultado de esta optimización (a mi parecer esto no es nada claro, pero es cierto, es futuras ediciones de este documento probaremos esta afirmación. Al autor (a mi) le pareció "gracioso" parafrasear textos en donde se sobreentiende que el lector es un estudiante erudito) </p>
+
+                                </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bb-item" id="item14">
+						<div class="content">
+							<div class="scroller">
+                                <h2>Transformada de Fourier continua $\mathscr{F}$</h2>
+<p>Se define a la transformada de Fourier de una función \(f(t)\) en tiempo continuo como</p>
+
+<div id="ecuacion">
+           \begin{equation}
+  \mathscr{F}\left\{ f(t)  \right\}=\int _{ -\infty  }^{ \infty  }{ f(t) } { e }^{ -j\omega t }dt
+ 
+\end{equation}
+
+</div>
+
+<p>siempre y cuando esta integral converja.</p>
+
+<p>Obsérvese que en esta integral desaparece la letra de integración (cuando se termina de integrar), en este caso la \(t\), por lo que este procedimiento da lugar a una nueva expresión en términos de una nueva variable \(\omega\), y dependiendo de la literatura que se consulte se define la siguiente notación:</p>
+
+<div id="ecuacion">
+\begin{equation}
+\mathscr{F}\left\{ f(t)  \right\}=F(j\omega)=F(\omega)
+\end{equation}
+    </div>
+
+<p>Se utilizará cualquiera de estas notaciones de manera indistinta. La transformada de Fourier es un tipo de operación que en general se conoce como transformada integral</p>
+
+<div class="video-ww">
+<div class="video-container">
+         <iframe src="https://www.youtube.com/embed/dIkGVtuKUmE?start=22&rel=0&showinfo=0&theme=light" allowfullscreen frameborder="0" width="100%" height="250"></iframe>
+</div>
+</div>
+
+
+<div class="video-ww">
+<div class="video-container">
+         <iframe src="https://www.youtube.com/embed/eJXuN3paffs?rel=0&showinfo=0&theme=light" allowfullscreen frameborder="0" width="100%" height="250"></iframe>
+</div>
+</div>
+
+<div class="video-ww">
+<div class="video-container">
+         <iframe src="https://www.youtube.com/embed/T-sxVneUQwk?rel=0&showinfo=0&theme=light" allowfullscreen frameborder="0" width="100%" height="250"></iframe>
+</div>
+</div>
+
+<p>Los siguientes ejemplos ayudan a entender como encontrar la transformada de Fourier  por medio de la definición, son cálculos directos, es decir, son técnicas de integración usual (recuerde que \(j\) se opera como una constante), probablemente lo "complicado" es evaluar los límites de integración, si no se recuerda como realizar estas evaluaciones es muy recomendable que se revise el siguiente <a href="https://www.youtube.com/watch?v=_Cyt4V0G5DU"> enlace </a>antes de continuar, con el fin de que los procedimientos presentados sean transparentes, aunque puede avanzar sin ningún problema.</p>
+
+  <div class="ejemplo">
+<div id="derecha">
+      <p>    <strong>Ejemplo 1.</strong><br></p></div>
+<p>
+            Encuentre la transformada de Fourier de \(f(t)={ e }^{ -at }u(t)\)
+</p>
+
+<div id="tfc1" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Tfc1c()">×</a>
+
+ <div class="overlay-content">
+   
+  
+<p >
+        
+          Por definición, </p>
+
+
+          \begin{align*}
+          \mathscr{F}\left\{ f(t) \right\}&=	F(\omega )\\
+          &=\int _{ -\infty  }^{ \infty  }{ { e }^{ -at } }
+            u(t){ e }^{ -j\omega t }dt\\
+            &=\int _{ 0 }^{ \infty  }{ { e }^{ -(a+j\omega )t } } dt\\
+            &=\frac{ -1 }{ a+j\omega } \left( { \left. { e }^{ -(a+j\omega )t } \right|  }_{ 0 }^{ \infty  }\right)
+          \end{align*}
+
+
+        <p >  Si \( \mathbb{R}e(a)>0\) la evaluación
+          \({ \left. { e }^{ -(a+j\omega )t } \right|  }_{ 0 }^{ \infty  }=1\). Por lo tanto:
+</p>
+
+          \begin{equation}
+            F(\omega )=\frac { 1 }{ a+j\omega  }  \quad \mathbb{R}e(a)>0
+          \end{equation}
+
+<div class="video-w">
+<div class="video-container">
+         <iframe src="https://www.youtube.com/embed/Xmp5JcYxVQA?start=9&rel=0&showinfo=0&theme=light" frameborder="0" width="420" height="315"></iframe>
+</div>
+</div>
+         <button class="dmbutton" onclick="Tfc1c()">Cerrar</button>
+
+</div>
+      </div>
+			
+<button class="dmbutton" onclick="Tfc1o()">Solución</button>
+</div>          
+
+
+<div class="ejemplo">
+
+
+<div id="derecha">
+      <p>    <strong>Ejemplo 2.</strong><br></p></div>
+<p>  Encuentre la transformada de Fourier de \(f(t)=t{ e }^{ -at }u(t)\)</p>
+
+<div id="tfc2" class="overlay">
+  <!--<a href="javascript:void(0)" class="closebtn" onclick="Tfc2c()">×</a>-->
+  <div class="overlay-content">                   
+                    <p>Por definición,</p>
+
+                    \begin{align*}
+                    \mathscr{F}\left\{ f(t) \right\}&=	F(\omega )\\
+                    &=\int _{ -\infty  }^{ \infty  }{ t{ e }^{ -at } }
+                      u(t){ e }^{ -j\omega t }dt&\\
+                      &=\int _{ 0 }^{ \infty  }{ t{ e }^{ -(a+j\omega )t } } dt&\\
+                      \end{align*}
+
+                      <p>si aplicamos integración por partes,</p>
+
+                      \begin{align*}
+                      &u=t,\;\;dv={ e }^{ -(a+j\omega )t }  dt\\
+                      &\frac{du}{dt}=1,\;\;v=\frac{ -1 }{ a+j\omega } { e }^{ -(a+j\omega )t } \\
+                      &F(\omega)=\frac{- 1}{ a+j\omega }\left( { \left.
+                        t{ e }^{ -(a+j\omega )t } \right|  }_{ 0 }^{ \infty  }\right)\\
+                      &+\frac{ 1 }{ a+j\omega }\int _{ 0  }^{ \infty  }
+                      { e }^{ -(a+j\omega )t }dt\\
+                    \end{align*}
+        <p class="justo">
+                    Si \( \mathbb{R}e(a)>0\) la evalución
+                    \({ \left. t{ e }^{ -(a+j\omega )t } \right|  }_{ 0 }^{ \infty  }=0\),
+                    se tiene que:</p>
+
+                    \begin{align*}
+
+                    &F(\omega)=\frac{ 1 }{ a+j\omega }\int _{ 0  }^{ \infty  }
+                    { e }^{ -(a+j\omega )t }dt\\
+                  \end{align*}
+        <p>si se usa el ejemplo anterior para saber el valor de la integral</p>
+        \begin{align*}
+
+        &F(\omega)=\frac{ 1 }{ a+j\omega }\left(\frac{ 1 }{ a+j\omega }\right)\\
+        \end{align*}
+        <p>Por lo tanto</p>
+
+                    \begin{equation}
+                      F(\omega )=\frac { 1 }{ \left(a+j\omega\right)^2  }  \;\;\; \mathbb{R}e(a)>0
+                    \end{equation}
+    <button class="dmbutton" onclick="Tfc2c()">Cerrar</button>
+
+  </div>
+</div>
+<button class="dmbutton" onclick="Tfc2o()">Solución</button>
+                  
+                        <br>
+</div>
+
+<div class="ejemplo">
+<div id="derecha">
+      <p>    <strong>Ejemplo 3.</strong><br></p></div>
+
+
+<p>Encuentre la transformada de Fourier de \(f(t)={ e }^{ -a|t| }\)</p>
+<div id="tfc3" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Tfc3c()">×</a>
+  <div class="overlay-content">
+    
+                        
+                    <p>Por definición,</p>
+
+                    \begin{align*}
+                    \mathscr{F}\left\{ f(t) \right\}&=	F(\omega )\\
+                    &=\int _{ -\infty  }^{ \infty  }{ { e }^{ -a|t| } }
+                      { e }^{ -j\omega t }dt\\
+                      \end{align*}
+                      <p class="justo">
+                      de acuerdo a la definición de valor absoluto
+                      </p>
+                      \begin{align*}
+                      & F(\omega)=\int _{ -\infty  }^{ 0  }{ { e }^{ at } }
+                      { e }^{ -j\omega t }dt\\
+                      &\;\;\;\;\;\;\;\;\;+\int _{ 0  }^{ \infty  }{ { e }^{ -at } }
+                      { e }^{ -j\omega t }dt\\
+                      &=\int_{ -\infty }^{ 0  }{ { e }^{ -(j\omega-a )t } } dt
+                      +\int _{ 0 }^{ \infty  }{ { e }^{ -(a+j\omega )t } } dt\\
+                      &=- \frac{ \left( { \left.
+                        { e }^{ -(j\omega-a )t } \right|  }_{ -\infty }^{ 0  }\right)}{ j\omega-a }-\frac{ \left( { \left.
+                        { e }^{ -(a+j\omega )t } \right|  }_{ 0 }^{ \infty  }\right)}{ a+j\omega }
+                      \end{align*}
+
+                      
+        <p class="justo">
+                    Si \( \mathbb{R}e(a)>0\) las evaluciones son \(1\) y \(-1\)
+            repectivamente, al operar el signo en el denominador de la 
+            primera expresión se tiene que:</p>
+
+                    \begin{align*}
+                    F(\omega)&=\frac{ 1 }{ a-j\omega }+\frac{ 1 }{ a+j\omega }\\
+                  \end{align*}
+                      
+        <p>Por lo tanto</p>
+
+                    \begin{equation}
+                      F(\omega )=\frac{ 2a }{ a^2+\omega^2 }  \;\;\; \mathbb{R}e(a)>0
+                    \end{equation}
+               <button class="dmbutton" onclick="Tfc3c()">Cerrar</button>
+
+                        </div>
+</div>
+<button class="dmbutton" onclick="Tfc3o()">Solución</button>
+</div>
+
+<p>Los ejemplos anteriores pueden ser resueltos usando diferentes paquetes de computo, en particular se han implementado los códigos en Python y MATLAB, que puedes consultar y ejecutar en los enlaces indicados.</p>
+
+<p>Puedes copiar el código de Python y ejecutarlo en el siguiente enlace </p>
+
+<p>Puedes copiar el código de MATLAB y ejecutarlo en el siguiente enlace</p>
+
+<pre><code class="python" id="">    
+#Python
+from sympy import *
+from sympy.abc import a, k, w, t
+k=w/(2*pi)
+f=fourier_transform(exp(-a*t)*Heaviside(t), t, k)
+g=fourier_transform(t*exp(-a*t)*Heaviside(t), t, k)
+h=fourier_transform(exp(-a*Abs(t)), t, k)
+print f,g,h
+            </code></pre>
+
+<pre><code class="matlab"> 
+%MATLAB
+syms   t w 
+syms a positive
+f=exp(-a*t)*heaviside(t);
+g=t*exp(-a*t)*heaviside(t);
+h=exp(-a*abs(t));
+fourier(f,t,w)
+fourier(g,t,w)
+fourier(h,t,w)            
+</code></pre>
+
+<h3>Propiedades de la transformada de Fourier</h3>
+
+<p>Si  se suponen ciertas condiciones de las funciones a las cuales se calcula su transformada Fourier y se manipula  la definición de la transformada, se pueden deducir propiedades, es decir, simplificaciones del uso de la transformación. Si estas interesado en conocer un argumento del porqué las expresiones listadas son correctas, puedes consultar los videos asociados.</p>
+
+<div class="embed-container-t" >
+    <iframe width="560" height="315" src="http://spcp.wikidot.com/local--files/material-del-curso/propiedadesFourier.html"></iframe>
+</div>
+
+<table class="rwd-table">
+  <tr>
+<th>Propiedad</th>
+    <th> Expresión </th>
+    <th>$F(j\omega)=F(\omega)$</th>
+    <th>Prueba</th>
+
+  </tr>
+  <tr>
+<td data-th=" Propiedad ">Linealidad</td>
+    <td data-th=" Expresión ">$af_1(t)+bf_2(t)$</td>
+    <td data-th=" Transformada">$aF_1(\omega)+bF_2(\omega)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="luDjVCjATn0?start=9&enablejsapi=1" title="...">
+enlace</button></td>
+  </tr>
+  <tr>
+
+<td data-th=" Propiedad ">Traslación en $t$</td>
+    <td data-th=" Expresión ">$f(t-t_0)$</td>
+    <td data-th=" Transformada">$F(\omega)e^{-jt_0 \omega}$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="aXjjjGuyQ80?start=9&enablejsapi=1" title="...">
+enlace</button></td>
+  </tr>
+<tr>
+
+<td data-th=" Propiedad ">Escalamiento en $t$</td>
+    <td data-th=" Expresión ">$f(at)$</td>
+    <td data-th=" Transformada">$\frac{1}{|a|}F(\frac{\omega}{a})$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="wZ07dRdD7y4?start=9&enablejsapi=1" title="...">
+enlace</button></td>
+  </tr>
+
+<tr>
+
+<td data-th=" Propiedad ">Inversión en $t$</td>
+    <td data-th=" Expresión ">$f(-t)$</td>
+    <td data-th=" Transformada">$F(-\omega)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="kbhudUtNI3A?start=9&enablejsapi=1" title="...">
+enlace</button></td>
+  </tr>
+
+<tr>
+<td data-th=" Propiedad ">Traslación en $\omega$</td>
+    <td data-th=" Expresión ">$f(t)e^{\omega_0 j t}$</td>
+    <td data-th=" Transformada">$F(\omega-\omega_0)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="lC0nyV9K89U?start=9&enablejsapi=1" title="...">
+enlace</button></td>
+  </tr>
+
+<tr>
+<td data-th=" Propiedad ">Modulación de Amplitud</td>
+    <td data-th=" Expresión ">$f(t)cos(\omega_0t)$</td>
+    <td data-th=" Transformada">$\frac{1}{2}F(\omega-\omega_0)+\frac{1}{2}F(\omega+\omega_0)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="ujgIPF8lipg?start=9&enablejsapi=1" title="...">
+enlace</button></td>
+  </tr>
+
+
+<tr>
+<td data-th=" Propiedad "></td>
+    <td data-th=" Expresión ">$f(t)sen(\omega_0t)$</td>
+    <td data-th=" Transformada">$\frac{j}{2}F(\omega+\omega_0)-\frac{j}{2}F(\omega-\omega_0)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="ujgIPF8lipg?start=9&enablejsapi=1" title="...">
+enlace</button></td>
+  </tr>
+    
+<tr>
+<td data-th=" Propiedad ">Conjugación</td>
+    <td data-th=" Expresión ">$f^*(t)$</td>
+    <td data-th=" Transformada">$F^*(-\omega)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+
+<tr>
+<td data-th=" Propiedad ">Dualidad</td>
+    <td data-th=" Expresión ">$F(t)$</td>
+    <td data-th=" Transformada">$2\pi f(-\omega)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+
+<tr>
+<td data-th=" Propiedad ">Derivada</td>
+    <td data-th=" Expresión ">$\frac{d}{dt}f(t)$</td>
+    <td data-th=" Transformada">$j\omega F(\omega)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+
+<tr>
+<td data-th=" Propiedad ">$n$ Derivada</td>
+    <td data-th=" Expresión ">$\frac{d^n}{dt^n}f(t)$</td>
+    <td data-th=" Transformada">$(j\omega)^nF(\omega)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+ 
+<tr>
+<td data-th=" Propiedad ">Convolución en t</td>
+    <td data-th=" Expresión ">$f(t)*h(t)$</td>
+    <td data-th=" Transformada">$F(\omega)H(\omega)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+
+<tr>
+<td data-th=" Propiedad ">Convolución en $\omega$</td>
+    <td data-th=" Expresión ">$f(t)h(t)$</td>
+    <td data-th=" Transformada">$\frac{1}{2\pi}F(\omega)*H(\omega)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+
+<tr>
+<td data-th=" Propiedad ">Integral</td>
+    <td data-th=" Expresión ">$\int_{-\infty}^{t}f(\tau) d\tau$</td>
+    <td data-th=" Transformada">$\frac{F(\omega)}{j\omega}+\pi F(0)\delta(\omega)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+
+
+</table>
+
+<h3>Tabla de transformadas de Fourier</h3>
+
+<p>La siguiente tabla muestra las transformadas de Fourier de señales usuales, la prueba del resultado, la "gráfica" de la señal , la "gráfica" de la transformada y la gráfica del espectro de Fourier (en algunos casos no es  la gráfica, es la idea geometrica asociada a la distribución).</p>
+
+<table class="rwd-table">
+  <tr>
+       <th>#</th>
+    <th>$f(t)$</th>
+    <th>$F(j\omega)=F(\omega)$</th>
+    <th>Condición</th>
+    <th>Prueba</th>
+<th>Gráfica de $f(t)$</th>
+<th>Gráfica de $F(\omega)$</th>
+<th>Espectro de Fourier</th>
+
+  </tr>
+  <tr>
+    <td data-th="#">1.</td>
+    <td data-th=" Expresión ">$e^{-at}u(t)$</td>
+    <td data-th=" Transformada">$\frac{1}{j\omega+a}$</td>
+    <td data-th="Condición">$\mathbb{R}e(a)>0$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="Xmp5JcYxVQA?start=9&enablejsapi=1" title="...">
+enlace</button></td>
+<td data-th=" Gráfica de $f(t)$"></td>
+<td data-th=" Espectro de magnitud"></td>
+<td data-th=" Espectro de fase "></td>
+  </tr>
+
+ <tr>
+    <td data-th="#">2.</td>
+    <td data-th=" Expresión ">$te^{-at}u(t)$</td>
+    <td data-th=" Transformada">$\frac{1}{(j\omega+a)^2}$</td>
+    <td data-th="Condición">$\mathbb{R}e(a)>0$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+<td data-th=" Gráfica de $f(t)$"></td>
+<td data-th=" Espectro de magnitud"></td>
+<td data-th=" Espectro de fase "></td>
+  </tr>
+ 
+ <tr>
+    <td data-th="#">3.</td>
+    <td data-th=" Expresión ">$t^ne^{-at}u(t)$</td>
+    <td data-th=" Transformada">$\frac{n!}{(j\omega+a)^{n+1}}$</td>
+    <td data-th="Condición">$\mathbb{R}e(a)>0$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+<td data-th=" Espectro de magnitud"></td>
+<td data-th=" Espectro de fase "></td>
+  </tr>
+
+ <tr>
+   <td data-th="#">4.</td>
+    <td data-th=" Expresión ">$e^{-a|t|}$</td>
+    <td data-th=" Transformada">$\frac{2a}{a^2+\omega^2}$</td>
+    <td data-th="Condición">$\mathbb{R}e(a)>0$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+<td data-th=" Espectro de magnitud"></td>
+<td data-th=" Espectro de fase "></td>
+  </tr>
+
+
+ <tr>
+    <td data-th="#">5.</td>
+    <td data-th=" Expresión ">$e^{-at}cos(\omega_0t)u(t)$</td>
+    <td data-th=" Transformada">$\frac{a+j\omega}{(j\omega+a)^2 + \omega_0^2}$</td>
+    <td data-th="Condición">$\mathbb{R}e(a)>0$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="Xmp5JcYxVQA?start=9&enablejsapi=1" title="...">
+enlace</button></td>
+<td data-th=" Espectro de magnitud"></td>
+<td data-th=" Espectro de fase "></td>
+  </tr>
+
+ <tr>
+    <td data-th="#">6.</td>
+    <td data-th=" Expresión ">$e^{-at}sen(\omega_0t)u(t)$</td>
+    <td data-th=" Transformada">$\frac{\omega_0}{(j\omega+a)^2 + \omega_0^2}$</td>
+    <td data-th="Condición">$\mathbb{R}e(a)>0$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="Xmp5JcYxVQA?start=9&enablejsapi=1" title="...">
+enlace</button></td>
+<td data-th=" Espectro de magnitud"></td>
+<td data-th=" Espectro de fase "></td>
+  </tr>
+
+    <!--
+<tr>
+    <td data-th="#">7.</td>
+    <td data-th=" Expresión ">$t^ne^{-at}cos(\omega_0 t)u(t)$</td>
+    <td data-th=" Transformada"></td>
+    <td data-th="Condición">$\mathbb{R}e(a)>0$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+<td data-th=" Espectro de magnitud"></td>
+<td data-th=" Espectro de fase "></td>
+  </tr>
+
+
+<tr>
+    <td data-th="#">8.</td>
+    <td data-th=" Expresión ">$t^ne^{-at}sen(\omega_0 t)u(t)$</td>
+    <td data-th=" Transformada"></td>
+    <td data-th="Condición">$\mathbb{R}e(a)>0$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+<td data-th=" Espectro de magnitud"></td>
+<td data-th=" Espectro de fase "></td>
+  </tr>
+-->
+
+<tr>
+   <td data-th="#">7.</td>
+    <td data-th=" Expresión ">$sgn(t)$</td>
+    <td data-th=" Transformada">$\frac{2}{j\omega}$</td>
+    <td data-th="Condición"></td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+<td data-th=" Espectro de magnitud"></td>
+<td data-th=" Espectro de fase "></td>
+  </tr>
+
+
+<tr>
+   <td data-th="#">8.</td>
+    <td data-th=" Expresión ">$rect\left(\frac{t}{\tau}\right)$</td>
+    <td data-th=" Transformada">$\tau sa\left(\frac{\omega\tau}{2}\right)$</td>
+    <td data-th="Condición"></td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+<td data-th=" Espectro de magnitud"></td>
+<td data-th=" Espectro de fase "></td>
+  </tr>
+
+
+<tr>
+    <td data-th="#">9.</td>
+    <td data-th=" Expresión ">$\frac{A}{\pi}sa\left(At\right)$</td>
+    <td data-th=" Transformada">$rect\left(\frac{\omega}{2A}\right)$</td>
+    <td data-th="Condición"></td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+<td data-th=" Espectro de magnitud"></td>
+<td data-th=" Espectro de fase "></td>
+  </tr>
+
+
+<tr>
+   <td data-th="#">10.</td>
+    <td data-th=" Expresión ">$\Delta\left(\frac{t}{\tau}\right)$</td>
+    <td data-th=" Transformada">$\frac{\tau}{2}sa^2\left(\frac{\omega \tau}{4}\right)$</td>
+    <td data-th="Condición"></td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+<td data-th=" Espectro de magnitud"></td>
+<td data-th=" Espectro de fase "></td>
+  </tr>
+
+<tr>
+   <td data-th="#">11.</td>
+    <td data-th=" Expresión ">$\frac{A}{2\pi}sa^2\left(\frac{At}{2}\right)$</td>
+    <td data-th=" Transformada">$\Delta\left(\frac{\omega}{2A}\right)$</td>
+    <td data-th="Condición"></td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+<td data-th=" Espectro de magnitud"></td>
+<td data-th=" Espectro de fase "></td>
+  </tr>
+
+<tr>
+   <td data-th="#">12.</td>
+    <td data-th=" Expresión ">$e^{-t^2/2\sigma^2}$</td>
+    <td data-th=" Transformada">$\sigma\sqrt{2\pi}e^{-\sigma^2\omega^2/2}$</td>
+    <td data-th="Condición"></td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+<td data-th=" Espectro de magnitud"></td>
+<td data-th=" Espectro de fase "></td>
+  </tr>
+
+<tr>
+    <td data-th="#">13.</td>
+    <td data-th=" Expresión ">$\delta (t)$</td>
+    <td data-th=" Transformada">$1$</td>
+    <td data-th="Condición"> </td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+
+<tr>
+    <td data-th="#">14.</td>
+    <td data-th=" Expresión ">$1$</td>
+    <td data-th=" Transformada">$2\pi \delta (\omega)$</td>
+    <td data-th="Condición"> </td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+
+<tr>
+   <td data-th="#">15.</td>
+    <td data-th=" Expresión ">$e^{\omega_0 j t}$</td>
+    <td data-th=" Transformada">$2\pi \delta (\omega-\omega_0)$</td>
+    <td data-th="Condición"> </td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+
+
+<tr>
+   <td data-th="#">16.</td>
+    <td data-th=" Expresión ">$cos(\omega_0  t)$</td>
+    <td data-th=" Transformada">$\pi\left\lbrace \delta (\omega-\omega_0)+\delta (\omega+\omega_0)\right\rbrace $</td>
+    <td data-th="Condición"> </td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+
+<tr>
+    <td data-th="#">17.</td>
+    <td data-th=" Expresión ">$sen(\omega_0  t)$</td>
+    <td data-th=" Transformada">$j\pi\left\lbrace \delta (\omega+\omega_0)-\delta (\omega-\omega_0)\right\rbrace $</td>
+    <td data-th="Condición"> </td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+
+
+
+<tr>
+   <td data-th="#">18.</td>
+    <td data-th=" Expresión ">$cos(\omega_0  t)u(t)$</td>
+    <td data-th=" Transformada">$\frac{\pi}{2}\left\lbrace \delta (\omega-\omega_0)+\delta (\omega+\omega_0)\right\rbrace +\frac{j\omega}{\omega_0^2-\omega^2}$</td>
+    <td data-th="Condición"> </td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+
+
+<tr>
+   <td data-th="#">19.</td>
+    <td data-th=" Expresión ">$sen(\omega_0  t)u(t)$</td>
+    <td data-th=" Transformada">$j\frac{\pi}{2}\left\lbrace \delta (\omega+\omega_0)-\delta (\omega-\omega_0)\right\rbrace +\frac{\omega_0}{\omega_0^2-\omega^2}$</td>
+    <td data-th="Condición"> </td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+
+
+<tr>
+   <td data-th="#">20.</td>
+    <td data-th=" Expresión ">$u(t)$</td>
+    <td data-th=" Transformada">$\pi\delta(\omega)+\frac{1}{j\omega}$</td>
+    <td data-th="Condición"> </td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+
+<tr>
+    <td data-th="#">21.</td>
+    <td data-th=" Expresión ">$\sum\limits_{n=-\infty}^{\infty}D_ne^{jn\omega_0 t}$</td>
+    <td data-th=" Transformada">$2\pi\sum\limits_{n=-\infty}^{\infty}D_n\delta(\omega-n\omega_0),\;\omega_0=\frac{2\pi}{T_0}$</td>
+    <td data-th="Condición"> </td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+
+<tr>
+    <td data-th="#">22.</td>
+    <td data-th=" Expresión ">$\sum\limits_{n=-\infty}^{\infty}\delta(t-nT_0)$</td>
+    <td data-th=" Transformada">$\omega_0\sum\limits_{n=-\infty}^{\infty}\delta(\omega-n\omega_0),\;\omega_0=\frac{2\pi}{T_0}$</td>
+    <td data-th="Condición"> </td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  
+
+</table>
+
+  <div class="ejemplo">
+<div id="derecha">
+      <p>    <strong>Ejemplo 4.</strong><br></p></div>
+<p>
+            Encuentre la solución de la siguiente ecuación diferencial mediante la transformada de Fourier $$\ddot{x}(t)+7\dot{x}(t)+10x(t)=u(t)$$
+</p>
+
+
+
+<div id="tfc4" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Tfc4c()">×</a>
+  <div class="overlay-content">
+   
+  
+<p >
+        
+          Aplicando propiedades de la transformada de Fourier: linealidad, derivación, y teniendo presente la transformada del escalón </p>
+
+
+          \begin{align*}
+          \mathscr{F}\left\{ \ddot{x}(t)+7\dot{x}(t)+10x(t) \right\}=\mathscr{F}\left\{u(t) \right\}&\\
+          (j\omega)^2X(w)+7(j\omega)X(\omega)+10X(\omega)=U(\omega)&\\
+            X(\omega)\left( (j\omega)^2+7(j\omega)+10 \right)=U(\omega)&\\
+             X(\omega)=U(\omega)\left( \frac{1}{(j\omega)^2+7(j\omega)+10} \right)&\\
+             X(\omega)=\left(\pi\delta (\omega)+\frac{1}{j\omega}\right)\left( \frac{1}{(j\omega)^2+7(j\omega)+10} \right)&
+          \end{align*}
+
+\begin{align*}
+X(\omega)&=\pi\delta (\omega)\left( \frac{1}{(j\omega)^2+7(j\omega)+10} \right)\\
+&+ \frac{1}{j\omega}\left( \frac{1}{(j\omega)^2+7(j\omega)+10} \right)\\
+\end{align*}
+
+
+
+
+<p>Recordamos que $f(\omega)\delta(\omega)=f(0)\delta(\omega)$, a la vez proponemos una descomposición en fracciones parciales</p>
+
+\begin{align*}
+X(\omega)&=\frac{1}{10}\pi\delta (\omega)+ \frac{A}{j\omega}+\frac{B}{j\omega+2}+\frac{C}{j\omega+5}\\
+\end{align*}
+
+
+        <p >  Se encuentra que los coeficientes de la descomposición en fracciones parciales son $A=1/10$ $B=-1/6$ $C=1/15$
+</p>
+
+       \begin{align*}
+X(\omega)&=\frac{1}{10}\left(\pi\delta (\omega)+ \frac{1}{j\omega}\right)+\frac{-1/6}{j\omega+2}+\frac{1/15}{j\omega+5}\\
+\end{align*}  
+
+<p>Por último se hace el siguiente razonamiento: Se ha encontrado la transformada de Fourier $X(\omega)$ de la incógnita $x(t)$ de la ecuación diferencial, entonces a partir de las fórmulas conocidas se sigue que para tener la estructura $X(\omega)$ necesariamente $x(t)$ tiene que ser </p>
+
+\begin{align*}
+x(t)&=\frac{1}{10}u(t)-\frac{1}{6}e^{-2t}u(t)+\frac{1}{15}e^{-5t}u(t)\\
+\end{align*}
+
+<p>La cual es la solución buscada de la ecuación diferencial.</p>
+
+<p>    <strong>Observaciones.</strong></p>
+
+<p>Sabemos que la ecuación diferencial propuesta es una ecuación que necesita 2 condiciones iniciales ($x(t_0)$, $\dot{x}(t_0)$) para tener una solución única, pues es de segundo orden. Entonces ¿Por qué no se han especificado estas condiciones iniciales?, la respuesta corta es porque no se necesitan, si se observa el procedimiento presentado previamente en ningún momento se presenta la necesidad de conocer $x(t_0)$ o $\dot{x}(t_0)$ para concluir el resultado. </p>
+
+<p>Siendo un poco más formales, resulta ser que una de las aplicaciones de la transformada de Fourier es para resolver ecuaciones diferenciales de orden $n$ con coeficientes constantes y con condiciones iniciales cero (las condiciones iniciales se especifican en algún punto $t_0$ por lo regular $t_0=0$),  precisamente como el procedimiento no necesita de estos datos pensamos que los datos son nulos. Entonces el problema completo tendría que haberse escrito de la sigueinte manera</p>
+
+
+<p>
+
+Encuentre la solución de la siguiente ecuación diferencial con condiciones iniciales $x(0)=0$ y $\dot{x}(0)=0$ mediante la transformada de Fourier $$\ddot{x}(t)+7\dot{x}(t)+10x(t)=u(t)$$
+
+</p>
+
+
+<p>Ahora obsérvese que el siguiente problema no se puede resolver por completo mediante la transformada de Fourier, ¿Por qué?</p>
+
+
+
+<p>
+
+Encuentre la solución de la siguiente ecuación diferencial con condiciones iniciales $x(0)=1$ y $\dot{x}(0)=-1$ mediante la transformada de Fourier $$\ddot{x}(t)+7\dot{x}(t)+10x(t)=u(t)$$
+
+</p>
+
+
+</div>
+</div>
+			
+<button class="dmbutton" onclick="Tfc4o()">Solución</button>
+</div>          
+
+<h3>Densidad espectral de potencia</h3>
+
+<p>La densidad espectral de potencia $P(\omega)$ (o $S_f(\omega)$ depende de la literatura consultada) de una señal de potencia $f(t)$, puede definirse directamente, también  puede motivarse la definición de distintas maneras para que el calculo resulte como la solución de una pregunta planteada. Aquí se indicará cual es la motivación, pero los argumentos para llegar a la definición no se desarrollarán, se presentará su definición y algunas equivalencias y simplificaciones.    </p>
+
+<p>Si se recuerda el teorema de Parseval para transformada de Fourier, se tiene que una función en el dominio $\omega$, $||G(\omega)||^2$, tiene la misma distribución de energía que una señal de energía $g(t)$, (salvo por una constante) con $G(\omega)=\mathscr{F}\{g(t)\}$. Es decir,</p>
+
+$$E_g=\int_{-\infty}^{\infty} ||g(t)||^2dt=\dfrac{1}{2\pi}\int_{-\infty}^{\infty}||G(\omega)||^2d\omega$$
+
+<p>La idea sería encontrar una expresión similar para una señal de potencia, es decir, si $f(t)$ es una señal de potencia nos gustaría encontrar $P(\omega)$ tal que:</p>
+
+\begin{equation}\label{edep}
+P_f=\lim_{T\to \infty}\dfrac{1}{T}\int_{-T/2}^{T/2} ||f(t)||^2dt=\dfrac{1}{2\pi}\int_{-\infty}^{\infty} P(\omega)d\omega,.......(1)\end{equation}
+
+<p>Entonces para encontrar esta $P(\omega)$ se podría definir $f_T(t)=f(t)rect(t/T)$ y a esta nueva señal (pensando que tiene energía finita) se le podría aplicar el teorema de Parseval para transformada de Fourier.  Después de algunas manipulaciones  para que la ecuación (1)  se satisfaga, se llega a que la densidad espectral de potencia $P(\omega)$ para una señal de potencia $f(t)$, se define como: </p>
+
+<div id="ecuacion">
+           \begin{equation}
+  P(\omega)=\lim_{T\to\infty}\dfrac{1}{T}||F_T(\omega)||^2=\lim_{T\to\infty}\dfrac{1}{T}\left\|\int_{-T/2}^{T/2}f(t)e^{-j\omega t}dt\right\|^2
+ 
+\end{equation}
+
+</div>
+
+<p>Equivalentemente se puede calcular la densidad espectral de potencia como</p>
+
+<div id="ecuacion">
+$$\displaystyle P(\omega)=\mathscr{F}\left\{\overline{r}\displaystyle_{ff}(t)\right\}=\int_{-\infty}^{\infty}\overline{r}_{ff}(t)e^{-j\omega t}dt$$
+
+</div>
+
+<p>donde $\overline{r}_{ff}(t)$ es la autocorrelación promedio de la señal $f(t)$. Se puede utilizar cualquiera de las dos definiciones para calcular la densidad espectral de potencia. Algunas veces este cálculo se simplifica para señales que satisfacen ciertas hipótesis, en particular se tiene el siguiente resultado</p>
+
+  <div class="ejemplo">
+<div id="derecha">
+      <p>    <strong>Señales periódicas reales</strong><br></p></div>
+<p>
+            Si una señal de potencia $f(t)$ satisface que: </p>
+
+
+<p>1. $f(t)$ es periodica de periodo $T_0$</p>
+<p>2. $f(t)$ es real</p>
+
+<p> Entonces su densidad espectral de potencia esta dada por 
+</p>
+<p>
+$$P(\omega)=\sum_{n=-\infty}^{\infty}2\pi||D_n||^2\delta(\omega-n\omega_0)$$</p>
+<p>con $D_n$ los coeficientes de al serie exponencial de Fourier para $f(t)$ y $\omega_0=2\pi/T_0$</p>
+
+<p>Así al calcular la fórmula (1) se tiene </p>
+<p>
+$$P_f=\dfrac{1}{T_0}\int_{-T_0/2}^{T_0/2} ||f(t)||^2dt=\dfrac{1}{2\pi}\int_{-\infty}^{\infty}\sum_{n=-\infty}^{\infty}2\pi||D_n||^2\delta(\omega-n\omega_0) d\omega=\sum_{n=-\infty}^{\infty}||D_n||^2$$</p>
+
+<p>Que precisamente coincide con el teorema de Parseval para series de Fourier</p>
+
+
+<div id="tfc5" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Tfc5c()">×</a>
+  <div class="overlay-content">
+   
+
+</div>
+</div>
+			
+<button class="dmbutton" onclick="Tfc5o()">Demostración</button>
+</div>          
+
+<p>La demostración de esta simplificación se sigue en tres pasos, el primero es calcular la autocorrelación promedio de una señal periódica de periodo $T_0$,</p>
+
+$$\overline{r}_{ff}(t)=\dfrac{1}{T_0}\int_{-T_0/2}^{T_0/2}f(\tau)f(\tau-t)dt,\;-T_0/2\leq t\leq T_0/2$$
+
+<p>el segundo es calcular la serie de Fourier del resultado antes obtenido (que también es una señal periódica del mismo periodo, es decir $\overline{r}_{ff}(t)=\overline{r}_{ff}(t+T_0) $) sabiendo que la señal es real, posteriormente utilizamos la equivalencia de la densidad espectral de potencia junto con la fórmula 23 de la tabla de transformadas de Fourier que se encuentra en la parte superior. Para ilustrar este procedimiento, en los siguientes ejemplos aplicaremos directamente el resultado, y después realizaremos los pasos descritos anteriormente con el fin de reforzar el entendimiento del calculo de la densidad espectral de potencia.</p>
+
+  <div class="ejemplo">
+<div id="derecha">
+      <p>    <strong>Ejemplo</strong><br></p></div>
+<p>
+            Encuentra la densidad espectral de potencia para: </p>
+
+
+
+
+$$f(t)=Asen(\omega_1t+\phi)$$
+
+
+<div id="tfc6" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Tfc6c()">×</a>
+  <div class="overlay-content">
+   
+<p>Esta señal es real y periódica de periodo $T_0=2\pi/\omega_1$, así la densidad espectral de potencia esta dada por  </p>
+
+$$P(\omega)=\sum_{n=-\infty}^{\infty}2\pi||D_n||^2\delta(\omega-n\omega_0)$$
+
+<p>Se puede calcular $D_n$ con su definición con $\omega_0=2\pi/T_0=\omega_1$ pero observemos que al aplicar la identidad de Euler a la señal</p>
+
+$$f(t)=\dfrac{A}{2j}e^{(\omega_1t+\phi)j}-\dfrac{A}{2j}e^{-(\omega_1t+\phi)j}$$
+
+
+$$f(t)=\dfrac{Ae^{\phi j}}{2j}e^{\omega_1tj}-\dfrac{Ae^{-\phi j}}{2j}e^{-\omega_1t}$$
+
+
+<p>Entonces el análisis es el siguiente, el objetivo de calcular la serie de Fourier de una señal es escribirla en términos de funciones exponencial complejas multiplicadas por ciertos coeficientes, este objetivo ya se ha cumplido al utilizar Euler, así se logra identificar a $D_1=\dfrac{Ae^{\phi j}}{2j}$ y $D_{-1}=\dfrac{Ae^{-\phi j}}{-2j}$ ¿Por qué? </p>
+
+<p>Si se calculan las coeficientes $D_n$ de manera directa se tendrá que todos los coeficientes son cero excepto cuando $n=1$ y $n=-1$, sería bueno comprobar esta situación. Se tiene que </p>
+
+$$||D_1||^2=||D_{-1}||^2=\dfrac{A^2}{4}$$
+
+<p>Así la densidad espectral de potencia es:</p>
+
+$$P(\omega)=\dfrac{A^2\pi}{2}\delta(\omega+\omega_1)+\dfrac{A^2\pi}{2}\delta(\omega-\omega_1)$$
+
+<p>En este caso</p>
+
+$$P_f=\dfrac{1}{2\pi}\int_{-\infty}^{\infty}\dfrac{A^2\pi}{2}\delta(\omega+\omega_1)+\dfrac{A^2\pi}{2}\delta(\omega-\omega_1)d\omega=\dfrac{A^2}{2}$$
+
+<p>Nuevamente, ya se sabia que la potencia de una función seno (o coseno) es la amplitud al cuadrado sobre dos.</p>
+
+
+</div>
+</div>
+			
+<button class="dmbutton" onclick="Tfc6o()">Solución</button>
+</div>          
+
+  <div class="ejemplo">
+<div id="derecha">
+      <p>    <strong>Ejemplo</strong><br></p></div>
+<p>
+            Encuentra la densidad espectral de potencia para, la señal periódica $f(t)=f(t+T_0)$, cuya descripción en $-T_0/2\leq t\leq T_0/2$ esta dada por: </p>
+
+
+
+<p>
+$$f(t)=\begin{cases}
+A  & \text{si } -T_0/4\leq t\leq T_0/4 \\
+0 & \text{en otro caso}
+\end{cases}$$</p>
+
+
+<div id="tfc7" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Tfc7c()">×</a>
+  <div class="overlay-content">
+   
+
+</div>
+</div>
+			
+<button class="dmbutton" onclick="Tfc7o()">Solución</button>
+</div>                                      </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bb-item" id="item15">
+						<div class="content">
+							<div class="scroller">
+                                <h2>Transformada de Fourier discreta</h2>
+<p>Se define a la transformada de Fourier de una función \(x[n]\) en tiempo discreto como</p>
+
+<div id="ecuacion">
+           \begin{equation}
+  \mathscr{F}\left\{ x[n]  \right\}=\sum _{ n=-\infty  }^{ \infty  }{ x[n] } { e }^{ -j\Omega n }
+ 
+\end{equation}
+
+</div>
+
+<p>siempre y cuando esta suma converja. La transformada Fourier de funciones en tiempo discreto es una función  $X:A\subseteq\mathbb{R}\rightarrow\mathbb{C}$, por tal motivo la gráfica necesita tres ejes, de igual manera que en el caso de la transformada de Fourier continua se pueden obtener 2 gràficas, $|X(\Omega)|$ vs $\Omega$ el espectro de magnitud y $\angle\,X(\Omega)|$ vs $\Omega$ el espectro de fase, ambas gráficas conforman el espectro de Fourier.    </p>
+
+<p>Obsérvese que al realizar la suma, desaparece la variable  \(n\), por lo que este procedimiento da lugar a una nueva expresión en términos de una nueva variable \(\Omega\), y dependiendo de la literatura que se consulte se define la siguiente notación:</p>
+
+<div id="ecuacion">
+\begin{equation}
+\mathscr{F}\left\{ x[n]  \right\}=X(\Omega)=X(e^{j\Omega})
+\end{equation}
+    </div>
+
+<p>Se utilizará cualquiera de estas notaciones de manera indistinta.</p>
+
+<h3>Observaciones</h3>
+
+<ul>
+<li>La transformada de Fourier discreta $X(\Omega)$ tiene dominio continuo.</li>
+<li>La transformada de Fourier discreta es periódica de periodo $2\pi$, es decir $$X(\Omega)=X(\Omega+2\pi)$$ </li>
+</ul>
+
+<p>Los siguientes ejemplos, tienen la intención de familiarizar al lector con las operaciones necesarias para realizar la transformada de la Fourier discreta. </p>
+
+  <div class="ejemplo">
+<div id="derecha">
+      <p>    <strong>Ejemplo 1.</strong><br></p></div>
+<p>
+            Encuentre la transformada de Fourier discreta de \(x[n]=a^{ |n| }\)
+</p>
+
+
+
+<div id="tfd1" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Tfd1c()">×</a>
+  <div class="overlay-content">
+ </div>
+</div>
+			
+<button class="dmbutton" onclick="Tfd1o()">Solución</button>
+</div>          
+
+<div class="ejemplo">
+
+
+<div id="derecha">
+      <p>    <strong>Ejemplo 2.</strong><br></p></div>
+<p>  Encuentre la transformada de Fourier de \(x[n]=\delta[n+1]-\delta[n-1]\), bosqueja los espectros de magnitud y de fase.</p>
+
+<div id="tfd2" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Tfd2c()">×</a>
+  <div class="overlay-content">                   
+         
+  </div>
+</div>
+<button class="dmbutton" onclick="Tfd2o()">Solución</button>
+                  
+                        <br>
+</div>
+
+<div class="ejemplo">
+<div id="derecha">
+      <p>    <strong>Ejemplo 3.</strong><br></p></div>
+
+
+<p>Use la transformada de Fourier discreta para encontrar la solución a la siguiente ecuación en diferencias   $$y[n]-0.8y[n-1]=(0.5)^nu[n]$$</p>
+<div id="tfd3" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Tfd3c()">×</a>
+  <div class="overlay-content">
+    
+                        
+                        </div>
+</div>
+<button class="dmbutton" onclick="Tfd3o()">Solución</button>
+</div>
+
+<h3>Propiedades de la transformada de Fourier discreta</h3>
+
+<p>Si  se suponen ciertas condiciones sobre las expresiones a las cuales se les calcula su  transformada de Fourier discreta y se manipula la definición de la transformada, se pueden deducir propiedades, es decir, simplificaciones del uso de la transformación. La siguiente tabla muestra algunas de estas propiedades. </p>
+
+
+<table class="rwd-table">
+  <tr>
+<th>Propiedad</th>
+    <th> Expresión </th>
+    <th>$X(\Omega)=X(e^{j\Omega})$</th>
+    <th>Prueba</th>
+
+  </tr>
+  <tr>
+<td data-th=" Propiedad ">Linealidad</td>
+    <td data-th=" Expresión ">$ax_1[n]+bx_2[n]$</td>
+    <td data-th=" Transformada">$aX_1(\Omega)+bX_2(\Omega)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+  <tr>
+
+<td data-th=" Propiedad ">Traslación en $n$</td>
+    <td data-th=" Expresión ">$x[n-n_0]$</td>
+    <td data-th=" Transformada">$X(\Omega)e^{-jn_0 \Omega}$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+<tr>
+
+
+<tr>
+
+<td data-th=" Propiedad ">Inversión en $n$</td>
+    <td data-th=" Expresión ">$x[-n]$</td>
+    <td data-th=" Transformada">$X(-\Omega)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+
+<tr>
+<td data-th=" Propiedad ">Traslación en $\Omega$</td>
+    <td data-th=" Expresión ">$x[n]e^{j\Omega_0 n}$</td>
+    <td data-th=" Transformada">$X(\Omega-\Omega_0)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+
+
+
+
+ 
+<tr>
+<td data-th=" Propiedad ">Convolución en $n$</td>
+    <td data-th=" Expresión ">$x_1[n]*x_2[n]$</td>
+    <td data-th=" Transformada">$X_1(\Omega)X_2(\Omega)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+
+<tr>
+<td data-th=" Propiedad ">Convolución en $\Omega$</td>
+    <td data-th=" Expresión ">$x_1[n]x_2[n]$</td>
+    <td data-th=" Transformada">$\frac{1}{2\pi}X_1(\Omega)*X_2(\Omega),\mbox{ en }<2\pi>$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+
+<tr>
+<td data-th=" Propiedad ">Acumulación</td>
+    <td data-th=" Expresión ">$\sum\limits_{k=-\infty}^{n}x[k]$</td>
+    <td data-th=" Transformada">$\frac{1}{1-e^{-j\Omega}}X(\Omega)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+
+<tr>
+<td data-th=" Propiedad ">Multiplicación por $n$</td>
+    <td data-th=" Expresión ">$nx[n]$</td>
+    <td data-th=" Transformada">$j\frac{d}{d\Omega}X(\Omega)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+
+<tr>
+<td data-th=" Propiedad ">Teorema de Parseval</td>
+    <td data-th=" Expresión ">$E_x=\sum\limits_{n=-\infty}^\infty{}|x[n]|^2$</td>
+    <td data-th=" Transformada">$E_x=\frac{1}{2\pi}\int\limits_{<2\pi>}|X(\Omega)|^2d\Omega$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+
+</table>
+
+<h3>Tabla de Transformadas de Fourier discreta</h3>
+
+<p>La siguiente tabla muestra las transformadas de Fourier discreta  de señales usuales, es importante se utilice la tabla solo si se tiene claro que significa cada elemento involucrado,  de lo contrario, es importante que se revisen las condiciones bajo las cuales las fórmulas listadas son válidas.</p>
+
+<table class="rwd-table">
+  <tr>
+       <th>#</th>
+    <th>$x[n]$</th>
+    <th>$X(\Omega)=X(e^{j\Omega})$</th>
+    <th>Condición</th>
+    <th>Prueba</th>
+<th>Gráfica de $x[n]$</th>
+<th>Gráfica de $X(\Omega)$</th>
+<th>Espectro de Fourier</th>
+
+  </tr>
+  <tr>
+    <td data-th="#">1.</td>
+    <td data-th=" Expresión ">$\delta [n]$</td>
+    <td data-th=" Transformada">$1$</td>
+    <td data-th="Condición"></td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="Xmp5JcYxVQA?start=9&enablejsapi=1" title="...">
+enlace</button></td>
+<td data-th=" Gráfica de la expresión"></td>
+<td data-th=" Espectro de magnitud"></td>
+<td data-th=" Espectro de fase "></td>
+  </tr>
+
+ <tr>
+    <td data-th="#">2.</td>
+    <td data-th=" Expresión ">$a^nu[n]$</td>
+    <td data-th=" Transformada">$\frac{e^{j\Omega}}{e^{j\Omega}-a}=\frac{1}{1-e^{-j\Omega}a}$</td>
+    <td data-th="Condición">$|a|<1$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+<td data-th=" Gráfica de la expresión"></td>
+<td data-th=" Espectro de magnitud"></td>
+<td data-th=" Espectro de fase "></td>
+  </tr>
+ 
+<tr>
+   <td data-th="#">3.</td>
+    <td data-th=" Expresión ">$na^{n}u[n]$</td>
+    <td data-th=" Transformada">$\frac{ae^{j\Omega}}{(e^{j\Omega}-a)^2}$</td>
+    <td data-th="Condición">$|a|<1$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+<td data-th=" Espectro de magnitud"></td>
+<td data-th=" Espectro de fase "></td>
+  </tr>
+
+ <tr>
+    <td data-th="#">4.</td>
+    <td data-th=" Expresión ">$a^{|n|}$</td>
+    <td data-th=" Transformada">$\frac{1-a^2}{1-2a\cos(\Omega)+a^2}$</td>
+    <td data-th="Condición">$|a|<1$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+<td data-th=" Espectro de magnitud"></td>
+<td data-th=" Espectro de fase "></td>
+  </tr>
+
+ 
+
+
+ <tr>
+    <td data-th="#">5.</td>
+    <td data-th=" Expresión ">$a^n\cos(\Omega_0n+\theta)u[n]$</td>
+    <td data-th=" Transformada">$\frac{e^{j\Omega}[e^{j\Omega}\cos(\theta)-a\cos(\Omega_0-\theta)]}{e^{j2\Omega}-2a\cos(\Omega_0)e^{j\Omega} + a^2}$</td>
+    <td data-th="Condición">$|a|<1$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="Xmp5JcYxVQA?start=9&enablejsapi=1" title="...">
+enlace</button></td>
+<td data-th=" Espectro de magnitud"></td>
+<td data-th=" Espectro de fase "></td>
+  </tr>
+
+ <tr>
+    <td data-th="#">6.</td>
+    <td data-th=" Expresión ">$-a^nu[-n+1]$</td>
+    <td data-th=" Transformada">$\frac{e^{j\Omega}}{e^{j\omega}-a}$</td>
+    <td data-th="Condición">$|a|>1$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="Xmp5JcYxVQA?start=9&enablejsapi=1" title="...">
+enlace</button></td>
+<td data-th=" Espectro de magnitud"></td>
+<td data-th=" Espectro de fase "></td>
+  </tr>
+
+<tr>
+    <td data-th="#">7.</td>
+    <td data-th=" Expresión ">$u[n]-u[n-M]$</td>
+    <td data-th=" Transformada">$\frac{sen(M\Omega/2)}{sin(\Omega/2)}e^{-j\Omega (M-1)/2}$</td>
+    <td data-th="Condición"></td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+<td data-th=" Espectro de magnitud"></td>
+<td data-th=" Espectro de fase "></td>
+  </tr>
+
+
+<tr>
+    <td data-th="#">8.</td>
+    <td data-th=" Expresión ">$\frac{\Omega_c}{\pi}Sa[\Omega_cn]$</td>
+    <td data-th=" Transformada">$\sum\limits_{k=-\infty}^\infty rect\left(\frac{\Omega-2\pi k}{2\Omega_c}\right)$</td>
+    <td data-th="Condición">$\Omega_c<\pi$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+<td data-th=" Espectro de magnitud"></td>
+<td data-th=" Espectro de fase "></td>
+  </tr>
+
+
+<tr>
+   <td data-th="#">9.</td>
+    <td data-th=" Expresión ">$u[n]$</td>
+    <td data-th=" Transformada">$\frac{e^{j\Omega}}{e^{j\Omega}-1}+\pi\sum\limits_{k=-\infty}^{\infty}\delta(\Omega-2\pi k)$</td>
+    <td data-th="Condición"></td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+<td data-th=" Espectro de magnitud"></td>
+<td data-th=" Espectro de fase "></td>
+  </tr>
+
+
+<tr>
+   <td data-th="#">10.</td>
+    <td data-th=" Expresión ">$1$</td>
+    <td data-th=" Transformada">$2\pi\sum\limits_{k=-\infty}^{\infty}\delta(\Omega-2\pi k)$</td>
+    <td data-th="Condición"></td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+<td data-th=" Espectro de magnitud"></td>
+<td data-th=" Espectro de fase "></td>
+  </tr>
+
+
+<tr>
+    <td data-th="#">11.</td>
+    <td data-th=" Expresión ">$e^{j\Omega_0 n}$</td>
+    <td data-th=" Transformada">$2\pi\sum\limits_{k=-\infty}^{\infty}\delta(\Omega-\Omega_0-2\pi k)$</td>
+    <td data-th="Condición"></td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+<td data-th=" Espectro de magnitud"></td>
+<td data-th=" Espectro de fase "></td>
+  </tr>
+
+
+<tr>
+   <td data-th="#">12.</td>
+    <td data-th=" Expresión ">$\cos(\Omega_0n)$</td>
+    <td data-th=" Transformada">$\pi\sum\limits_{k=-\infty}^{\infty}\delta(\Omega-\Omega_0-2\pi k)+\delta(\Omega+\Omega_0-2\pi k)$</td>
+    <td data-th="Condición"></td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+<td data-th=" Espectro de magnitud"></td>
+<td data-th=" Espectro de fase "></td>
+  </tr>
+
+<tr>
+   <td data-th="#">13.</td>
+    <td data-th=" Expresión ">$sen(\Omega_0 n)$</td>
+    <td data-th=" Transformada">$j\pi\sum\limits_{k=-\infty}^{\infty}\delta(\Omega+\Omega_0-2\pi k)-\delta(\Omega-\Omega_0-2\pi k)$</td>
+    <td data-th="Condición"></td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+<td data-th=" Espectro de magnitud"></td>
+<td data-th=" Espectro de fase "></td>
+  </tr>
+
+<tr>
+   <td data-th="#">14.</td>
+    <td data-th=" Expresión ">$cos(\Omega_0 n)u[n]$</td>
+    <td data-th=" Transformada">$\frac{e^{j2\Omega}-e{j\Omega}\cos(\Omega_0)}{e^{j2\Omega}-2e{j\Omega}\cos(\Omega_0)+1}+\frac{\pi}{2}\sum\limits_{k=-\infty}^{\infty}\delta(\Omega-\Omega_0-2\pi k)+\delta(\Omega+\Omega_0-2\pi k)$</td>
+    <td data-th="Condición"></td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+<td data-th=" Espectro de magnitud"></td>
+<td data-th=" Espectro de fase "></td>
+  </tr>
+
+<tr>
+    <td data-th="#">15.</td>
+    <td data-th=" Expresión ">$sin(\Omega_0 n)u[n]$</td>
+    <td data-th=" Transformada">$\frac{e{j\Omega}sin(\Omega_0)}{e^{j2\Omega}-2e{j\Omega}\cos(\Omega_0)+1}+\frac{\pi}{2j}\sum\limits_{k=-\infty}^{\infty}\delta(\Omega-\Omega_0-2\pi k)-\delta(\Omega+\Omega_0-2\pi k)$</td>
+    <td data-th="Condición"> </td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+
+
+</table>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bb-item" id="item16">
+						<div class="content">
+							<div class="scroller">
+                                <h2>Transformada de Laplace $\mathscr{L}$ </h2>
+<p>Se define a la transformada de Laplace bilateral de una función \(f(t)\) en tiempo continuo como</p>
+
+<div id="ecuacion">
+           \begin{equation}
+  \mathscr{L}\left\{ f(t)  \right\}=\int _{ -\infty  }^{ \infty  }{ f(t) } { e }^{ -s t }dt
+ 
+\end{equation}
+
+</div>
+
+<p>siempre y cuando esta integral converja.</p>
+
+<p>Obsérvese que en esta integral desaparece la letra de integración (cuando se termina de integrar), en este caso la \(t\), por lo que este procedimiento da lugar a una nueva expresión en términos de una nueva variable $s\in\mathbb{C}$, por tal motivo se define la siguiente notación:</p>
+
+<div id="ecuacion">
+\begin{equation}
+\mathscr{L}\left\{ f(t)  \right\}=F(s)
+\end{equation}
+    </div>
+
+<p>La transformada de Laplace es un tipo de operación que en general se conoce como transformada integral, puedes reproducir los videos para más información.</p>
+
+<p>Si redefinimos los límites de integración de $0^-$ a $\infty$ damos lugar a la transformada de Laplace unilateral derecha (la que utilizaremos normalmente)</p>
+
+<div id="ecuacion">
+           \begin{equation}
+  \mathscr{L}_+\left\{ f(t)  \right\}=\int _{ 0^-  }^{ \infty  }{ f(t) } { e }^{ -s t }dt
+ 
+\end{equation}
+
+</div>
+
+<p>nuevamente siempre y cuando esta integral converja, esta operación también da lugar a una nueva expresión que depende de la variable $s\in\mathbb{C}$, por tal motivo se define la notación:</p>
+
+<div id="ecuacion">
+           \begin{equation}
+  \mathscr{L}_+\left\{ f(t)  \right\}=F_+(s)
+\end{equation}
+
+</div>
+
+<p>Cuando decimos que la integral converja, nos referimos a que la operación exista, esta existencia en ocasiones queda determinada por los valores que se elijan de la variable $s$, es decir $s\in\xi\subseteq\mathbb{C}$, $\xi$ recibe el nombre de Región de convergencia ROC (por sus siglas en inglés Region Of Convergence) de la transformada.</p>
+
+<p>Observemos que si la señal $f(t)$ es causal, entonces la transformada bilateral y la transformada unilateral derecha coinciden en la definición, es decir, $\mathscr{L}=\mathscr{L}_+$. También observemos que si en la transformada bilateral se tiene que $\mathbb{I}m(s)\subseteq\xi$ entonces se puede hacer $s=j\omega$ y se tiene la definición de transformada de Fourier, es decir, podremos obtener la transformada de Fourier a partir de la transformada de Laplace bilateral siempre y cuando $\mathbb{I}m(s)\subseteq\xi$ .</p>
+
+<div class="video-ww">
+<div class="video-container">
+         <iframe src="https://www.youtube.com/embed/eJXuN3paffs?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg?rel=0&showinfo=0&theme=light" allowfullscreen frameborder="0" width="100%" height="250"></iframe>
+</div>
+</div>
+
+<div class="video-ww">
+<div class="video-container">
+         <iframe src="https://www.youtube.com/embed/T-sxVneUQwk?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg?rel=0&showinfo=0&theme=light" allowfullscreen frameborder="0" width="100%" height="250"></iframe>
+</div>
+</div>
+
+
+<div class="video-ww">
+<div class="video-container">
+         <iframe src="https://www.youtube.com/embed/Kn-RpHUZa5c?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg?rel=0&showinfo=0&theme=light" allowfullscreen frameborder="0" width="100%" height="250"></iframe>
+</div>
+</div>
+
+
+<div class="video-ww">
+<div class="video-container">
+         <iframe src="https://www.youtube.com/embed/GY_gTvgRLSU?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg?rel=0&showinfo=0&theme=light" allowfullscreen frameborder="0" width="100%" height="250"></iframe>
+</div>
+</div>
+
+
+<div class="video-ww">
+<div class="video-container">
+         <iframe src="https://www.youtube.com/embed/XyaGbml296Y?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg&rel=1&showinfo=0&theme=light" allowfullscreen frameborder="0" width="100%" height="250"></iframe>
+</div>
+</div>
+
+<p>En los siguientes ejemplos se encuentra la transformada de Laplace bilateral por medio de la definición, son cálculos directos, es decir, son técnicas de integración usual ($s$ se opera como una constante compleja), se tiene que tener claro como evaluar los límites de integración, si no se recuerda como realizar estas evaluaciones es recomendable que se revise el siguiente enlace antes de continuar, con el fin de que los procedimientos presentados sean transparentes, aunque puedes avanzar si así lo decides.</p>
+
+  <div class="ejemplo">
+<div id="derecha">
+      <p>    <strong>Ejemplo 1.</strong><br></p></div>
+<p>
+            Encuentre la transformada de Laplace bilateral y la ROC de \(f(t)={ e }^{ at }u(t)\)
+</p>
+
+<p>En este caso $\mathscr{L}=\mathscr{L}_+$ ¿Por qué?</p>
+
+<div id="tl1" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Tl1c()">×</a>
+  <div class="overlay-content">
+   
+  
+<div class="video-w">
+<div class="video-container">
+         <iframe src="https://www.youtube.com/embed/Llkj1X1qtXg?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg&rel=0&showinfo=0&theme=light" frameborder="0" width="420" height="315"></iframe>
+</div>
+</div>
+
+</div>
+</div>
+			
+<button class="dmbutton" onclick="Tl1o()">Solución</button>
+</div>          
+
+<div class="ejemplo">
+
+
+<div id="derecha">
+      <p>    <strong>Ejemplo 2.</strong><br></p></div>
+<p>  Encuentre la transformada de Laplace bilateral y la ROC de</p>
+<p> \(a)\; f(t)={ e }^{ -3t }u(t)\)</p>
+
+<p> \(b)\; f(t)={ e }^{ 2t }u(t)\)</p>
+
+<p> \(c)\; f(t)={ e }^{ 2jt }u(t)\)</p>
+
+
+<p> \(d)\; f(t)={ e }^{ (2-3j)t }u(t)\)</p>
+
+
+<p>En estos casos $\mathscr{L}=\mathscr{L}_+$ ¿Por qué?</p>
+
+
+<div id="tl2" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Tl2c()">×</a>
+  <div class="overlay-content">                   
+               
+<div class="video-w">
+<div class="video-container">
+         <iframe src="https://www.youtube.com/embed/D-dE7C8Rs3w?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg&rel=0&showinfo=0&theme=light" frameborder="0" width="420" height="315"></iframe>
+</div>
+</div>
+     
+
+  </div>
+</div>
+<button class="dmbutton" onclick="Tl2o()">Solución</button>
+                  
+                        <br>
+</div>
+
+<div class="ejemplo">
+<div id="derecha">
+      <p>    <strong>Ejemplo 3.</strong><br></p></div>
+
+
+Encuentre la transformada de Laplace bilateral y la ROC de $f(t)={- e }^{ at }u(-t)$
+</p>
+
+<p>En este caso $\mathscr{L}\neq\mathscr{L}_+$ ¿Qué valor tiene $\mathscr{L}_+$?</p>
+
+
+<div id="tl3" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Tl3c()">×</a>
+  <div class="overlay-content">
+    
+<div class="video-w">
+<div class="video-container">
+         <iframe src="https://www.youtube.com/embed/HjLgoYV6Lfo?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg&rel=0&showinfo=0&theme=light" frameborder="0" width="420" height="315"></iframe>
+</div>
+</div>
+                        
+                               
+                        </div>
+</div>
+<button class="dmbutton" onclick="Tl3o()">Solución</button>
+</div>
+
+
+<div class="ejemplo">
+
+
+<div id="derecha">
+      <p>    <strong>Ejemplo 4.</strong><br></p></div>
+<p>  Encuentre la transformada de Laplace bilateral y la ROC de</p>
+<p> \(a)\; f(t)={ -e }^{ 2t }u(-t)\)</p>
+
+<p> \(b)\; f(t)={ -e }^{ (-3+2j)t }u(-t)\)</p>
+
+<p> \(c)\; f(t)={ e }^{ 2t }u(t)\)</p>
+
+
+
+
+<div id="tl4" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Tl4c()">×</a>
+  <div class="overlay-content">                   
+               
+<div class="video-w">
+<div class="video-container">
+         <iframe src="https://www.youtube.com/embed/VpjqnSioZKo?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg&rel=0&showinfo=0&theme=light" frameborder="0" width="420" height="315"></iframe>
+</div>
+</div>
+     
+
+  </div>
+</div>
+<button class="dmbutton" onclick="Tl4o()">Solución</button>
+                  
+                        <br>
+</div>
+
+<p>Los ejemplos anteriores que sean funciones causales pueden ser resueltos usando MATLAB, puedes copiar y ejecutar el ejemplo de código en el siguiente enlace</p>
+
+<pre><code class="matlab"> 
+%MATLAB
+syms   t s 
+syms a positive
+f=exp(a*t)*heaviside(t);
+h=exp((2-3i)*t)*heaviside(t);
+laplace(f)
+laplace(h)
+syms a negative
+f=exp(a*t)*heaviside(t);
+laplace(f)
+</code></pre>
+
+<h3>Propiedades de la transformada de Laplace unilateral derecha</h3>
+
+<p>Nuestro objetivo es trabajar con señales causales, pues en ingeniería la variable independiente de una señal puede ser interpretada como tiempo, y se puede pensar que cuando un fenómeno comienza a observarse, en ese instante accionamos un reloj, es decir, los fenómenos pueden pensarse que transcurren de $[0,\infty)$ y para fines prácticos de $[0^-,\infty)$, en otra sección se explicará con mayor detalle esta abstracción. De ahora en adelante trabajaremos con la definición de transformada de Laplace unilateral derecha para señales causales, y para concordar con la notación usual  fijamos la notación como</p>
+
+<div id="ecuacion">
+           \begin{equation}
+  \mathscr{L}_+\left\{ f(t)  \right\}=\mathscr{L}\left\{ f(t)  \right\}
+\end{equation}
+
+</div>
+
+<p>Al igual que la transformada de Fourier, la transformada de Laplace tiene algunas propiedades que facilitan su uso y que pueden ser deducidas a partir de la definición y de  suponer la estructura de las expresiones a las cuales se aplica. La siguiente tabla muestra algunas de las propiedades, es importante que esta tabla se utilice una vez que se tenga claro el significado de cada propiedad.</p>
+
+<table class="rwd-table">
+  <tr>
+    <th>Propiedad</th>
+    <th> Expresión </th>
+    <th>$F(s)=\mathscr{L}\left\{f(t)\right\}$</th>
+    <th>ROC</th>
+    <th>Prueba</th>
+
+  </tr>
+  <tr>
+    <td data-th=" Propiedad ">Linealidad</td>
+    <td data-th=" Expresión ">$af_1(t)+bf_2(t)$</td>
+    <td data-th=" Transformada">$aF_1(s)+bF_2(s)$</td>
+    <td data-th=" ROC">$\xi_1\bigcap\xi_2$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="dC-KLNnmvpQ?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Propiedad de linealidad">
+video</button></td>
+  </tr>
+
+
+<tr>
+<td data-th=" Propiedad ">Traslación en $s$</td>
+    <td data-th="Expresión ">$f(t)e^{a t}$</td>
+    <td data-th="Transformada">$F(s-a)$</td>
+    <td data-th="ROC ">$\xi+a$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="8MBQLGnsFrQ?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg&start=12&enablejsapi=1" title="Traslación en s">
+video</button></td>
+  </tr>
+
+
+  <tr>
+<td data-th="Propiedad">Traslación en $t$</td>
+    <td data-th="Expresión">$f(t-t_0)u(t-to)$</td>
+    <td data-th="Transformada">$F(s)e^{-t_0s}$</td>
+    <td data-th=" ROC">$\xi$</td> 
+    <td data-th="Prueba "><button class=" dmbutton youtube" id="nUEJkm5aHhc?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg&start=12&enablejsapi=1" title="Traslación en t">
+video</button></td>
+  </tr>
+
+
+<tr>
+<td data-th=" Propiedad ">Escalamiento en $t$</td>
+    <td data-th="Expresión">$f(at)$</td>
+    <td data-th="Transformada">$\frac{1}{a}F(\frac{s}{a}),\;a>0$</td>
+    <td data-th=" ROC">$a\xi$</td> 
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+
+
+
+
+
+
+<tr>
+<td data-th=" Propiedad ">Derivada 1 en $t$</td>
+    <td data-th=" Expresión ">$\frac{d}{dt}f(t)$</td>
+    <td data-th="Transformada">$s F(s)-f(0^-)$</td>
+<td data-th=" ROC ">$\xi$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QAXZuT2YjGQ?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg&start=12&enablejsapi=1" title="Transformada de la derivada">
+video</button></td>
+  </tr>
+
+<tr>
+
+<td data-th=" Propiedad "> Derivada 2 en $t$</td>
+    <td data-th=" Expresión ">$\frac{d^2}{dt^2}f(t)$</td>
+    <td data-th="Transformada">$s^2F(s)-sf(0^-)-\dot{f}(0^-)$</td>
+<td data-th=" ROC">$\xi$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="rbByWYN_i50?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg&start=12&enablejsapi=1" title="Transformada de la segunda derivada">
+video</button></td>
+  </tr>
+
+    <tr>
+<td data-th=" Propiedad "> Derivada n en $t$</td>
+    <td data-th=" Expresión ">$\frac{d^n}{dt^n}f(t)$</td>
+    <td data-th="Transformada">$s^nF(s)-\sum\limits_{k=1}^{n}s^{n-k}f^{k-1}(0^-)$</td>
+<td data-th=" ROC">$\xi$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="Transformada de la n derivada">
+enlace</button></td>
+  </tr>
+<tr>
+<td data-th=" Propiedad "> Derivada en $s$</td>
+    <td data-th=" Expresión ">$t^nf(t)$</td>
+    <td data-th="Transformada">$(-1)^n\frac{d^n}{ds^n}F(s)$</td>
+<td data-th=" ROC">$\xi$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="Transformada de la multiplicación por t">
+enlace</button></td>
+  </tr>
+ 
+<tr>
+<td data-th=" Propiedad ">Convolución en t</td>
+    <td data-th=" Expresión ">$f_1(t)*f_2(t)$</td>
+    <td data-th="Transformada">$F_1(s)F_2(s)$</td>
+<td data-th=" ROC ">$\xi_1\bigcap\xi_2$</td>
+    <td data-th="Prueba "><button class=" dmbutton youtube" id="DCdH4McO6vQ?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg&start=12&enablejsapi=1" title="Transformada de una convolución">
+video</button></td>
+  </tr>
+
+<tr>
+<td data-th=" Propiedad ">Convolución en s</td>
+    <td data-th=" Expresión ">$f_1(t)f_2(t)$</td>
+    <td data-th="Transformada">$\frac{1}{2\pi j}F_1(s)*F_2(s)$</td>
+<td data-th=" ROC ">$\xi_1\bigcap\xi_2$</td>
+    <td data-th="Prueba "><button class=" dmbutton youtube" id="" title="Transformada de un producto">
+enlace</button></td>
+  </tr>
+<tr>
+
+
+<td data-th=" Propiedad ">Integral I</td>
+    <td data-th=" Expresión ">$\int_{0^-}^{t}f(\tau) d\tau$</td>
+    <td data-th="Transformada">$\frac{F(s)}{s}$</td>
+    <td data-th=" ROC ">$\xi_1-{0}$</td>    
+<td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+    
+    <td data-th=" Propiedad ">Integral II</td>
+    <td data-th=" Expresión ">$\int_{-\infty}^{t}f(\tau) d\tau$</td>
+    <td data-th="Transformada">$\frac{F(s)}{s}+\frac{1}{s}\int_{-\infty}^{0^-}f(\tau) d\tau$</td>
+    <td data-th=" ROC ">$\xi_1-{0}$</td>    
+<td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+    
+<tr>
+<td data-th=" Propiedad ">Teorema de valor final</td>
+    <td data-th=" Expresión ">$\lim\limits_{t\to\infty}f(t)$</td>
+    <td data-th="Transformada">$\lim\limits_{s\to 0}sF(s)$<br> si $p$ es polo de $sF(s)$<br>$\mathbb{R}e(p)<0$ </td>
+    <td data-th=" ROC "></td>    
+<td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+<tr>
+<td data-th=" Propiedad ">Teorema de valor inicial</td>
+    <td data-th=" Expresión ">$\lim\limits_{t\to 0^+}f(t)$</td>
+    <td data-th="Transformada">$\lim\limits_{s\to \infty}sF(s)$<br> $F(s)$ estrictamente propia </td>
+    <td data-th=" ROC "></td>    
+<td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+
+</table>
+
+<h3>Tabla de Transformadas de Laplace</h3>
+
+<p>La siguiente tabla muestra las transformadas de Laplace de señales causales, la región de convergencia (ROC), y la prueba del resultado,  es importante que cuando se use esta tabla se tenga claro el significado de cada termino.</p>
+
+<table class="rwd-table">
+  <tr>
+       <th>#</th>
+    <th>$f(t)$</th>
+    <th>$F(s)=\mathscr{L}\left\{f(t)\right\}$</th>
+    <th>ROC</th>
+    <th>Prueba</th>
+  </tr>
+
+
+
+<tr>
+    <td data-th="#">1.</td>
+    <td data-th=" Expresión ">$\delta (t)$</td>
+    <td data-th=" Transformada">$1$</td>
+    <td data-th="ROC"> $\mathbb{C}$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la delta de Dirac">
+video</button></td>
+  </tr>
+
+ <tr>
+    <td data-th="#">2.</td>
+    <td data-th=" Expresión">$u(t)$</td>
+    <td data-th=" Transformada">$\frac{1}{s}$</td>
+    <td data-th="ROC">$\mathbb{R}e(s)>0$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="4eUtGPNdP9I?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada del escalón">
+video</button></td>
+  </tr>
+
+
+  <tr>
+    <td data-th="#">3.</td>
+    <td data-th=" Expresión">$tu(t)$</td>
+    <td data-th=" Transformada">$\frac{1}{s^2}$</td>
+    <td data-th="ROC">$\mathbb{R}e(s)>0$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="X-eE0u8CaEM?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la rampa o identidad">
+video</button></td>
+  </tr>
+
+  <tr>
+    <td data-th="#">4.</td>
+    <td data-th=" Expresión">$t^nu(t)$</td>
+    <td data-th=" Transformada">$\frac{n!}{s^{n+1}}$</td>
+    <td data-th="ROC">$\mathbb{R}e(s)>0$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="Q447bwDJhFY?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de potencias">
+video</button></td>
+  </tr>
+
+
+  <tr>
+    <td data-th="#">5.</td>
+    <td data-th=" Expresión">$e^{at}u(t)$</td>
+    <td data-th=" Transformada">$\frac{1}{s-a}$</td>
+    <td data-th="ROC">$\mathbb{R}e(s)>\mathbb{R}e(a)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="_Q7bIg9YEEw?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la función exponencial">
+video</button></td>
+  </tr>
+
+
+<tr>
+   <td data-th="#">6.</td>
+    <td data-th=" Expresión ">$cos(\omega  t)u(t)$</td>
+    <td data-th=" Transformada">$\frac{s}{s^2+\omega^2}$</td>
+    <td data-th="ROC">$\mathbb{R}e(s)>0$ </td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="nDT-QJ1oaoI?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="transformada de la función coseno causal">
+video</button></td>
+  </tr>
+
+
+<tr>
+   <td data-th="#">7.</td>
+    <td data-th=" Expresión ">$sen(\omega  t)u(t)$</td>
+    <td data-th=" Transformada">$\frac{\omega}{s^2+\omega^2}$</td>
+    <td data-th="ROC"> $\mathbb{R}e(s)>0$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="dqXvLHWcqbo?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Tranformada del la función seno causal">
+video</button></td>
+  </tr>
+
+ <tr>
+    <td data-th="#">8.</td>
+    <td data-th=" Expresión ">$te^{at}u(t)$</td>
+    <td data-th=" Transformada">$\frac{1}{(s-a)^2}$</td>
+    <td data-th="Condición">$\mathbb{R}e(s)>\mathbb{R}e(a)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+ 
+ <tr>
+    <td data-th="#">9.</td>
+    <td data-th=" Expresión ">$t^ne^{at}u(t)$</td>
+    <td data-th=" Transformada">$\frac{n!}{(s-a)^{n+1}}$</td>
+    <td data-th="Condición">$\mathbb{R}e(s)>\mathbb{R}e(a)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+
+
+
+
+ <tr>
+    <td data-th="#">10.</td>
+    <td data-th=" Expresión ">$e^{at}cos(\omega t)u(t)$</td>
+    <td data-th=" Transformada">$\frac{s-a}{(s-a)^2+\omega^2}$</td>
+    <td data-th="Condición">$\mathbb{R}e(s)>\mathbb{R}e(a)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+<td data-th=" Espectro de magnitud"></td>
+<td data-th=" Espectro de fase "></td>
+  </tr>
+
+ <tr>
+    <td data-th="#">11.</td>
+    <td data-th=" Expresión ">$e^{at}sen(\omega t)u(t)$</td>
+    <td data-th=" Transformada">$\frac{\omega}{(s-a)^2 + \omega^2}$</td>
+    <td data-th="Condición">$\mathbb{R}e(s)>\mathbb{R}e(a)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="Xmp5JcYxVQA?start=9&enablejsapi=1" title="...">
+enlace</button></td>
+<td data-th=" Espectro de magnitud"></td>
+<td data-th=" Espectro de fase "></td>
+  </tr>
+
+    <!--
+<tr>
+    <td data-th="#">12.</td>
+    <td data-th=" Expresión ">$t^ne^{at}cos(\omega t)u(t)$</td>
+    <td data-th=" Transformada"></td>
+    <td data-th="Condición"></td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+
+  </tr>
+
+
+<tr>
+    <td data-th="#">13.</td>
+    <td data-th=" Expresión ">$t^ne^{at}sen(\omega t)u(t)$</td>
+    <td data-th=" Transformada"></td>
+    <td data-th="Condición"></td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+
+  </tr>
+-->
+
+    <tr>
+    <td data-th="#">12.</td>
+    <td data-th=" Expresión ">$\frac{B-Aa}{b-a}e^{-at}u(t)+$<br>$\frac{B-Ab}{a-b}e^{-bt}u(t),\;a\neq b,\;cons.$</td>
+    <td data-th=" Transformada">$\frac{As+B}{(s+a)(s+b)}$</td>
+    <td data-th="Condición">$\mathbb{R}e(s)>c$<br>$c=max\{\mathbb{R}e(-a),\mathbb{R}e(-b)\}$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+
+  </tr>
+    
+        <tr>
+    <td data-th="#">13.</td>
+    <td data-th=" Expresión ">$(B-Aa)te^{-at}u(t)+$<br>$Ae^{-at}u(t),\;A,\,B,\,a,\;cons.$</td>
+    <td data-th=" Transformada">$\frac{As+B}{(s+a)^2}$</td>
+    <td data-th="Condición">$\mathbb{R}e(s)>\mathbb{R}e(-a)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+
+  </tr>
+
+    
+
+<tr>
+   <td data-th="#">14.</td>
+    <td data-th=" Expresión ">$Ae^{-at}\cos(\sqrt{c-a^2} t)u(t)+$<br>$\frac{B-Aa}{\sqrt{c-a^2}}e^{-at}sen(\sqrt{c-a^2} t)u(t)$<br>$A,\,B,\;cons$<br>$a,\,c\in\mathbb{R},\;c-a^2>0$</td>
+    <td data-th=" Transformada">$\frac{As+B}{s^2+2as+c}$</td>
+    <td data-th="Condición">$\mathbb{R}e(s)>-a$ </td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+
+<tr>
+   <td data-th="#">15.</td>
+    <td data-th=" Expresión ">$re^{-at}\cos(\omega t+\theta)u(t)$ <br>$r=\sqrt{\frac{A^2c+B^2-2ABa}{c-a^2}},$<br>$\theta=\tan^{-1}\left(\frac{Aa-B}{A\sqrt{c-a^2}}\right),$<br> $\omega=\sqrt{c-a^2}$<br>$A,\,B,\;cons$<br>$a,\,c\in\mathbb{R},\;c-a^2>0$</td>
+    <td data-th=" Transformada">$\frac{As+B}{s^2+2as+c}$</td>
+    <td data-th="Condición">$\mathbb{R}e(s)>-a$ </td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+
+
+     <tr>
+    <td data-th="#">16.</td>
+    <td data-th=" Expresión ">$\frac{B-A(a+\sqrt{a^2-c})}{-2\sqrt{a^2-c}}e^{-(a+\sqrt{a^2-c})t}u(t)+$<br>$\frac{B-A(a-\sqrt{a^2-c})}{2\sqrt{a^2-c}}e^{-(a-\sqrt{a^2-c})t}u(t)$<br>$A,\,B,\;cons$<br>$a,\,c\in\mathbb{R},\;c-a^2< 0$</td>
+    <td data-th=" Transformada">$\frac{As+B}{s^2+2as+c}$</td>
+    <td data-th="Condición">$\mathbb{R}e(s)>-a+\sqrt{a^2-c}$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+
+  </tr>
+    
+    
+    
+<tr>
+   <td data-th="#">17.</td>
+    <td data-th=" Expresión ">$re^{-at}\cos(\omega t+\theta)u(t)$<br>$r,\,a,\,\omega,\,\theta\in\mathbb{R}$</td>
+    <td data-th=" Transformada">$\frac{0.5re^{j\theta}}{s+a-j\omega}+ \frac{0.5re^{-j\theta}}{s+a+j\omega}$</td>
+    <td data-th="Condición">$\mathbb{R}e(s)>-a$ </td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+
+</table>
+
+<div class="ejemplo">
+
+
+<div id="derecha">
+      <p>    <strong>Ejemplo 5.</strong><br></p></div>
+<p>  Resuelve los siguientes ejercicios</p>
+
+<p>a) $$\ddot{y}(t)-y(t)=-t$$ con $y(0)=0,\;\dot{y}(0)=1$ <button class=" dmbutton youtube" id="BmuYXVUSy5g?list=PLSC7gO5dTNPc1iu55uqvhxwLS1XHM--FY&start=0&enablejsapi=1" title="">
+solución</button></p>
+
+<p> b)$$\ddot{y}(t)-2\dot{y}(t)+5y(t)=-8e^{-t}$$ con $y(0)=2,\;\dot{y}(0)=12$ <button class=" dmbutton youtube" id="BmuYXVUSy5g?list=PLSC7gO5dTNPc1iu55uqvhxwLS1XHM--FY&start=132&enablejsapi=1" title="">
+solución</button></p>
+
+<p> c)$$\dot{y}(t)=1-\int_o^ty(t-\tau)e^{-2\tau}d\tau$$ con $y(0)=1$ <button class=" dmbutton youtube" id="BmuYXVUSy5g?list=PLSC7gO5dTNPc1iu55uqvhxwLS1XHM--FY&start=624&enablejsapi=1" title="">
+solución</button></p>
+
+<p> d)$$\ddot{x}(t)+16x(t)=f(t)$$ con $x(0)=0,\;\dot{x}(0)=1$ $$f(t)=\begin{cases}
+\cos(4t)  & \text{si } 0\leq t\leq\pi \\
+0 & \text{en otro caso}
+\end{cases}$$
+<button class=" dmbutton youtube" id="sUiZrVMxtn4?list=PLSC7gO5dTNPc1iu55uqvhxwLS1XHM--FY&start=0&enablejsapi=1" title="">
+solución</button>
+</p>
+
+</div>
+
+<div class="ejemplo">
+
+
+<div id="derecha">
+      <p>    <strong>Ejemplo 5.</strong><br></p></div>
+
+
+
+<p>e) $$\ddot{y}(t)-2\dot{y}(t)+y(t)=f(t)$$ con $y(0)=0,\;\dot{y}(0)=0$ $$f(t)=\begin{cases}
+1  & \text{si } 1\leq t < 2 \\
+-1  & \text{si } 2\leq t\leq 3 \\
+0 & \text{en otro caso}
+\end{cases}$$
+<button class=" dmbutton youtube" id="sUiZrVMxtn4?list=PLSC7gO5dTNPc1iu55uqvhxwLS1XHM--FY&start=590&enablejsapi=1" title="">
+solución</button>
+</p>
+
+
+
+
+<p>f) $$L\frac{d}{dt}i+\frac{1}{C}\int_0^ti(\tau)d\tau+Ri=E$$ con $L=0.1$, $C=10^{-3}$, $R=20$, $i(0)=0$ $$E(t)=\begin{cases}
+120  & \text{si } 0\leq t < 1 \\
+0 & \text{en otro caso}
+\end{cases}$$
+<button class=" dmbutton youtube" id="I-AZnTvUpcw?list=PLSC7gO5dTNPc1iu55uqvhxwLS1XHM--FY&start=0&enablejsapi=1" title="">
+solución</button>
+</p>
+
+
+
+<p>  
+g)
+\begin{align*}
+
+        &\frac{d}{dt}x(t)-3x(t)=-2y(t)\\
+&\frac{d}{dt}y(t)-3y(t)+2x(t)=0\\
+        \end{align*}
+con $x(0)=1,\;y(0)=1$
+<button class=" dmbutton youtube" id="Kmpu4tA-4os?list=PLSC7gO5dTNPc1iu55uqvhxwLS1XHM--FY&start=0&enablejsapi=1" title="">
+solución</button>
+</p>
+
+
+</div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bb-item" id="item17">
+						<div class="content">
+							<div class="scroller">
+                                <h2>Transformada $\mathscr{Z}$</h2>
+<p>Se define a la transformada $\mathscr{Z}$ (zeta) de una función \(x[n]\) en tiempo discreto como</p>
+
+<div id="ecuacion">
+           \begin{equation}
+  \mathscr{Z}\left\{ x[n]  \right\}=\sum _{ n=-\infty  }^{ \infty  }{ x[n] } { z }^{ -n }
+ 
+\end{equation}
+
+</div>
+
+<p>siempre y cuando esta serie converja.</p>
+
+<p>Obsérvese que en esta serie desaparece la variable (cuando se termina de realizar la operación), en este caso la \(n\), por lo que este procedimiento da lugar a una nueva expresión en términos de una nueva variable $z\in\mathbb{C}$, por tal motivo se define la siguiente notación:</p>
+
+<div id="ecuacion">
+\begin{equation}
+\mathscr{Z}\left\{ x[n]  \right\}=X(z)
+\end{equation}
+    </div>
+
+<p>Si redefinimos los límites de la suma de $0$ a $\infty$ damos lugar a la transformada de zeta unilateral derecha (la que utilizaremos normalmente)</p>
+
+
+<div id="ecuacion">
+           \begin{equation}
+  \mathscr{Z}_+\left\{ x[n]  \right\}=\sum _{n= 0  }^{ \infty  }{ x[n] } { z }^{ -n }
+ 
+\end{equation}
+
+</div>
+
+<p>nuevamente siempre y cuando esta serie converja, esta operación también da lugar a una nueva expresión que depende de la variable $z\in\mathbb{C}$, por tal motivo se define la notación:</p>
+
+<div id="ecuacion">
+           \begin{equation}
+  \mathscr{Z}_+\left\{ x[n]  \right\}=X_+(z)
+\end{equation}
+
+</div>
+
+<p>Cuando decimos que la serie converja, nos referimos a que la expresión de la transformada tenga sentido, esta existencia en ocasiones queda determinada por los valores que se elijan de la variable $z$, es decir $z\in\xi\subseteq\mathbb{C}$, $\xi$ recibe el nombre de Región de convergencia ROC (por sus siglas en inglés Region Of Convergence) de la transformada.</p>
+
+<p>Observemos que si la señal $x[n]$ es causal, entonces la transformada bilateral y la transformada unilateral derecha coinciden en la definición, es decir, $\mathscr{Z}=\mathscr{Z}_+$. También observemos que si en la transformada bilateral se tiene que $e^{j\Omega}\subseteq\xi$, $\forall \Omega\in\mathbb{R}$ entonces se puede hacer $z=e^{j\Omega}$ y se tiene la definición de transformada de Fourier discreta, es decir, podremos obtener la transformada de Fourier discreta a partir de la transformada de zeta bilateral siempre y cuando el circulo unitario en el plano $z$ pertenezca a la región de convergencia  $\xi$.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bb-item" id="item3">
+						<div class="content">
+							<div class="scroller">
+                                <h2>Sistemas</h2>
+                                
+                                <iframe src="http://slides.com/ra_fa/sistemas/embed" width="100%" height="620" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+
+                            </div>
+                        </div>
+                    </div>
+                    
+				</div>
+				
+				<nav>
+					<span id="bb-nav-prev">&larr;</span>
+					<span id="bb-nav-next">&rarr;</span>
+				</nav>
+
+				<span id="tblcontents" class="menu-button">Table of Contents</span>
+
+			</div>
+		</div><!-- /container -->
+		
+		<script src="js/jquery.mousewheel.js"></script>
+		<script src="js/jquery.jscrollpane.min.js"></script>
+		<script src="js/jquerypp.custom.js"></script>
+		<script src="js/jquery.bookblock.js"></script>
+		<script src="js/page.js"></script>
+		<script>
+			$(function() {
+
+				Page.init();
+
+			});
+		</script>
+        <script src="js/ejeFou.js"></script>
+        <!-- INcluimos para correr las cosas-->
+        <script src="js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+    
+<script type="text/javascript" src="jquery.youtubepopup.min.js"></script>
+        <div id="cubierta1">Cargando matemáticas..</div>
+    				<div id="cubierta">Cargando multimedia..</div>
+                       		<script src="js/cargar.js"></script>
+
+
+
+	</body>
+</html>
+
+
