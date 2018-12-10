@@ -1,0 +1,284 @@
+<h3>Definición de convolución</h3>
+<p>La operación de convolución entre dos señales $f(t)$ y $x(t)$ genera una nueva señal $g(t)$, la operación se define como:</p>
+
+<div id="ecuacion">
+            \begin{equation}
+  g(t)=f(t)*x(t)=\int_{-\infty}^{\infty}f(\tau)x(t-\tau)\,d\tau
+ 
+\end{equation}
+</div>
+
+<p>Nota: También se conoce a la convolución como producto composición, integral de superposición, integral de Duhamel. </p>
+
+<p>Esta operación tiene diferentes simplificaciones dependiendo de como sea la forma de las señales involucradas, comenzamos con el caso que aparece frecuentemente en sistemas. </p>
+
+<div class="ejemplo">
+<div id="derecha">
+      <p>    <strong>Señales causales</strong><br></p></div>
+<p>Si las señales son causales y tienen longitud infinita entonces la convolución es:</p>
+$$g(t)=\begin{cases}
+\int_0^t f(\tau)x(t-\tau)\,d\tau&\mbox{si }0\leq t\\
+0&\mbox{en otro caso}
+\end{cases}$$
+
+<div id="ctc5" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Ctc5c()">×</a>
+  <div class="overlay-content">                   
+Escribiremos el escalón unitario de manera implícita  $f(t)u(t)$ y $x(t)u(t)$, al sustituir en la definición de convolución
+
+$$\int_{-\infty}^{\infty}f(\tau)u(\tau)x(t-\tau)u(t-\tau)\,d\tau$$                
+     
+Si $\tau<0$ entonces $u(\tau)=0$ así la integral se reduce a:
+
+$$\int_{0}^{\infty}f(\tau)u(\tau)x(t-\tau)u(t-\tau)\,d\tau$$ 
+
+Si $t-\tau < 0$ equivalentemente $t < \tau$ entonces $u(t-\tau)=0$ y los escalones tienen valor unitario, así la integral se reduce a:
+
+$$\int_{0}^{t}f(\tau)x(t-\tau)\,d\tau$$ 
+
+               
+  </div>
+</div>
+<button class="dmbutton" onclick="Ctc5o()">Argumentos</button>
+                  
+                        <br>
+</div>
+<p>Otra caso para tener en cuenta es cuando las señales tienen longitud finita, es decir, son cero para casi todo su intervalo de definición, en tales circunstancias se puede dar una sugerencia de los pasos a seguir para realizar la convolución. </p>
+
+<div class="ejemplo">
+
+<div id="derecha">
+      <p>    <strong>Pasos para realizar convoluciones</strong><br></p></div>
+
+<p>1. Seleccionar una de las dos señal para graficar con el argumento $\tau$</p>
+<p>2. La segunda señal se gráfica con el argumento $-\tau$</p>
+<p>3. En la segunda señal para cada valor horizontal de cambio de geometría se suma la variable $t$ </p>
+<p>4. Se traslada la segunda señal mediante la variable $t\in\mathbb{R}$ hasta que $f(\tau)g(t-\tau)$ no sea cero </p>
+<p>5. Mediante el paso anterior se eligen los valores de $\tau$ para realizar la integral </p>  
+<p>6. Se anota el intervalo de $t$ para los cuales los pasos 4 y 5 son válidos</p>
+<p>7. Se repite los pasos 4-6 hasta que $t$  tome todos los valores reales </p>               
+</div>
+    
+<p>De la definición es fácil ver que se satisfacen las siguientes propiedades</p>  
+    
+<div class="ejemplo">
+
+
+<div id="derecha">
+      <p>    <strong>Propiedades de la convolución</strong><br></p></div>
+1) La convolución conmuta $$f(t)*x(t)=x(t)*f(t)$$
+<div id="ctc1" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Ctc1c()">×</a>
+  <div class="overlay-content">                   
+Escribiremos el escalón unitario de manera implícita  $f(t)u(t)$ y $x(t)u(t)$, al sustituir en la definición de convolución
+
+  </div>
+</div>
+<button class="dmbutton" onclick="Ctc1o()">Argumentos</button>
+                  
+                        <br>
+2) La convolución asocia $$\left(f(t)*x(t)\right)*z(t)=f(t)*\left(x(t)*z(t)\right)$$
+<div id="ctc2" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Ctc2c()">×</a>
+  <div class="overlay-content">                   
+Escribiremos el escalón unitario de manera implícita  $f(t)u(t)$ y $x(t)u(t)$, al sustituir en la definición de convolución
+
+  </div>
+</div>
+<button class="dmbutton" onclick="Ctc2o()">Argumentos</button>
+<br>
+3) La convolución distribuye $$f(t)*\left(x(t)+z(t)\right)=f(t)*x(t)+f(t)*z(t)$$
+<div id="ctc3" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Ctc3c()">×</a>
+  <div class="overlay-content">                   
+Escribiremos el escalón unitario de manera implícita  $f(t)u(t)$ y $x(t)u(t)$, al sustituir en la definición de convolución
+
+$$\int_{-\infty}^{\infty}f(\tau)u(\tau)x(t-\tau)u(t-\tau)\,d\tau$$                
+              
+  </div>
+</div>
+<button class="dmbutton" onclick="Ctc3o()">Argumentos</button>
+
+<br>
+
+4) Identidad $$f(t)*\delta(t)=f(t)$$
+
+<div id="ctc4" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Ctc4c()">×</a>
+  <div class="overlay-content">                   
+Escribiremos el escalón unitario de manera implícita  $f(t)u(t)$ y $x(t)u(t)$, al sustituir en la definición de convolución
+
+$$\int_{-\infty}^{\infty}f(\tau)u(\tau)x(t-\tau)u(t-\tau)\,d\tau$$                
+              
+  </div>
+</div>
+<button class="dmbutton" onclick="Ctc4o()">Argumentos</button>
+
+<br>
+
+5) Traslación. Si $f(t)*x(t)=y(t)$ entonces $$f(t-t_0)*x(t)=y(t-t_0)$$
+<br>
+
+6) Constantes. Si $a$ es constante entonces $$af(t)*x(t)=f(t)*ax(t)=a(f(t)*x(t))$$
+<br>
+
+7) Derivación con delta. Si $m\in\mathbb{N}$ entonces $$f(t)*\delta^{(m)}(t)=f^{(m)}(t)$$
+<br>
+
+8) Derivación. Si $f(t)*x(t)=y(t)$ y $m,n\in\mathbb{N}$ entonces $$f^{(m)}(t)*x^{(n)}(t)=y^{(m+n)}(t)$$
+<br>
+
+9) Escalamiento. Si $f(t)*x(t)=y(t)$ y $a\neq 0\in\mathbb{R}$ entonces $$f(at)*x(at)=\frac{1}{|a|}y(at)$$
+<br>
+
+</div>
+<h3>Observaciones</h3>
+    
+<ul>
+    <li>La convolución no necesariamente existe, i. e., no siempre se puede realizar para cualesquiera dos señales, por ejemplo si se quiere realizar $u(t)*u(-t)$ donde $u(t)$ es un escalón unitario, veremos que no hay convergencia para ningún valor de $t$</li>
+    <li>La convolución de señales periódicas también tiene detalles técnicos, es por eso que algunas veces se define una operación conocida como convolución periódica, que es similar a la definición de convolución salvo que los límites de integración no son infinitos.</li>
+    <li>El resultado de la convolución de dos señales es "más suave" que las señales involucradas.   </li>    
+</ul>
+    
+<p>Para los casos en donde las señales son causales se puede construir la siguiente tabla, la deducción de cada fórmula es de manera directa </p>
+
+<table class="rwd-table">
+  <tr>
+       <th>#</th>
+    <th>$f(t)$</th>
+    <th>$x(t)$</th>
+    <th>$f(t)*x(t)$</th>
+    <th>Prueba</th>
+  </tr>
+
+<tr>
+    <td data-th="#">1.</td>
+    <td data-th=" Señal ">$f(t)$</td>
+    <td data-th=" Señal">$\delta(t-T)$</td>
+    <td data-th="Convolución"> $f(t-T)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la delta de Dirac">
+video</button></td>
+  </tr>
+
+<tr>
+    <td data-th="#">2.</td>
+    <td data-th=" Señal ">$e^{\lambda t}u(t)$</td>
+    <td data-th=" Señal">$u(t)$</td>
+    <td data-th="Convolución"> $\frac{e^{\lambda t }-1}{\lambda}u(t)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la delta de Dirac">
+video</button></td>
+  </tr>
+
+<tr>
+    <td data-th="#">3.</td>
+    <td data-th=" Señal ">$u(t)$</td>
+    <td data-th=" Señal">$u(t)$</td>
+    <td data-th="Convolución"> $tu(t)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la delta de Dirac">
+video</button></td>
+  </tr>
+
+<tr>
+    <td data-th="#">4.</td>
+    <td data-th=" Señal ">$e^{\lambda_1 t}u(t)$</td>
+    <td data-th=" Señal">$e^{\lambda_2 t}u(t)$</td>
+    <td data-th="Convolución"> $\frac{e^{\lambda_1 t }-e^{\lambda_2 t }}{\lambda_1-\lambda_2}u(t)$<br>$\lambda_1\neq\lambda_2$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la delta de Dirac">
+video</button></td>
+  </tr>
+
+
+<tr>
+    <td data-th="#">5.</td>
+    <td data-th=" Señal ">$e^{\lambda t}u(t)$</td>
+    <td data-th=" Señal">$e^{\lambda t}u(t)$</td>
+    <td data-th="Convolución"> $te^{\lambda_1 t}u(t)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la delta de Dirac">
+video</button></td>
+  </tr>
+
+<tr>
+    <td data-th="#">6.</td>
+    <td data-th=" Señal ">$te^{\lambda t}u(t)$</td>
+    <td data-th=" Señal">$e^{\lambda t}u(t)$</td>
+    <td data-th="Convolución"> $\frac{1}{2}t^2e^{\lambda t}u(t)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la delta de Dirac">
+video</button></td>
+  </tr>
+
+<tr>
+    <td data-th="#">7.</td>
+    <td data-th=" Señal ">$t^Nu(t)$</td>
+    <td data-th=" Señal">$e^{\lambda t}u(t)$</td>
+    <td data-th="Convolución"> $\frac{N!e^{\lambda t}}{\lambda^{N+1}}u(t)-$<br>
+$\sum\limits_{k=0}^N\frac{N!t^{N-k}}{\lambda^{k+1}(N-k)!}u(t)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la delta de Dirac">
+video</button></td>
+  </tr>
+
+
+<tr>
+    <td data-th="#">8.</td>
+    <td data-th=" Señal ">$t^Mu(t)$</td>
+    <td data-th=" Señal">$t^Nu(t)$</td>
+    <td data-th="Convolución"> $\frac{M!N!}{(M+N+1)!}t^{M+N+1}u(t)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la delta de Dirac">
+video</button></td>
+  </tr>
+
+<tr>
+    <td data-th="#">9.</td>
+    <td data-th=" Señal ">$te^{\lambda_1 t}u(t)$</td>
+    <td data-th=" Señal">$e^{\lambda_2 t}u(t)$</td>
+    <td data-th="Convolución"> $\frac{e^{\lambda_2 t }-e^{\lambda_1 t }+(\lambda_1-\lambda_2)te^{\lambda_1 t }}{(\lambda_1-\lambda_2)^2}u(t)$<br>$\lambda_1\neq\lambda_2$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la delta de Dirac">
+video</button></td>
+  </tr>
+
+<tr>
+    <td data-th="#">10.</td>
+    <td data-th=" Señal ">$t^Me^{\lambda t}u(t)$</td>
+    <td data-th=" Señal">$t^Ne^{\lambda t}u(t)$</td>
+    <td data-th="Convolución"> $\frac{M!N!}{(N+M+1)!}t^{M+N+1}e^{\lambda t}u(t)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la delta de Dirac">
+video</button></td>
+  </tr>
+
+
+<tr>
+    <td data-th="#">11.</td>
+    <td data-th=" Señal ">$e^{-a t}cos(\beta t + \theta)u(t)$</td>
+    <td data-th=" Señal">$e^{\lambda t}u(t)$</td>
+    <td data-th="Convolución"> $\frac{cos(\theta-\phi)e^{-\lambda t}-e^{-at}cos(\beta t +\theta-\phi)}{\sqrt{(a+\lambda)^2+\beta^2}}u(t)$<br> $\phi=tan^{-1}\left(-\beta/(a+\lambda)\right)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la delta de Dirac">
+video</button></td>
+  </tr>
+
+<tr>
+    <td data-th="#">12.</td>
+    <td data-th=" Señal ">$e^{-a t}cos(\omega t)u(t)$</td>
+    <td data-th=" Señal">$e^{-a t}sen(\omega t)u(t)$</td>
+    <td data-th="Convolución"> $\frac{1}{2}te^{-at}sen(\omega t)u(t)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la delta de Dirac">
+video</button></td>
+  </tr>
+
+<tr>
+    <td data-th="#">13.</td>
+    <td data-th=" Señal ">$e^{-a t}sen(\omega t)u(t)$</td>
+    <td data-th=" Señal">$e^{-a t}sen(\omega t)u(t)$</td>
+    <td data-th="Convolución"> $\frac{1}{2\omega}e^{-at}sen(\omega t)u(t)-\frac{1}{2}te^{-at}cos(\omega t)u(t)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la delta de Dirac">
+video</button></td>
+  </tr>
+
+<tr>
+    <td data-th="#">14.</td>
+    <td data-th=" Señal ">$e^{-a t}cos(\omega t)u(t)$</td>
+    <td data-th=" Señal">$e^{-a t}cos(\omega t)u(t)$</td>
+    <td data-th="Convolución"> $\frac{1}{2\omega}e^{-at}sen(\omega t)u(t)+\frac{1}{2}te^{-at}cos(\omega t)u(t)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la delta de Dirac">
+video</button></td>
+  </tr>
+</table>
+    

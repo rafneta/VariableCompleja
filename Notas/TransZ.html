@@ -1,0 +1,44 @@
+<p>Se define a la transformada $\mathscr{Z}$ (zeta) de una función \(x[n]\) en tiempo discreto como</p>
+
+<div id="ecuacion">
+           \begin{equation}
+  \mathscr{Z}\left\{ x[n]  \right\}=\sum _{ n=-\infty  }^{ \infty  }{ x[n] } { z }^{ -n }
+ 
+\end{equation}
+
+</div>
+
+<p>siempre y cuando esta serie converja.</p>
+
+<p>Obsérvese que en esta serie desaparece la variable (cuando se termina de realizar la operación), en este caso la \(n\), por lo que este procedimiento da lugar a una nueva expresión en términos de una nueva variable $z\in\mathbb{C}$, por tal motivo se define la siguiente notación:</p>
+
+<div id="ecuacion">
+\begin{equation}
+\mathscr{Z}\left\{ x[n]  \right\}=X(z)
+\end{equation}
+    </div>
+
+<p>Si redefinimos los límites de la suma de $0$ a $\infty$ damos lugar a la transformada de zeta unilateral derecha (la que utilizaremos normalmente)</p>
+
+
+<div id="ecuacion">
+           \begin{equation}
+  \mathscr{Z}_+\left\{ x[n]  \right\}=\sum _{n= 0  }^{ \infty  }{ x[n] } { z }^{ -n }
+ 
+\end{equation}
+
+</div>
+
+<p>nuevamente siempre y cuando esta serie converja, esta operación también da lugar a una nueva expresión que depende de la variable $z\in\mathbb{C}$, por tal motivo se define la notación:</p>
+
+<div id="ecuacion">
+           \begin{equation}
+  \mathscr{Z}_+\left\{ x[n]  \right\}=X_+(z)
+\end{equation}
+
+</div>
+
+<p>Cuando decimos que la serie converja, nos referimos a que la expresión de la transformada tenga sentido, esta existencia en ocasiones queda determinada por los valores que se elijan de la variable $z$, es decir $z\in\xi\subseteq\mathbb{C}$, $\xi$ recibe el nombre de Región de convergencia ROC (por sus siglas en inglés Region Of Convergence) de la transformada.</p>
+
+<p>Observemos que si la señal $x[n]$ es causal, entonces la transformada bilateral y la transformada unilateral derecha coinciden en la definición, es decir, $\mathscr{Z}=\mathscr{Z}_+$. También observemos que si en la transformada bilateral se tiene que $e^{j\Omega}\subseteq\xi$, $\forall \Omega\in\mathbb{R}$ entonces se puede hacer $z=e^{j\Omega}$ y se tiene la definición de transformada de Fourier discreta, es decir, podremos obtener la transformada de Fourier discreta a partir de la transformada de zeta bilateral siempre y cuando el circulo unitario en el plano $z$ pertenezca a la región de convergencia  $\xi$.</p>
+

@@ -1,0 +1,661 @@
+<p>Se define a la transformada de Laplace bilateral de una función \(f(t)\) en tiempo continuo como</p>
+
+<div id="ecuacion">
+           \begin{equation}
+  \mathscr{L}\left\{ f(t)  \right\}=\int _{ -\infty  }^{ \infty  }{ f(t) } { e }^{ -s t }dt
+ 
+\end{equation}
+
+</div>
+
+<p>siempre y cuando esta integral converja.</p>
+
+<p>Obsérvese que en esta integral desaparece la letra de integración (cuando se termina de integrar), en este caso la \(t\), por lo que este procedimiento da lugar a una nueva expresión en términos de una nueva variable $s\in\mathbb{C}$, por tal motivo se define la siguiente notación:</p>
+
+<div id="ecuacion">
+\begin{equation}
+\mathscr{L}\left\{ f(t)  \right\}=F(s)
+\end{equation}
+    </div>
+
+<p>La transformada de Laplace es un tipo de operación que en general se conoce como transformada integral, puedes reproducir los videos para más información.</p>
+
+<p>Si redefinimos los límites de integración de $0^-$ a $\infty$ damos lugar a la transformada de Laplace unilateral derecha (la que utilizaremos normalmente)</p>
+
+<div id="ecuacion">
+           \begin{equation}
+  \mathscr{L}_+\left\{ f(t)  \right\}=\int _{ 0^-  }^{ \infty  }{ f(t) } { e }^{ -s t }dt
+ 
+\end{equation}
+
+</div>
+
+<p>nuevamente siempre y cuando esta integral converja, esta operación también da lugar a una nueva expresión que depende de la variable $s\in\mathbb{C}$, por tal motivo se define la notación:</p>
+
+<div id="ecuacion">
+           \begin{equation}
+  \mathscr{L}_+\left\{ f(t)  \right\}=F_+(s)
+\end{equation}
+
+</div>
+
+<p>Cuando decimos que la integral converja, nos referimos a que la operación exista, esta existencia en ocasiones queda determinada por los valores que se elijan de la variable $s$, es decir $s\in\xi\subseteq\mathbb{C}$, $\xi$ recibe el nombre de Región de convergencia ROC (por sus siglas en inglés Region Of Convergence) de la transformada.</p>
+
+<p>Observemos que si la señal $f(t)$ es causal, entonces la transformada bilateral y la transformada unilateral derecha coinciden en la definición, es decir, $\mathscr{L}=\mathscr{L}_+$. También observemos que si en la transformada bilateral se tiene que $\mathbb{I}m(s)\subseteq\xi$ entonces se puede hacer $s=j\omega$ y se tiene la definición de transformada de Fourier, es decir, podremos obtener la transformada de Fourier a partir de la transformada de Laplace bilateral siempre y cuando $\mathbb{I}m(s)\subseteq\xi$ .</p>
+
+<div class="video-ww">
+<div class="video-container">
+         <iframe src="https://www.youtube.com/embed/eJXuN3paffs?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg?rel=0&showinfo=0&theme=light" allowfullscreen frameborder="0" width="100%" height="250"></iframe>
+</div>
+</div>
+
+<div class="video-ww">
+<div class="video-container">
+         <iframe src="https://www.youtube.com/embed/T-sxVneUQwk?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg?rel=0&showinfo=0&theme=light" allowfullscreen frameborder="0" width="100%" height="250"></iframe>
+</div>
+</div>
+
+
+<div class="video-ww">
+<div class="video-container">
+         <iframe src="https://www.youtube.com/embed/Kn-RpHUZa5c?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg?rel=0&showinfo=0&theme=light" allowfullscreen frameborder="0" width="100%" height="250"></iframe>
+</div>
+</div>
+
+
+<div class="video-ww">
+<div class="video-container">
+         <iframe src="https://www.youtube.com/embed/GY_gTvgRLSU?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg?rel=0&showinfo=0&theme=light" allowfullscreen frameborder="0" width="100%" height="250"></iframe>
+</div>
+</div>
+
+
+<div class="video-ww">
+<div class="video-container">
+         <iframe src="https://www.youtube.com/embed/XyaGbml296Y?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg&rel=1&showinfo=0&theme=light" allowfullscreen frameborder="0" width="100%" height="250"></iframe>
+</div>
+</div>
+
+<p>En los siguientes ejemplos se encuentra la transformada de Laplace bilateral por medio de la definición, son cálculos directos, es decir, son técnicas de integración usual ($s$ se opera como una constante compleja), se tiene que tener claro como evaluar los límites de integración, si no se recuerda como realizar estas evaluaciones es recomendable que se revise el siguiente enlace antes de continuar, con el fin de que los procedimientos presentados sean transparentes, aunque puedes avanzar si así lo decides.</p>
+
+  <div class="ejemplo">
+<div id="derecha">
+      <p>    <strong>Ejemplo 1.</strong><br></p></div>
+<p>
+            Encuentre la transformada de Laplace bilateral y la ROC de \(f(t)={ e }^{ at }u(t)\)
+</p>
+
+<p>En este caso $\mathscr{L}=\mathscr{L}_+$ ¿Por qué?</p>
+
+<div id="tl1" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Tl1c()">×</a>
+  <div class="overlay-content">
+   
+  
+<div class="video-w">
+<div class="video-container">
+         <iframe src="https://www.youtube.com/embed/Llkj1X1qtXg?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg&rel=0&showinfo=0&theme=light" frameborder="0" width="420" height="315"></iframe>
+</div>
+</div>
+
+</div>
+</div>
+			
+<button class="dmbutton" onclick="Tl1o()">Solución</button>
+</div>          
+
+<div class="ejemplo">
+
+
+<div id="derecha">
+      <p>    <strong>Ejemplo 2.</strong><br></p></div>
+<p>  Encuentre la transformada de Laplace bilateral y la ROC de</p>
+<p> \(a)\; f(t)={ e }^{ -3t }u(t)\)</p>
+
+<p> \(b)\; f(t)={ e }^{ 2t }u(t)\)</p>
+
+<p> \(c)\; f(t)={ e }^{ 2jt }u(t)\)</p>
+
+
+<p> \(d)\; f(t)={ e }^{ (2-3j)t }u(t)\)</p>
+
+
+<p>En estos casos $\mathscr{L}=\mathscr{L}_+$ ¿Por qué?</p>
+
+
+<div id="tl2" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Tl2c()">×</a>
+  <div class="overlay-content">                   
+               
+<div class="video-w">
+<div class="video-container">
+         <iframe src="https://www.youtube.com/embed/D-dE7C8Rs3w?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg&rel=0&showinfo=0&theme=light" frameborder="0" width="420" height="315"></iframe>
+</div>
+</div>
+     
+
+  </div>
+</div>
+<button class="dmbutton" onclick="Tl2o()">Solución</button>
+                  
+                        <br>
+</div>
+
+<div class="ejemplo">
+<div id="derecha">
+      <p>    <strong>Ejemplo 3.</strong><br></p></div>
+
+
+Encuentre la transformada de Laplace bilateral y la ROC de $f(t)={- e }^{ at }u(-t)$
+</p>
+
+<p>En este caso $\mathscr{L}\neq\mathscr{L}_+$ ¿Qué valor tiene $\mathscr{L}_+$?</p>
+
+
+<div id="tl3" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Tl3c()">×</a>
+  <div class="overlay-content">
+    
+<div class="video-w">
+<div class="video-container">
+         <iframe src="https://www.youtube.com/embed/HjLgoYV6Lfo?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg&rel=0&showinfo=0&theme=light" frameborder="0" width="420" height="315"></iframe>
+</div>
+</div>
+                        
+                               
+                        </div>
+</div>
+<button class="dmbutton" onclick="Tl3o()">Solución</button>
+</div>
+
+
+<div class="ejemplo">
+
+
+<div id="derecha">
+      <p>    <strong>Ejemplo 4.</strong><br></p></div>
+<p>  Encuentre la transformada de Laplace bilateral y la ROC de</p>
+<p> \(a)\; f(t)={ -e }^{ 2t }u(-t)\)</p>
+
+<p> \(b)\; f(t)={ -e }^{ (-3+2j)t }u(-t)\)</p>
+
+<p> \(c)\; f(t)={ e }^{ 2t }u(t)\)</p>
+
+
+
+
+<div id="tl4" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="Tl4c()">×</a>
+  <div class="overlay-content">                   
+               
+<div class="video-w">
+<div class="video-container">
+         <iframe src="https://www.youtube.com/embed/VpjqnSioZKo?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg&rel=0&showinfo=0&theme=light" frameborder="0" width="420" height="315"></iframe>
+</div>
+</div>
+     
+
+  </div>
+</div>
+<button class="dmbutton" onclick="Tl4o()">Solución</button>
+                  
+                        <br>
+</div>
+
+<p>Los ejemplos anteriores que sean funciones causales pueden ser resueltos usando MATLAB, puedes copiar y ejecutar el ejemplo de código en el siguiente enlace</p>
+
+<pre><code class="matlab"> 
+%MATLAB
+syms   t s 
+syms a positive
+f=exp(a*t)*heaviside(t);
+h=exp((2-3i)*t)*heaviside(t);
+laplace(f)
+laplace(h)
+syms a negative
+f=exp(a*t)*heaviside(t);
+laplace(f)
+</code></pre>
+
+<h3>Propiedades de la transformada de Laplace unilateral derecha</h3>
+
+<p>Nuestro objetivo es trabajar con señales causales, pues en ingeniería la variable independiente de una señal puede ser interpretada como tiempo, y se puede pensar que cuando un fenómeno comienza a observarse, en ese instante accionamos un reloj, es decir, los fenómenos pueden pensarse que transcurren de $[0,\infty)$ y para fines prácticos de $[0^-,\infty)$, en otra sección se explicará con mayor detalle esta abstracción. De ahora en adelante trabajaremos con la definición de transformada de Laplace unilateral derecha para señales causales, y para concordar con la notación usual  fijamos la notación como</p>
+
+<div id="ecuacion">
+           \begin{equation}
+  \mathscr{L}_+\left\{ f(t)  \right\}=\mathscr{L}\left\{ f(t)  \right\}
+\end{equation}
+
+</div>
+
+<p>Al igual que la transformada de Fourier, la transformada de Laplace tiene algunas propiedades que facilitan su uso y que pueden ser deducidas a partir de la definición y de  suponer la estructura de las expresiones a las cuales se aplica. La siguiente tabla muestra algunas de las propiedades, es importante que esta tabla se utilice una vez que se tenga claro el significado de cada propiedad.</p>
+
+<table class="rwd-table">
+  <tr>
+    <th>Propiedad</th>
+    <th> Expresión </th>
+    <th>$F(s)=\mathscr{L}\left\{f(t)\right\}$</th>
+    <th>ROC</th>
+    <th>Prueba</th>
+
+  </tr>
+  <tr>
+    <td data-th=" Propiedad ">Linealidad</td>
+    <td data-th=" Expresión ">$af_1(t)+bf_2(t)$</td>
+    <td data-th=" Transformada">$aF_1(s)+bF_2(s)$</td>
+    <td data-th=" ROC">$\xi_1\bigcap\xi_2$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="dC-KLNnmvpQ?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Propiedad de linealidad">
+video</button></td>
+  </tr>
+
+
+<tr>
+<td data-th=" Propiedad ">Traslación en $s$</td>
+    <td data-th="Expresión ">$f(t)e^{a t}$</td>
+    <td data-th="Transformada">$F(s-a)$</td>
+    <td data-th="ROC ">$\xi+a$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="8MBQLGnsFrQ?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg&start=12&enablejsapi=1" title="Traslación en s">
+video</button></td>
+  </tr>
+
+
+  <tr>
+<td data-th="Propiedad">Traslación en $t$</td>
+    <td data-th="Expresión">$f(t-t_0)u(t-to)$</td>
+    <td data-th="Transformada">$F(s)e^{-t_0s}$</td>
+    <td data-th=" ROC">$\xi$</td> 
+    <td data-th="Prueba "><button class=" dmbutton youtube" id="nUEJkm5aHhc?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg&start=12&enablejsapi=1" title="Traslación en t">
+video</button></td>
+  </tr>
+
+
+<tr>
+<td data-th=" Propiedad ">Escalamiento en $t$</td>
+    <td data-th="Expresión">$f(at)$</td>
+    <td data-th="Transformada">$\frac{1}{a}F(\frac{s}{a}),\;a>0$</td>
+    <td data-th=" ROC">$a\xi$</td> 
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+
+
+
+
+
+
+<tr>
+<td data-th=" Propiedad ">Derivada 1 en $t$</td>
+    <td data-th=" Expresión ">$\frac{d}{dt}f(t)$</td>
+    <td data-th="Transformada">$s F(s)-f(0^-)$</td>
+<td data-th=" ROC ">$\xi$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QAXZuT2YjGQ?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg&start=12&enablejsapi=1" title="Transformada de la derivada">
+video</button></td>
+  </tr>
+
+<tr>
+
+<td data-th=" Propiedad "> Derivada 2 en $t$</td>
+    <td data-th=" Expresión ">$\frac{d^2}{dt^2}f(t)$</td>
+    <td data-th="Transformada">$s^2F(s)-sf(0^-)-\dot{f}(0^-)$</td>
+<td data-th=" ROC">$\xi$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="rbByWYN_i50?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg&start=12&enablejsapi=1" title="Transformada de la segunda derivada">
+video</button></td>
+  </tr>
+
+    <tr>
+<td data-th=" Propiedad "> Derivada n en $t$</td>
+    <td data-th=" Expresión ">$\frac{d^n}{dt^n}f(t)$</td>
+    <td data-th="Transformada">$s^nF(s)-\sum\limits_{k=1}^{n}s^{n-k}f^{k-1}(0^-)$</td>
+<td data-th=" ROC">$\xi$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="Transformada de la n derivada">
+enlace</button></td>
+  </tr>
+<tr>
+<td data-th=" Propiedad "> Derivada en $s$</td>
+    <td data-th=" Expresión ">$t^nf(t)$</td>
+    <td data-th="Transformada">$(-1)^n\frac{d^n}{ds^n}F(s)$</td>
+<td data-th=" ROC">$\xi$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="Transformada de la multiplicación por t">
+enlace</button></td>
+  </tr>
+ 
+<tr>
+<td data-th=" Propiedad ">Convolución en t</td>
+    <td data-th=" Expresión ">$f_1(t)*f_2(t)$</td>
+    <td data-th="Transformada">$F_1(s)F_2(s)$</td>
+<td data-th=" ROC ">$\xi_1\bigcap\xi_2$</td>
+    <td data-th="Prueba "><button class=" dmbutton youtube" id="DCdH4McO6vQ?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg&start=12&enablejsapi=1" title="Transformada de una convolución">
+video</button></td>
+  </tr>
+
+<tr>
+<td data-th=" Propiedad ">Convolución en s</td>
+    <td data-th=" Expresión ">$f_1(t)f_2(t)$</td>
+    <td data-th="Transformada">$\frac{1}{2\pi j}F_1(s)*F_2(s)$</td>
+<td data-th=" ROC ">$\xi_1\bigcap\xi_2$</td>
+    <td data-th="Prueba "><button class=" dmbutton youtube" id="" title="Transformada de un producto">
+enlace</button></td>
+  </tr>
+<tr>
+
+
+<td data-th=" Propiedad ">Integral I</td>
+    <td data-th=" Expresión ">$\int_{0^-}^{t}f(\tau) d\tau$</td>
+    <td data-th="Transformada">$\frac{F(s)}{s}$</td>
+    <td data-th=" ROC ">$\xi_1-{0}$</td>    
+<td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+    
+    <td data-th=" Propiedad ">Integral II</td>
+    <td data-th=" Expresión ">$\int_{-\infty}^{t}f(\tau) d\tau$</td>
+    <td data-th="Transformada">$\frac{F(s)}{s}+\frac{1}{s}\int_{-\infty}^{0^-}f(\tau) d\tau$</td>
+    <td data-th=" ROC ">$\xi_1-{0}$</td>    
+<td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+    
+<tr>
+<td data-th=" Propiedad ">Teorema de valor final</td>
+    <td data-th=" Expresión ">$\lim\limits_{t\to\infty}f(t)$</td>
+    <td data-th="Transformada">$\lim\limits_{s\to 0}sF(s)$<br> si $p$ es polo de $sF(s)$<br>$\mathbb{R}e(p)<0$ </td>
+    <td data-th=" ROC "></td>    
+<td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+<tr>
+<td data-th=" Propiedad ">Teorema de valor inicial</td>
+    <td data-th=" Expresión ">$\lim\limits_{t\to 0^+}f(t)$</td>
+    <td data-th="Transformada">$\lim\limits_{s\to \infty}sF(s)$<br> $F(s)$ estrictamente propia </td>
+    <td data-th=" ROC "></td>    
+<td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+
+</table>
+
+<h3>Tabla de Transformadas de Laplace</h3>
+
+<p>La siguiente tabla muestra las transformadas de Laplace de señales causales, la región de convergencia (ROC), y la prueba del resultado,  es importante que cuando se use esta tabla se tenga claro el significado de cada termino.</p>
+
+<table class="rwd-table">
+  <tr>
+       <th>#</th>
+    <th>$f(t)$</th>
+    <th>$F(s)=\mathscr{L}\left\{f(t)\right\}$</th>
+    <th>ROC</th>
+    <th>Prueba</th>
+  </tr>
+
+
+
+<tr>
+    <td data-th="#">1.</td>
+    <td data-th=" Expresión ">$\delta (t)$</td>
+    <td data-th=" Transformada">$1$</td>
+    <td data-th="ROC"> $\mathbb{C}$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="QLbXSyHvVn8?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la delta de Dirac">
+video</button></td>
+  </tr>
+
+ <tr>
+    <td data-th="#">2.</td>
+    <td data-th=" Expresión">$u(t)$</td>
+    <td data-th=" Transformada">$\frac{1}{s}$</td>
+    <td data-th="ROC">$\mathbb{R}e(s)>0$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="4eUtGPNdP9I?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada del escalón">
+video</button></td>
+  </tr>
+
+
+  <tr>
+    <td data-th="#">3.</td>
+    <td data-th=" Expresión">$tu(t)$</td>
+    <td data-th=" Transformada">$\frac{1}{s^2}$</td>
+    <td data-th="ROC">$\mathbb{R}e(s)>0$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="X-eE0u8CaEM?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la rampa o identidad">
+video</button></td>
+  </tr>
+
+  <tr>
+    <td data-th="#">4.</td>
+    <td data-th=" Expresión">$t^nu(t)$</td>
+    <td data-th=" Transformada">$\frac{n!}{s^{n+1}}$</td>
+    <td data-th="ROC">$\mathbb{R}e(s)>0$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="Q447bwDJhFY?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de potencias">
+video</button></td>
+  </tr>
+
+
+  <tr>
+    <td data-th="#">5.</td>
+    <td data-th=" Expresión">$e^{at}u(t)$</td>
+    <td data-th=" Transformada">$\frac{1}{s-a}$</td>
+    <td data-th="ROC">$\mathbb{R}e(s)>\mathbb{R}e(a)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="_Q7bIg9YEEw?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Transformada de la función exponencial">
+video</button></td>
+  </tr>
+
+
+<tr>
+   <td data-th="#">6.</td>
+    <td data-th=" Expresión ">$cos(\omega  t)u(t)$</td>
+    <td data-th=" Transformada">$\frac{s}{s^2+\omega^2}$</td>
+    <td data-th="ROC">$\mathbb{R}e(s)>0$ </td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="nDT-QJ1oaoI?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="transformada de la función coseno causal">
+video</button></td>
+  </tr>
+
+
+<tr>
+   <td data-th="#">7.</td>
+    <td data-th=" Expresión ">$sen(\omega  t)u(t)$</td>
+    <td data-th=" Transformada">$\frac{\omega}{s^2+\omega^2}$</td>
+    <td data-th="ROC"> $\mathbb{R}e(s)>0$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="dqXvLHWcqbo?list=PLSC7gO5dTNPctF2If6_-ceBLRWuCmKWvg" title="Tranformada del la función seno causal">
+video</button></td>
+  </tr>
+
+ <tr>
+    <td data-th="#">8.</td>
+    <td data-th=" Expresión ">$te^{at}u(t)$</td>
+    <td data-th=" Transformada">$\frac{1}{(s-a)^2}$</td>
+    <td data-th="Condición">$\mathbb{R}e(s)>\mathbb{R}e(a)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+ 
+ <tr>
+    <td data-th="#">9.</td>
+    <td data-th=" Expresión ">$t^ne^{at}u(t)$</td>
+    <td data-th=" Transformada">$\frac{n!}{(s-a)^{n+1}}$</td>
+    <td data-th="Condición">$\mathbb{R}e(s)>\mathbb{R}e(a)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+
+
+
+
+ <tr>
+    <td data-th="#">10.</td>
+    <td data-th=" Expresión ">$e^{at}cos(\omega t)u(t)$</td>
+    <td data-th=" Transformada">$\frac{s-a}{(s-a)^2+\omega^2}$</td>
+    <td data-th="Condición">$\mathbb{R}e(s)>\mathbb{R}e(a)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+<td data-th=" Espectro de magnitud"></td>
+<td data-th=" Espectro de fase "></td>
+  </tr>
+
+ <tr>
+    <td data-th="#">11.</td>
+    <td data-th=" Expresión ">$e^{at}sen(\omega t)u(t)$</td>
+    <td data-th=" Transformada">$\frac{\omega}{(s-a)^2 + \omega^2}$</td>
+    <td data-th="Condición">$\mathbb{R}e(s)>\mathbb{R}e(a)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="Xmp5JcYxVQA?start=9&enablejsapi=1" title="...">
+enlace</button></td>
+<td data-th=" Espectro de magnitud"></td>
+<td data-th=" Espectro de fase "></td>
+  </tr>
+
+    <!--
+<tr>
+    <td data-th="#">12.</td>
+    <td data-th=" Expresión ">$t^ne^{at}cos(\omega t)u(t)$</td>
+    <td data-th=" Transformada"></td>
+    <td data-th="Condición"></td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+
+  </tr>
+
+
+<tr>
+    <td data-th="#">13.</td>
+    <td data-th=" Expresión ">$t^ne^{at}sen(\omega t)u(t)$</td>
+    <td data-th=" Transformada"></td>
+    <td data-th="Condición"></td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+
+  </tr>
+-->
+
+    <tr>
+    <td data-th="#">12.</td>
+    <td data-th=" Expresión ">$\frac{B-Aa}{b-a}e^{-at}u(t)+$<br>$\frac{B-Ab}{a-b}e^{-bt}u(t),\;a\neq b,\;cons.$</td>
+    <td data-th=" Transformada">$\frac{As+B}{(s+a)(s+b)}$</td>
+    <td data-th="Condición">$\mathbb{R}e(s)>c$<br>$c=max\{\mathbb{R}e(-a),\mathbb{R}e(-b)\}$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+
+  </tr>
+    
+        <tr>
+    <td data-th="#">13.</td>
+    <td data-th=" Expresión ">$(B-Aa)te^{-at}u(t)+$<br>$Ae^{-at}u(t),\;A,\,B,\,a,\;cons.$</td>
+    <td data-th=" Transformada">$\frac{As+B}{(s+a)^2}$</td>
+    <td data-th="Condición">$\mathbb{R}e(s)>\mathbb{R}e(-a)$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+
+  </tr>
+
+    
+
+<tr>
+   <td data-th="#">14.</td>
+    <td data-th=" Expresión ">$Ae^{-at}\cos(\sqrt{c-a^2} t)u(t)+$<br>$\frac{B-Aa}{\sqrt{c-a^2}}e^{-at}sen(\sqrt{c-a^2} t)u(t)$<br>$A,\,B,\;cons$<br>$a,\,c\in\mathbb{R},\;c-a^2>0$</td>
+    <td data-th=" Transformada">$\frac{As+B}{s^2+2as+c}$</td>
+    <td data-th="Condición">$\mathbb{R}e(s)>-a$ </td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+
+<tr>
+   <td data-th="#">15.</td>
+    <td data-th=" Expresión ">$re^{-at}\cos(\omega t+\theta)u(t)$ <br>$r=\sqrt{\frac{A^2c+B^2-2ABa}{c-a^2}},$<br>$\theta=\tan^{-1}\left(\frac{Aa-B}{A\sqrt{c-a^2}}\right),$<br> $\omega=\sqrt{c-a^2}$<br>$A,\,B,\;cons$<br>$a,\,c\in\mathbb{R},\;c-a^2>0$</td>
+    <td data-th=" Transformada">$\frac{As+B}{s^2+2as+c}$</td>
+    <td data-th="Condición">$\mathbb{R}e(s)>-a$ </td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+
+
+     <tr>
+    <td data-th="#">16.</td>
+    <td data-th=" Expresión ">$\frac{B-A(a+\sqrt{a^2-c})}{-2\sqrt{a^2-c}}e^{-(a+\sqrt{a^2-c})t}u(t)+$<br>$\frac{B-A(a-\sqrt{a^2-c})}{2\sqrt{a^2-c}}e^{-(a-\sqrt{a^2-c})t}u(t)$<br>$A,\,B,\;cons$<br>$a,\,c\in\mathbb{R},\;c-a^2< 0$</td>
+    <td data-th=" Transformada">$\frac{As+B}{s^2+2as+c}$</td>
+    <td data-th="Condición">$\mathbb{R}e(s)>-a+\sqrt{a^2-c}$</td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+
+  </tr>
+    
+    
+    
+<tr>
+   <td data-th="#">17.</td>
+    <td data-th=" Expresión ">$re^{-at}\cos(\omega t+\theta)u(t)$<br>$r,\,a,\,\omega,\,\theta\in\mathbb{R}$</td>
+    <td data-th=" Transformada">$\frac{0.5re^{j\theta}}{s+a-j\omega}+ \frac{0.5re^{-j\theta}}{s+a+j\omega}$</td>
+    <td data-th="Condición">$\mathbb{R}e(s)>-a$ </td>
+    <td data-th="Prueba"><button class=" dmbutton youtube" id="" title="...">
+enlace</button></td>
+  </tr>
+
+</table>
+
+<div class="ejemplo">
+
+
+<div id="derecha">
+      <p>    <strong>Ejemplo 5.</strong><br></p></div>
+<p>  Resuelve los siguientes ejercicios</p>
+
+<p>a) $$\ddot{y}(t)-y(t)=-t$$ con $y(0)=0,\;\dot{y}(0)=1$ <button class=" dmbutton youtube" id="BmuYXVUSy5g?list=PLSC7gO5dTNPc1iu55uqvhxwLS1XHM--FY&start=0&enablejsapi=1" title="">
+solución</button></p>
+
+<p> b)$$\ddot{y}(t)-2\dot{y}(t)+5y(t)=-8e^{-t}$$ con $y(0)=2,\;\dot{y}(0)=12$ <button class=" dmbutton youtube" id="BmuYXVUSy5g?list=PLSC7gO5dTNPc1iu55uqvhxwLS1XHM--FY&start=132&enablejsapi=1" title="">
+solución</button></p>
+
+<p> c)$$\dot{y}(t)=1-\int_o^ty(t-\tau)e^{-2\tau}d\tau$$ con $y(0)=1$ <button class=" dmbutton youtube" id="BmuYXVUSy5g?list=PLSC7gO5dTNPc1iu55uqvhxwLS1XHM--FY&start=624&enablejsapi=1" title="">
+solución</button></p>
+
+<p> d)$$\ddot{x}(t)+16x(t)=f(t)$$ con $x(0)=0,\;\dot{x}(0)=1$ $$f(t)=\begin{cases}
+\cos(4t)  & \text{si } 0\leq t\leq\pi \\
+0 & \text{en otro caso}
+\end{cases}$$
+<button class=" dmbutton youtube" id="sUiZrVMxtn4?list=PLSC7gO5dTNPc1iu55uqvhxwLS1XHM--FY&start=0&enablejsapi=1" title="">
+solución</button>
+</p>
+
+</div>
+
+<div class="ejemplo">
+
+
+<div id="derecha">
+      <p>    <strong>Ejemplo 5.</strong><br></p></div>
+
+
+
+<p>e) $$\ddot{y}(t)-2\dot{y}(t)+y(t)=f(t)$$ con $y(0)=0,\;\dot{y}(0)=0$ $$f(t)=\begin{cases}
+1  & \text{si } 1\leq t < 2 \\
+-1  & \text{si } 2\leq t\leq 3 \\
+0 & \text{en otro caso}
+\end{cases}$$
+<button class=" dmbutton youtube" id="sUiZrVMxtn4?list=PLSC7gO5dTNPc1iu55uqvhxwLS1XHM--FY&start=590&enablejsapi=1" title="">
+solución</button>
+</p>
+
+
+
+
+<p>f) $$L\frac{d}{dt}i+\frac{1}{C}\int_0^ti(\tau)d\tau+Ri=E$$ con $L=0.1$, $C=10^{-3}$, $R=20$, $i(0)=0$ $$E(t)=\begin{cases}
+120  & \text{si } 0\leq t < 1 \\
+0 & \text{en otro caso}
+\end{cases}$$
+<button class=" dmbutton youtube" id="I-AZnTvUpcw?list=PLSC7gO5dTNPc1iu55uqvhxwLS1XHM--FY&start=0&enablejsapi=1" title="">
+solución</button>
+</p>
+
+
+
+<p>  
+g)
+\begin{align*}
+
+        &\frac{d}{dt}x(t)-3x(t)=-2y(t)\\
+&\frac{d}{dt}y(t)-3y(t)+2x(t)=0\\
+        \end{align*}
+con $x(0)=1,\;y(0)=1$
+<button class=" dmbutton youtube" id="Kmpu4tA-4os?list=PLSC7gO5dTNPc1iu55uqvhxwLS1XHM--FY&start=0&enablejsapi=1" title="">
+solución</button>
+</p>
+
+
+</div>
+
+
+
